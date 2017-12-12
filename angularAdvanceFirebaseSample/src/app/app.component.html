@@ -1,0 +1,23 @@
+<h1>Cuisines</h1>
+<ul>
+  <li *ngFor="let c of cuisines | async">{{ c.$key + '- ' + c.$value }}</li>
+</ul>
+<h1>Restaurants</h1>
+<!-- to show the restaurant as an object  -->
+<span>Restaurant object:</span>
+{{(resturan | async)?.name}}
+
+<ul>
+  <li *ngFor="let r of restaurants | async">
+    <!--{{ r.name }} - {{(r.cusineType | async)?.$value}}-->
+    {{ r.name }}
+    <ul>
+      <li *ngFor="let f of r.featureType">
+        {{(f | async)?.$value}}
+      </li>
+    </ul>
+  </li>
+</ul>
+<div *ngIf="(exist | async)?.$value">Exists</div>
+    <a routerLink="/login" routerLinkActive="active">login page</a>
+<router-outlet></router-outlet>

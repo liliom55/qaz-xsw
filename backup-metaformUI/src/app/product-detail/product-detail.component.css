@@ -1,0 +1,19 @@
+.detail-container{
+    background-color: #cad9e6;
+    border-radius: 10px;
+    padding: 3px 5px;
+    height: auto;
+    cursor: pointer;
+}
+
+img{
+    width:100%;
+}
+p{
+    font-size: 10px;
+    margin:0;
+    text-transform: capitalize;
+}
+.right{
+    padding-left: 5px;
+}

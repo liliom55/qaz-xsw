@@ -1,0 +1,288 @@
+﻿<div id="container_home" *ngIf="!isError">
+    <!---------------------------reloading page---------------------------------->
+    <div class="left_btn" *ngIf="!firstViewIsVisible">
+        <a class="btn-floating btn-large waves-effect waves-light white" id="btn_prev" (click)="refreshPage()"><i class="material-icons">&#xE863;</i></a>
+    </div>
+    <!-----------------------------    language    -------------------------------------->
+
+    <button *ngFor="let lang of supportedLangs"
+            (click)="selectLang(lang.value)" (touch)="selectLang(lang.value)"
+            class="btn_lang" [class.btn-primary]="isCurrentLang(lang.value)">
+        {{ lang.display }}
+    </button>
+    <div id="content_login" *ngIf="!isError">
+        <div id="logo_div">
+            <img src="../../images/lilianne-logo.svg" />
+        </div>
+        <!--------------------------   Email form --------------------------------------->
+        <form id="form_login" class="col s12">
+            <div class="row">
+                <div class="input-field inline col s12">
+                    <input id="firstName" name="firstName" type="text" data-error=".errorTxtF_name" (input)="onInput('f_name',$event.target.value)" />
+                    <div class="errorTxtF_name"></div>
+                    <label for="firstName" data-error="wrong" data-success="right">{{'Prénom' | translate}}</label>
+                </div>
+                <div class="input-field inline col s12">
+                    <input id="lastName" name="lastName" type="text" data-error=".errorTxtL_name" (input)="onInput('l_name',$event.target.value)" />
+                    <div class="errorTxtL_name"></div>
+                    <label for="lastName" data-error="wrong" data-success="right">{{'Nom' | translate}}</label>
+                </div>
+                <div class="input-field inline col s12">
+                    <input id="email" name="email" type="email" data-error=".errorTxt00" (input)="onInput('email',$event.target.value)" />
+                    <div class="errorTxt00"></div>
+                    <label class="error_">{{validMsg | translate}}</label>
+                    <label for="email" data-error="wrong" data-success="right">{{'Courriel' | translate}}</label>
+                </div>
+            </div>
+
+            <button #suivant id="suivant" type="submit" class="btn">{{'Suivant' | translate}}</button><br />
+            <button #incognito id="incognito" type="button" class="btn">{{'Incognito' | translate}}</button>
+        </form>
+        <!--------------------------   password form --------------------------------------->
+        <form id="form_password" class="col s12">
+            <label>{{"Entrez votre mot-de-passe pour vous connecter."| translate}}</label>
+
+            <div class="row">
+                <div class="input-field inline col s12">
+                    <input class="password" name="password" type="password" data-error=".errorTxt100" (input)="onInput('password',$event.target.value)" />
+                    <div class="errorTxt100"></div>
+                    <label id="wrongPass">{{wrongPass_msg|translate}}</label>
+                    <label for="password" data-error="wrong" data-success="right">{{'mot-de-passe' | translate}}</label>
+
+                </div>
+            </div>
+            <button id="suivant_paswrd" type="submit" class="btn" (click)="check_passwrd()" (touch)="check_passwrd()">{{'Suivant' | translate}}</button><br />
+        </form>
+        <!-------------------------------------- loader --------------------------------------------------->
+        <div id="preLoader_">
+            <div class="preloader-wrapper big active">
+                <div class="spinner-layer">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                        <div class="circle"></div>
+                    </div><div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--------------------------   compeleting registration form --------------------------------------->
+        <div id="form_registration">
+            <form id="form_register" class="col s12">
+                <label>{{"Vous n'avez pas encore spécifié de mot-de-passe. Entrez en un pour finalizer votre inscription."| translate}}</label>
+                <div class="row">
+
+                    <div class="input-field inline col s12">
+                        <input type="checkbox" id="test5" />
+                        <label id="passLbl" for="test5" (click)="switchEyes()" (touch)="switchEyes()"><i class="material-icons">{{icon_eye}}</i></label>
+                        <input class="password" name="password" type="password" data-error=".errorTxt0" (input)="onInput('password',$event.target.value)" />
+                        <div class="errorTxt0"></div>
+                        <label for="password" data-error="wrong" data-success="right">{{'mot-de-passe' | translate}}</label>
+                    </div>
+                </div>
+                <br />
+                <button id="register_btn" type="submit" class="btn" (click)="register()" (touch)="register()">{{'Suivant' | translate}}</button>
+            </form>
+        </div>
+        <!--------------------------   New size or old size form --------------------------------------->
+        <div id="NewOrOldSizes">
+            <label>{{'Nous avons déjà vos mesures. Voulez-vous les utilizer ou en prendre de nouvelles?' | translate}}</label>
+            <form>
+                <button id="new_sizeStat_btn" type="submit" class="btn" (click)="nextStep_newSize()" (touch)="nextStep_newSize()" >{{'Nouvelles mesures' | translate}}</button>
+                <button id="old_sizeStat_btn" type="submit" class="btn" (click)="nextStep_oldSize()" (touch)="nextStep_oldSize()">{{'Mesures précédentes' | translate}}</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!------------------------------------  breast choise view  --------------------------------------->
+    <div id="content_breastChs">
+        <!--(click)="onchioseBrst(i)"-->
+            <h2>{{'Sélectionnez votre type de poitrine' | translate}} </h2>
+            <br />
+            <div class="carousel">
+                <div #carousel_item class="carousel-item" *ngFor="let item of brsChois;let i = index" >
+                    <div class=imgContainer>
+                        <img [src]="item.image1" alt={{item.title}} />
+                        <img [src]="item.image2" alt={{item.title}} />
+                    </div>
+                    <div class=txtContainer>
+                        <h3>{{item.title | translate }} </h3>
+                        <p [class.Select]="i==selectIndex">{{item.description | translate }}  </p>
+                    </div>
+                    <div class="btn_suivant" >
+                        <button #suivant3 class="btn suivant3" name="Suivant" (click)="onchioseBrst(i)" (touchstart)="onchioseBrst(i)">
+                            {{'Choisir' | translate}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+   </div>
+    <!--------------------------------  step 1 scan  -------------------------------------------->
+    <div id="scan_step1">
+        <p>1 / 2</p>
+        <p>{{ 'Enfilez le soutien-gorge léger.'| translate}}</p>
+        <p>{{ 'Cela permet une analyze plus juste de votre morphologie.' | translate}}</p>
+        <div id="pic_step1">
+            <img src="../../images/home/light-bra.png" />
+        </div>
+        <button id="step1_btn" class="btn" (click)="goStep2()" (touch)="goStep2()">{{'Suivant' | translate}}</button>
+    </div>
+    <!----------------------------- Step 2 scan  -------------------------------------------------->
+    <div id="scan_step2">
+        <p>2 / 2</p><br/>
+        <p>{{"Mettez vos mains sur vos hanches, assurez-vous d'avoir le dos droit et regardez devant vous." | translate}}</p><br/>
+        <p>{{'Appuyez sur Débuter lorsque vous êtes prête.' | translate}}</p>
+        <div id="pic_step2">
+            <img src="../../images/home/silouhette.svg" />
+        </div>
+        <button id="step2_btn" class="btn" (click)="connectToServer()" (touch)="connectToServer()">{{'Débuter' | translate}}</button>
+    </div>
+    <!----------------------------- connecting view  -------------------------------------------------->
+    <div id="connecting_view">
+        <h4>{{Message_rcvd | translate | uppercase}}</h4>
+        <ul *ngIf="Message_rcvd === 'connexion au scanner en cours'">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <button id="scan_again" class="btn" (click)="connectToServer()" (touch)="connectToServer()"   *ngIf="Message_rcvd !=='connexion au scanner en cours' && Message_rcvd !==''">{{'Débuter' | translate}}</button>
+    </div>
+    <!---------------------------   Scan room view   ------------------------------------------>
+    <div id="content_scan">
+        <label>{{'Analyze en cours' | translate}}</label><br />
+        <img src="../../images/home/silouhette-rotating.svg " />
+        <div id="loader_container"></div>
+    </div>
+    <!---------------------------   Scan matching view   ------------------------------------->
+    <div id="content_loader">
+        {{counter}}
+        <br />
+        <div class="preloader-wrapper big active">
+            <div class="spinner-layer">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                    <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------------------------  result view  --------------------------------------->
+    <div id="content_result">
+        <div id="result_circle" *ngIf="!isError_match">
+            <label>{{matchNo}}</label>
+            <h5>{{'recommendations pour vous !' | translate}}</h5>
+        </div>
+    </div>
+    <!------------------------------------ bust result ------------------------------->
+    <div id="bust_results">
+        <!--<object id="svgObj" data="../../images/home/bust-results-new.svg" type="image/svg+xml"></object>-->
+        <div id="svgObj"></div>
+        <div class="right_btn">
+            <label>{{'SUIVANT' | translate}}</label><a class="btn-floating btn-large waves-effect waves-light white" id="btn_next" (click)="goToPrefilter()" (touch)="goToPrefilter()"><i class="material-icons">&#xE5C8;</i></a>
+        </div>
+    </div>
+    
+        <!----------------------------------  prefilter svg view  -------------------------->
+        <div id="content_prefilter">
+            <div id="result_circle_error" *ngIf="isError_match">
+                <p>
+                    {{errorMessage | translate}}
+                </p>
+                <h5 (click)="reloadPage()" (touch)="reloadPage()">{{'Recommencer' | translate}} </h5>
+            </div>
+            <div *ngIf="!isError_match">
+                <p>{{"Comment vous sentez-vous aujourd'hui?" | translate}}</p>
+                <div id="svg_div">
+
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         width="500" height="500" viewBox="0 0 481.7 484.2" xml:space="preserve">
+                    <style type="text/css">
+                        .st0 {
+                            fill: #FFFFFF;
+                            stroke: #ff4081;
+                            stroke-miterlimit: 10;
+                        }
+
+                        .st1 {
+                            fill: #ff4081;
+                        }
+
+                        .st2 {
+                            fill: none;
+                        }
+
+                        .st3 {
+                            fill: #FFFFFF;
+                        }
+
+                        .st4 {
+                            font-family: 'Raleway-Regular';
+                        }
+
+                        .st5 {
+                            font-size: 24px;
+                        }
+
+                        .st6 {
+                            fill: none;
+                            stroke: #017e61;
+                            stroke-miterlimit: 10;
+                        }
+
+                        #p6.s1 {
+                            text-align: center;
+                        }
+</style>
+                    <path id="Portion_9_" class="st0" d="M448.4,372.7l-114.5-66.1c0,0-29.3,48.6-93,48.6s-93-48.6-93-48.6L33.4,372.7
+        c0,0,68.1,111.4,207.5,111.4S448.4,372.7,448.4,372.7z" (click)="Portion9_click()" (touch)="Portion9_click()" />
+                    <path id="Portion_8_" class="st0" d="M248.4,0v132.2c0,0,56.7,1.1,88.6,56.2s4.5,104.8,4.5,104.8L456,359.4
+        c0,0,62.4-114.7-7.3-235.4S248.4,0,248.4,0z" (click)="Portion8_click()" (touch)="Portion8_click()" />
+                    <path id="Portion_7_" class="st0" d="M25.7,359.6l114.5-66.1c0,0-27.5-49.7,4.4-104.8s88.5-56.3,88.5-56.3l0-132.3
+        c0,0-130.5,3.3-200.2,124S25.7,359.6,25.7,359.6z" (click)="Portion7_click()" (touch)="Portion7_click()" />
+                    <g>
+                    <path id="p6" class="st1" d="M240.9,315.2c-39.2,0-71-31.9-71-71s31.9-71,71-71s71,31.9,71,71S280.1,315.2,240.9,315.2z" />
+                    <path id="p5" class="st1" d="M240.9,173.6c38.9,0,70.5,31.6,70.5,70.5s-31.6,70.5-70.5,70.5s-70.5-31.6-70.5-70.5S202,173.6,240.9,173.6
+             M240.9,172.6c-39.5,0-71.5,32-71.5,71.5s32,71.5,71.5,71.5s71.5-32,71.5-71.5S280.4,172.6,240.9,172.6L240.9,172.6z" />
+    </g>
+                    <rect x="206.3" y="234.4" class="st2" width="69.1" height="19.5" />
+                    <text id="txt_p6" transform="matrix(1 0 0 1 206.3218 251.9179)" class="st3 st4 st5 all_">{{'TOUS'|translate }}</text>
+                    <rect x="206.3" y="410.9" class="st2" width="69.1" height="24.9" />
+                    <text id="txt_p9" transform="matrix(1 0 0 1 210.9072 428.425)" x="-20" class="st1 st4 st5" (click)="Portion9_click()" (touch)="Portion9_click()">{{'HABILLE' |translate }}</text>
+                    <rect x="339.8" y="169.7" class="st2" width="118.2" height="24.9" />
+                    <text id="txt_p8" transform="matrix(1 0 0 1 341.1514 187.2127)" x="10" class="st1 st4 st5" (click)="Portion8_click()" (touch)="Portion8_click()">{{'CASUAL' | translate}}</text>
+                    <rect x="20.4" y="169.7" class="st2" width="118.2" height="24.9" />
+                    <text id="txt_p7" transform="matrix(1 0 0 1 40.6456 187.2126)" class="st1 st4 st5" (click)="Portion7_click()" (touch)="Portion7_click()">{{'SPORT' | translate}}</text>
+                    <path class="st6" d="M240.9,484.2" />
+    </svg>
+
+
+                    <div #nextCatalog class="right_btn">
+                        <label>{{'SUIVANT' | translate}}</label><a class="btn-floating btn-large waves-effect waves-light white" id="btn_next" (click)="goToCatalog()" (touch)="goToCatalog()"><i class="material-icons">&#xE5C8;</i></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="clear_both"></div>
+
+        </div>
+        <!------------------------------  footer  ----------------------------------->
+        <div id="footer">
+            <img src="../../images/stefanka-logo.png" />
+            <p>powered by </p>
+            <div class="clear_both"></div>
+        </div>
+
+</div>
+<!----------------------------  error handler view  ------------------------------>
+<div id="errorHandler" *ngIf="isError && !isError_match" class="valign-wrapper">
+    <div id="messageError" class="valign">
+        <h2>Connection Server Error</h2><i class="material-icons">error</i>
+    </div>
+</div>
+
+

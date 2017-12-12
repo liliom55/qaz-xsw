@@ -1,0 +1,173 @@
+<div id="dialog" fxLayout="column" [style.borderColor]="store.activeColor(selectedTab)">
+    <md-toolbar fxFlex="64px" fxLayout="row">
+        <button md-button fxFlex="40px" type="button" *ngIf="selectedTab >= 1 && selectedTab < 5" class="no-padding" (click)="goBack()">
+                <i class="material-icons">&#xE408;</i>
+        </button>
+        <button [style.color]="store.activeColor(selectedTab)" type="button" (click)="changeLanguage()" fxFlex="40px" class="no-padding"
+            md-button type="button">
+                        {{getOtherLanguage()}}
+        </button>
+    </md-toolbar>
+
+    <div fxFlex>
+        <md-tab-group fxFlex [(selectedIndex)]="selectedTab">
+            <md-tab [label]="'_'+ (0 == selectedTab? '01' : '')">
+                <ng-container *ngTemplateOutlet="welcome"></ng-container>
+            </md-tab>
+            <md-tab [label]="'_'+ (1 == selectedTab? '02' : '')">
+                <ng-container *ngTemplateOutlet="login"></ng-container>
+            </md-tab>
+            <md-tab [label]="'_'+ (2 == selectedTab? '03' : '')">
+                <ng-container *ngTemplateOutlet="loadingLogin"></ng-container>
+            </md-tab>
+            <md-tab [label]="'_'+ (3 == selectedTab? '05' : '')">
+                <ng-container *ngTemplateOutlet="profile"></ng-container>
+            </md-tab>
+            <md-tab [label]="'_'+ (4 == selectedTab? '05' : '')">
+                <ng-container *ngTemplateOutlet="measurements"></ng-container>
+            </md-tab>
+            <md-tab [label]="'_'+ (5 == selectedTab? '06' : '')">
+                <ng-container *ngTemplateOutlet="loading"></ng-container>
+            </md-tab>
+            <md-tab [label]="'_'+ (6 == selectedTab? '07' : '')">
+                <ng-container *ngTemplateOutlet="yourFit"></ng-container>
+            </md-tab>
+            <md-tab [label]="'_'+ (7 == selectedTab? '08' : '')">
+                <ng-container *ngTemplateOutlet="fitDescription"></ng-container>
+            </md-tab>
+
+        </md-tab-group>
+    </div>
+</div>
+
+<ng-template #welcome>
+    <div fxFlexFill class="card" id="welcome" fxLayout="column" fxLayoutAlign="center center">
+        <h1>{{store.steps.welcome.title | translate}}</h1>
+        <div class="space-around-top-bottom" fxLayout="column" fxLayoutAlign="center center">
+            <img class="logo" [src]="store.logo" alt="moov logo">
+        </div>
+        <button class="btn" md-raised-button type="button" (click)="goNext()">{{store.steps.welcome.btnsCaption[0]| translate}}</button>
+    </div>
+</ng-template>
+
+<ng-template #login>
+    <div fxFlexFill class="card" id="login" fxLayout="column" fxLayoutAlign="center center">
+        <form (submit)="accountForm.valid ? goNext() || addClient(store.account[0].value) : false" fxLayout="column" fxLayoutAlign="center start">
+            <h3>{{store.steps.login.title | translate}}</h3>
+            <div class="full-width space-around-top-bottom" fxLayout="column" fxLayoutAlign="center start" [formGroup]="accountForm">
+                <ng-container *ngFor="let input of store.account">
+                    <h2>{{input.label | translate}}</h2>
+                    <md-input-container class='full-width' fxLayout="row">
+                        <input mdInput class='full-width' type="text" [formControlName]="input.name" [(ngModel)]="input.value" email>
+                        <div *ngIf="accountForm.controls[input.name]?.touched && accountForm.controls[input.name]?.errors?.email" class="error-msg"
+                            fxLayout="row" fxLayoutAlign="center center"><span class="text-center">{{'MOOV.VALIDATION.EMAIL' | translate}}</span>
+                        </div>
+                    </md-input-container>
+                </ng-container>
+            </div>
+            <div fxFlexFill class="btnContainer" fxLayout="row" fxLayoutAlign="center center">
+                <button [disabled]="!accountForm.valid" class="btn" md-raised-button type="submit">{{store.steps.login.btnsCaption[0]| translate}}</button>
+            </div>
+        </form>
+    </div>
+</ng-template>
+
+<ng-template #loadingLogin>
+
+    <div fxFlexFill class="card" id="loadingLogin" fxLayout="column" fxLayoutAlign="center center">
+        <md-spinner></md-spinner>
+    </div>
+
+</ng-template>
+
+<ng-template #profile>
+    <div fxFlexFill class="card" id="profile" fxLayout="column" fxLayoutAlign="center center">
+        <form (submit)="profileForm.valid ? goNext(): false" fxLayout="column" fxLayoutAlign="center start">
+            <div fxFlexFill fxLayout="row" fxLayoutAlign="space-between center">
+                <h3>{{store.steps.profile.title | translate}}</h3>
+                <md-slide-toggle [checked]="!isMetric()" (change)="changeUnits()">{{(unitConversionService.metricUnit? 'UNITS.METRIC' : 'UNITS.IMPERIAL') | translate}}</md-slide-toggle>
+
+            </div>
+            <div class="space-around-top-bottom" fxLayout="column" fxLayoutAlign="center start" [formGroup]="profileForm">
+                <div *ngFor="let input of store.profile">
+                    <fit-input [formGroup]="profileForm" [input]="input"></fit-input>
+                </div>
+            </div>
+            <div fxFlexFill class="btnContainer" fxLayout="row" fxLayoutAlign="center center">
+                <button [disabled]="!profileForm.valid" class="btn" md-raised-button type="submit">{{store.steps.profile.btnsCaption[0]| translate}}</button>
+            </div>
+        </form>
+    </div>
+</ng-template>
+
+
+<ng-template #measurements>
+
+    <div fxFlexFill class="card" id="measurements" fxLayout="column" fxLayoutAlign="center center">
+        <form (submit)="measurementsForm.valid ? goNext() || submitMeasurements({'profile': store.profile, 'measurements': store.measurements}) : false"
+            fxLayout="column" fxLayoutAlign="center start" *ngIf="!store.showImageOnStep3">
+            <div fxFlexFill fxLayout="row" fxLayoutAlign="space-between center">
+                <h3>{{store.steps.measurements.title | translate}}</h3>
+                <md-slide-toggle [checked]="!isMetric()" (change)="changeUnits()">{{(unitConversionService.metricUnit? 'UNITS.METRIC' : 'UNITS.IMPERIAL') | translate}}</md-slide-toggle>
+
+            </div>
+            <div class="space-around-top-bottom" fxLayout="column" fxLayoutAlign="center start" [formGroup]="measurementsForm">
+                <div *ngFor="let input of store.measurements">
+                    <fit-input [formGroup]="measurementsForm" [input]="input"></fit-input>
+                </div>
+            </div>
+            <div fxFlexFill class="btnContainer" fxLayout="row" fxLayoutAlign="space-around center">
+                <button class="btn btn1" md-raised-button type="button" (click)="store.showImageOnStep3=true;">{{store.steps.measurements.btnsCaption[0]| translate}}</button>
+                <button [disabled]="!measurementsForm.valid" class="btn btn2" md-raised-button type="submit">{{store.steps.measurements.btnsCaption[1]| translate}}</button>
+            </div>
+        </form>
+        <div id="measurements-how-to" fxFlexFill class="fade-in" *ngIf="store.showImageOnStep3">
+            <ng-container *ngTemplateOutlet="measurementsHowTo"></ng-container>
+        </div>
+    </div>
+
+</ng-template>
+
+
+<ng-template #measurementsHowTo>
+    <div fxFlexFill fxLayout="column" fxLayoutAlign="center none" fxFlex="65">
+        <h3>{{store.steps.measurementsHowTo.title | translate}}</h3>
+        <div class="space-around-top-bottom">
+            <h2 *ngFor="let item of store.steps.measurementsHowTo.content">{{ item | translate }}</h2>
+        </div>
+        <button class="btn btnInfo" md-raised-button type="button" (click)="store.showImageOnStep3=false;">{{store.steps.measurementsHowTo.btnsCaption[0]| translate}}</button>
+    </div>
+    <div fxFlex="30" fxLayout="column" fxLayoutAlign="center center">
+        <img [src]="store.steps.measurementsHowTo.imgsUrl[0]" alt="info item">
+    </div>
+</ng-template>
+
+<ng-template #loading>
+
+    <div fxFlexFill class="card" id="loading" fxLayout="column" fxLayoutAlign="center center">
+        <h1>{{store.steps.loading.title | translate}}</h1>
+        <md-spinner></md-spinner>
+    </div>
+
+</ng-template>
+
+<ng-template #yourFit>
+    <div fxFlexFill class="card" id="your-fit" fxLayout="column" fxLayoutAlign="center center">
+        <div>
+            <h2 class="text-center">{{store.steps.yourFit.title | translate}}</h2>
+            <h1 class="text-center space-around-top-bottom">{{store.fit}}</h1>
+            <div fxFlexFill class="btnContainer" fxLayout="row" fxLayoutAlign="space-between center">
+                <button class="btn btn1" md-raised-button type="button" (click)="goNext()">{{store.steps.yourFit.btnsCaption[0]| translate}}</button>
+                <button class="btn btn2" md-raised-button type="button" (click)="exit()">{{store.steps.yourFit.btnsCaption[1]| translate}}</button>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #fitDescription>
+    <div fxFlexFill class="card" id="fit-description" fxLayout="column" fxLayoutAlign="center center">
+        <h2>{{store.steps.fitDescription.title | translate}}</h2>
+        <p class="text-center">{{store.steps.fitDescription.content | translate}}</p>
+        <button class="btn btn1" md-raised-button type="button" (click)="exit()">{{store.steps.fitDescription.btnsCaption[0]| translate}}</button>
+    </div>
+</ng-template>

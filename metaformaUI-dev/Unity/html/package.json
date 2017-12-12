@@ -1,0 +1,7 @@
+{
+    "name": "Unity",
+    "version": "0.0.1",
+    "description": "Comparison of Node.js template languages.",
+    "author": "Unity",
+    "main": "Build/UnityLoader.js"
+}

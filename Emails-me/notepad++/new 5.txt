@@ -1,0 +1,61 @@
+cd /www/ 
+ls 
+sudo mkdir test.dev.stefanka.tech 
+cd test.dev.stefanka.tech/ 
+sudo git clone https://github.com/stefanka-lingerie/fitroom-DEPRECATED--.git 
+cd ../simons.ces.stefanka.tech/ 
+cd .. 
+cd test.dev.stefanka.tech/ 
+sudo mkid log 
+sudo mkdir log 
+clear 
+cd fitroom-DEPRECATED--/ 
+sudo npm i 
+ls 
+sudo ng build 
+sudo mkdir dist 
+cd .. 
+ls 
+sudo ln -s www fitroom-DEPRECATED--/dist/ 
+sudo ln -s fitroom-DEPRECATED--/dist/ www 
+cd www 
+cd .. 
+cd fitroom-DEPRECATED--/dist/ 
+cd .. 
+cd dist/ 
+sudo rm www 
+cd .. 
+sudo ng build 
+cd /etc/apache2/conf-available/ls 
+cd /etc/apache2/conf-available/ 
+clear 
+cd .. 
+cd conf-enabled/ 
+cd .. 
+cd sites-available/ 
+;s 
+ls 
+cp --help 
+man cp 
+sudo cp liliannelingerie.dev.stefanka.tech.conf test.dev.stefanka.tech.conf 
+sudo nano test.dev.stefanka.tech.conf 
+sudo vim test.dev.stefanka.tech.conf 
+cpp --help 
+sudo nano test.dev.stefanka.tech.conf 
+sudo a2ensite test.dev.stefanka.tech.conf 
+sudo service apache2 restart 
+sudo a2dissite test.dev.stefanka.tech.conf 
+sudo service apache2 restart 
+vim test.dev.stefanka.tech.conf 
+sudo systemctl status apache2.service 
+sudo journalctl -xe 
+ls 
+sudo apachectl configtest 
+sudo a2ensite test.dev.stefanka.tech.conf 
+sudo apachectl configtest 
+sudo a2dissite test.dev.stefanka.tech.conf 
+sudo apachectl configtest 
+sudo rm test.dev.stefanka.tech.conf 
+cd /www/ 
+sudo rm -rf test.dev.stefanka.tech/ 
+clear 

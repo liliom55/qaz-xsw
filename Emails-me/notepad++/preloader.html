@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<!--Put this file in server (xampp/htdoc/) to work well-->
+<head>
+
+    <title>Preloader</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body onload="showcontent('preloader')">
+    <!-- onload optional -->
+    <div id="loader"><i class="fa fa-spinner fa-spin snipper" style="font-size:100px;"></i></div>
+    <div id="content" style="visibility:hidden;">
+        <img src="https://s3.amazonaws.com/stefanka.images/1463691876895_4855-5p-lovelypassiocoque-ps1.jpg">
+    </div>
+    <!-- leave img out if not onload -->
+    <script type="text/javascript">
+    function showcontent(x) {
+        if (window.XMLHttpRequest) {
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+        }
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById('loader').style.visibility = "hidden";
+                document.getElementById('content').style.visibility = "visible";
+
+            }
+        }
+        xmlhttp.open('POST', x + '.html', true); 
+        xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xmlhttp.send(null);
+    }
+
+</script>
+
+</body>
+
+
+</html>

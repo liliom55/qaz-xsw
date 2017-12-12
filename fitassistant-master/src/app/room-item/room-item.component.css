@@ -1,0 +1,66 @@
+#roomItem_container{
+    width:100%;
+    height:75px;
+    /*border-bottom:1px solid rgba(0,0,0,0.1);*/
+    font-family: 'Raleway-Regular';
+    font-size:14px;
+}
+#status_div{
+    width:110px;
+    height:32px;
+    border-radius:30px;
+    background-color:#EBEBEB;
+    opacity:0.54;
+    padding-left:3px;
+    padding-right:3px;
+    float:left;
+    margin-top:20px;
+    margin-left:12px;
+}
+#status_div i{
+    color:black;
+    opacity:0.54;
+    float:left;
+    line-height:32px;
+}
+#status_div label{
+    line-height:32px;
+    font-family: 'Raleway-Regular';
+    color:black;
+    font-size:14px;
+    opacity:0.54;
+}
+
+#cabinName_div label{
+    font-family: 'Raleway-Medium';
+    color:black ;
+    font-size:16px;
+    line-height:normal;
+}
+#sellerName_div label{
+    font-family: 'Raleway-Regular';
+    color:black;
+    font-size:14px;
+    opacity:0.54;
+    line-height:normal;
+}
+#midd_div{
+    float: left;
+    padding-left: 70px;
+    margin-top: 15px;
+}
+#sign_div{
+    float:right;
+    padding-right:20px;
+    line-height:75px;
+}
+#sign_div i{
+    color:#EF7918;
+    width:22px;
+    height:19px;
+}
+@media screen and (max-width: 767px) {
+    #midd_div{
+        padding-left: 20px;
+    }
+}

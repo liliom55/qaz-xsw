@@ -1,0 +1,17 @@
+<div fxLayout="column" class='container'>
+    <div fxLayout="row" fxLayoutAlign="none none"  fxFlex="30" class='nav-bar'>
+        <app-app-bar fxFlex="100"></app-app-bar>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-between stretch" fxFlex="70" class='body'>
+        <div  fxFlex="20" class="measurement">
+            <app-measurement-form [measurement]="measurement" (fitMe)="fitMe($event)" ></app-measurement-form>
+        </div>
+        <div  fxFlex="45" class="avatar">
+            <app-avatar></app-avatar>
+        </div>
+        <div fxFlex="30" class="products" [class.hide]="!formObject">
+            <app-products [products]="products" ></app-products>
+        </div>
+
+    </div>
+</div>

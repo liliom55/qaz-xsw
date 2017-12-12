@@ -1,0 +1,12 @@
+@import './styles/base/_base.scss';
+@import './styles/base/_font.scss';
+@import './styles/base/_paddings.scss';
+@import './styles/base/_size.scss';
+@import './styles/base/_positioning.scss';
+@import './styles/base/shadows';
+#metaforma {
+    @import './styles/components/_scrollbar.scss';
+    @import './styles/components/_card.scss';
+    @import './styles/components/_footers.scss';
+}
+

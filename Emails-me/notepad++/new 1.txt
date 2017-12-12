@@ -1,0 +1,54 @@
+./node_modules/.bin/ng-xi18n --i18nFile=./locale/messages.fr.xlf --locale=fr --i18nFormat=xlf
+
+Connection Server Error
+Your recommendations
+You got ... recommendations!
+The capture is about to start...
+Sorry, an error occured
+powered by
+
+
+
+Connection Server Error
+Your recommendations
+Good choice! Hold on while we are bringing your selection
+Make sure you get the right size every time you shop, enter your email here:
+SEND
+Thank you for sharing your email with us
+BACK
+LOG OUT
+NEXT
+INCOGNITO
+Enter your measurement
+Metrics
+Imperial
+It seems you haven&apos;t defined a password yet. Enter one to finalize your inscription.
+Password
+We already got your measurement. We can use them or take new ones if you prefer?
+New measurements
+Previous measurements
+Enter your password to log into your account.
+You got ... recommendations!
+Sorry, we didn&apos;t get any match...
+TRY AGAIN
+How do you feel today?
+ALL
+FORMAL
+CASUAL
+SPORT
+Put on the light bra.
+This will ensure to get the most accurate measurements.
+Put your hands on your hips, straighten your back, look ahead.
+Press Start when you are ready.
+START
+The capture is about to start...
+Sorry, an error occured
+Empty basket
+TRY ON MY SELECTION
+SIZE
+Color
+Minimum Price
+Maximum Price
+Help
+Log Out
+BRAND

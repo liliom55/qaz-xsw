@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+app-todolist{
+  width:500px;
+  height:300px;
+  padding: 20px;
+  background-color: beige;
+  float: left;
+}
+app-dashboard{
+  width:500px;
+  height:300px;
+  padding: 20px;
+  background-color: lightgray;
+  float: left;
+}

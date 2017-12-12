@@ -1,0 +1,95 @@
+﻿<div id="prdDetail_container">
+    <div id="main_info">
+        <div id="pic" class="valign-wrapper">
+            <div id="img_wraper">
+                <img [src]="large_picture_prd" alt="product" />
+            </div>
+            <div id="nameAndSku" class="valign">
+                <label>{{name_prd}}</label>
+                <label>Sku {{sku_prd}}</label>
+            </div>
+            
+        </div>
+        <div id="color_div" class="valign-wrapper" >
+
+            <ul>
+                <li *ngFor="let item of color_prd ;let i = index">
+                    <div id="color_pic" class="valign-wrapper">
+                        <img class="valign" [src]="item.small_image" alt="color" />
+                    </div>
+                    <div id="color_title" class="valign"><label>{{item.name}}</label></div>
+                </li>
+
+            </ul>
+        </div>
+        <!--<div id="features_div">
+            <div class="left_div2">
+                <ul>
+                    <li *ngFor="let item of feature_prd ;let i = index">
+                        <label>{{"Imp.Feature" | translate}}</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="right_div valign-wrapper">
+                <ul class="valign">
+                    <li *ngFor="let item of feature_prd ;let i = index">
+                        <label>{{item}}</label>
+                    </li>
+                </ul>
+            </div>
+        </div>-->
+
+    </div>
+    <div id="rest_info">
+        <!--<div id="lessImpFeature_div">
+
+            <div class="left_div1">
+                <label>{{"less imp.feature" | translate}}</label>
+            </div>
+            <div class="right_div1">
+                <label>Spacer</label>
+            </div>
+
+        </div>-->
+        <div id="brand_div">
+            <div class="left_div1">
+                <label>{{"Marque" | translate}}</label>
+            </div>
+            <div class="right_div1">
+                <label>{{brand_prd}}</label>
+            </div>
+        </div>
+        <div id="cut_div">
+            <div class="left_div1">
+                <label>{{"Coupe" | translate}}</label>
+            </div>
+            <div class="right_div1">
+                <label>{{cut_prd}}</label>
+            </div>
+        </div>
+        <div id="fabric_div">
+            <div class="left_div1">
+                <label>{{"Matière" | translate}}</label>
+            </div>
+            <div class="right_div1">
+                <label>{{fabric_prd}}</label>
+            </div>
+        </div>
+        <div id="sleeve_div">
+            <div class="left_div1">
+                <label>{{"Longueur de manches" | translate}}</label>
+            </div>
+            <div class="right_div1">
+                <label>{{sleeve_prd | translate}}</label>
+            </div>
+        </div>
+        <div id="price_div">
+            <div class="left_div1">
+                <label>{{"Prix" | translate}}</label>
+            </div>
+            <div class="right_div1">
+                <label>{{price_prd}}</label>
+            </div>
+        </div>
+    </div>
+</div>

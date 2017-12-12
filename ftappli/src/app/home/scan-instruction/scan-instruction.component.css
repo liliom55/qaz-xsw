@@ -1,0 +1,17 @@
+.scan-instruction-container {
+    text-align: center;
+    width: 500px;
+}
+.scan-instruction-container p{
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    /* width:180px;
+    height: 57px; */
+    margin: auto;
+    line-height: auto;
+}
+.img-div{
+    padding-top: 50px;
+    padding-bottom: 30px;
+}

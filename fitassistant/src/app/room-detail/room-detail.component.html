@@ -1,0 +1,38 @@
+﻿<div id="roomDetail_containet">
+    
+        <ul id="main_ul">
+            <li>
+                <div class="collapsible_header btn-flat waves-effect waves-light">Client <span>{{clientName | translate}}</span><i class="material-icons">arrow_drop_down</i></div>
+                <div class="collapsible_body" style="padding-top:30px"><span>{{clientName | translate}}</span></div>
+            </li>
+            <li>
+                <div>Status <span>{{roomStatus | translate}}</span></div>
+
+            </li>
+            <li><div id="prd_label">{{"Produit" | translate}}</div></li>
+            
+            <li>
+                <div class="collapsible_header btn-flat waves-effect waves-light">{{"Suggestion" | translate}}s <span>{{prd_sugg_list.length}}&nbsp;{{"suggestions" | translate}} </span><i class="material-icons">arrow_drop_down</i></div>
+                <div class="collapsible_body">
+                    <ul id="suggPrd_ul">
+                        <li *ngFor="let item of prd_sugg_list ;let i = index" (click)="onClickPrd(i)">
+                            <product-item class="btn-flat waves-effect waves-light" [imgUrl]="item.small_picture" [prd_name]="item.name" [prd_sku]="item.sku" [prd_color]="item.color" [prd_size]="item.size" [prd_brand]="item.brand"></product-item>
+                        </li>
+                        
+                    </ul>
+                </div>
+
+            </li>
+            <li>
+                <div class="collapsible_header btn-flat waves-effect waves-light">{{"Sélection" | translate}}s <span>{{prd_sel_list.length}}&nbsp;{{"sélections" | translate}}</span><i class="material-icons">arrow_drop_down</i></div>
+                <div class="collapsible_body">
+                    <ul id="selPed_ul">
+                        <li *ngFor="let item of prd_sel_list ;let i = index" (click)="onClickPrd(i)">
+                            <product-item class="btn-flat waves-effect waves-light" [imgUrl]="item.small_picture" [prd_name]="item.name" [prd_sku]="item.sku" [prd_color]="item.color" [prd_size]="item.size" [prd_brand]="item.brand"></product-item>
+                        </li>
+                    </ul>
+                </div>
+
+            </li>
+        </ul>
+</div>

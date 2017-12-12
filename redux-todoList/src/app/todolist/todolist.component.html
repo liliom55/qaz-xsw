@@ -1,0 +1,11 @@
+<h1>Todo List</h1>
+<input type="text" name="itemName" id="itemName" [(ngModel)] = "itemName">
+<input type="button" value="Add to list" (click)="addItem()">
+<input type="button" value="update" (click)="updateItem()">
+
+<ul>
+  <li *ngFor="let item of (itemsList | async)" >
+    <span (click)="editItem(item)">{{item.name}}</span>
+    <input type="button" value="Delete" (click)="deleteItem(item.id)">
+  </li>
+</ul>

@@ -1,0 +1,21 @@
+#measurements-how-to{
+    h3{
+        color:$cyan;
+    }
+    h2:first-child{
+        color:$blue;
+    }
+    h2:last-child{
+        color:$pink;
+    }
+
+    .btnInfo{
+        max-width: 355px;
+        width: 100%;
+        background-color: $cyan;
+        color: $white;
+    }
+    img{
+        height:100%;
+    }
+}

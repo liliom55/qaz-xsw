@@ -1,0 +1,31 @@
+input{
+    border-bottom: 3px solid;
+    border-color:$cyan;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        /* display: none; <- Crashes Chrome on hover */
+        -webkit-appearance: none;
+        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    }
+}
+
+.mat-input-underline {
+    display: none;
+}
+.mat-input-element {
+    vertical-align: bottom;
+    margin-top: 13px;
+    text-align: center;
+    height: 30px;
+    &.number{
+    max-width: 15% !important;
+    }
+}
+.mat-input-wrapper {
+    padding: 0 !important;
+    width:100%;
+}
+.mat-input-infix {
+    border: none;
+    padding: 0;
+}

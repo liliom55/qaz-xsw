@@ -1,0 +1,256 @@
+<div id="dialog" fxLayout="column" fxLayoutAlign="none center">
+    <div class="toolbar">
+        <md-toolbar>
+            <div class="back-btn" *ngIf="selectedTab >= 1 && selectedTab < 3" class="no-padding" (click)="goBack()">
+                <i class="material-icons">&#xE408;</i>
+            </div>
+
+            <!-- <div>
+                    <button [disabled]="selectedTab == 0" fxFlex="30px" class="no-padding" md-button type="button" (click)="goTo(0)">
+                    <i class="material-icons">view_module</i>
+                    </button>
+                </div>
+                <div>
+                    <button (click)="changeLanguage()" fxFlex="30px" class="no-padding" md-button type="button">
+                        {{getOtherLanguage()}}
+                    </button>
+                </div>  -->
+
+            <!-- <md-slide-toggle (change)="changeUnits()">imperial</md-slide-toggle>-->
+
+
+            <!-- <div fxFlex="94" fxLayoutAlign="end none">
+                    <button fxFlex="30px" class="no-padding" md-button type="button" (click)="closeDialogBox()">
+                    <i class="material-icons">close</i>
+                    </button>
+                </div> -->
+        </md-toolbar>
+    </div>
+
+    <div style="width:130%;margin:0 auto;">
+        <md-tab-group [(selectedIndex)]="selectedTab">
+            <!-- <md-tab label="Menu">
+                <ng-container *ngTemplateOutlet="menuTab"></ng-container>
+            </md-tab> -->
+            <md-tab label="step1">
+                <ng-container *ngTemplateOutlet="step1"></ng-container>
+            </md-tab>
+            <md-tab label="step2">
+                <ng-container *ngTemplateOutlet="step2"></ng-container>
+            </md-tab>
+            <md-tab label="step3">
+                <ng-container *ngTemplateOutlet="step3"></ng-container>
+            </md-tab>
+            <md-tab label="step4">
+                <ng-container *ngTemplateOutlet="step4"></ng-container>
+            </md-tab>
+            <md-tab label="step5">
+                <ng-container *ngTemplateOutlet="step5"></ng-container>
+            </md-tab>
+            <md-tab label="step6">
+                <ng-container *ngTemplateOutlet="step6"></ng-container>
+            </md-tab>
+            <md-tab label="step7">
+                <ng-container *ngTemplateOutlet="step7"></ng-container>
+            </md-tab>
+        </md-tab-group>
+    </div>
+</div>
+
+
+<!-- <ng-template #menuTab>
+    <div class="card" fxLayout="column" fxLayoutAlign="center none">
+        <h1>Menu</h1>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div>
+                <button md-button (click)="goTo(2)">sex</button>
+            </div>
+            <div>
+                <button md-button (click)="goTo(3)">Preferences</button>
+            </div>
+            <div>
+                <button md-button (click)="goTo(4)">Basic informations</button>
+            </div>
+            <div>
+                <button md-button (click)="goTo(5)">shape</button>
+            </div>
+            <div>
+                <button md-button (click)="goTo(6)">measurements</button>
+            </div>
+        </div>
+    </div>
+</ng-template> -->
+<ng-template #stepShow>
+    <ul class="stepShow">
+        <li *ngFor="let step of store.steps;let i=index">
+            <div *ngIf="i<store.steps.length-1">
+                <span class="step-line" [style.color]="selectedTab===i?step.fontColor:'lightgray'">__</span>
+                <span *ngIf="selectedTab===i" [style.color]="step.fontColor">0{{selectedTab+1}}</span>
+            </div>
+        </li>
+    </ul>
+</ng-template>
+<ng-template #step1>
+    <div class="card" id="step1" fxLayout="column" fxLayoutAlign="center none">
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div fxFlex="7">
+                <ng-container *ngTemplateOutlet="stepShow"></ng-container>
+            </div>
+            <div fxFlex="100" class="content" fxLayout="column" fxLayoutAlign="start center">
+                <h1>{{store.steps[0].title | translate}}</h1>
+                <div class="fixed-height" fxLayout="column" fxLayoutAlign="center center">
+                    <img class="logo" [src]="logoUrl" alt="moov logo">
+                </div>
+                <button class="btn" md-raised-button type="button" (click)="goNext()">{{store.steps[0].btnsCaption[0]| translate}}</button>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #step2>
+    <div class="card" id="step2" fxLayout="column" fxLayoutAlign="center none">
+
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div fxFlex="30">
+                <ng-container *ngTemplateOutlet="stepShow"></ng-container>
+            </div>
+            <div fxFlex="70" class="content" fxLayout="column" fxLayoutAlign="start start">
+                <h3>{{store.steps[1].title | translate}}</h3>
+                <form class="fixed-height" fxLayout="column" fxLayoutAlign="center start">
+                    <div *ngFor="let input of store.formSteps[0].inputs">
+                        <md-input-container fxLayout="row" fxLayoutAlign="start end">
+                            <h2>{{input.label | translate}}</h2>
+                            <input [id]="input.id" mdInput [type]="input.type" fxFlex="10">
+                            <md-select *ngIf="input.id==='height'">
+                                <md-option *ngFor="let unit of store.units[0].height">
+                                    <span>{{ unit}}</span>
+                                </md-option>
+                            </md-select>
+                            <md-select *ngIf="input.id==='weight'">
+                                <md-option *ngFor="let unit of store.units[1].weight" [value]="unit">
+                                    <span>{{ unit}}</span>
+                                </md-option>
+                            </md-select>
+                            <span *ngIf="false" class="error-msg">Oops! <br/>Champs invalide</span>
+                        </md-input-container>
+                    </div>
+                </form>
+                <button class="btn" md-raised-button type="button" (click)="goNext()">{{store.steps[1].btnsCaption[0]| translate}}</button>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #step3>
+
+    <div class="card" id="step3" fxLayout="column" fxLayoutAlign="center none">
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div fxFlex="10">
+                <ng-container *ngTemplateOutlet="stepShow"></ng-container>
+            </div>
+            <div *ngIf="!store.showImageOnStep3" fxFlex="75" class="content" fxLayout="column" fxLayoutAlign="start start">
+                <h3>{{store.steps[2].title | translate}}</h3>
+                <form class="fixed-height" fxLayout="column" fxLayoutAlign="center start">
+                    <div *ngFor="let input of store.formSteps[1].inputs">
+                        <md-input-container fxLayout="row" fxLayoutAlign="start end">
+                            <h2>{{input.label | translate}}</h2>
+                            <input [id]="input.id" mdInput [type]="input.type" fxFlex="15">
+                            <md-select>
+                                <md-option *ngFor="let unit of store.units[0].height">
+                                    <span>{{ unit}}</span>
+                                </md-option>
+                            </md-select>
+                            <span *ngIf="false" class="error-msg">Oops! <br/>Champs invalide</span>
+                        </md-input-container>
+                    </div>
+                </form>
+                <div fxLayout="row">
+                    <button class="btn btn1" md-raised-button type="button" (click)="store.showImageOnStep3=true;">{{store.steps[2].btnsCaption[0]| translate}}</button>
+                    <button class="btn btn2" md-raised-button type="button" (click)="goNext()">{{store.steps[2].btnsCaption[1]| translate}}</button>
+                </div>
+            </div>
+            <div class="info-body" [class.transparent]="!store.showImageOnStep3" *ngIf="store.showImageOnStep3" fxFlex="80" fxLayout="row">
+                <ng-container *ngTemplateOutlet="bodyInfoTab"></ng-container>
+            </div>
+        </div>
+    </div>
+
+</ng-template>
+
+
+<ng-template #bodyInfoTab>
+    <div fxLayout="column" fxLayoutAlign="center none" fxFlex="70">
+        <h3>{{store.steps[5].title | translate}}</h3>
+        <div class="description">
+            <h2 *ngFor="let body of store.steps[5].bodys">{{body | translate }}</h2>
+        </div>
+        <button class="btn btnInfo" md-raised-button type="button" (click)="store.showImageOnStep3=false;">{{store.steps[5].btnsCaption[0]| translate}}</button>
+    </div>
+    <div fxFlex="20" fxLayout="row" fxLayoutAlign="center center">
+        <img [src]="store.steps[5].imgsUrl[0]" alt="info body">
+    </div>
+</ng-template>
+
+<ng-template #step4>
+
+    <div class="card" id="step4" fxLayout="column" fxLayoutAlign="center none">
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div fxFlex="10">
+                <ng-container *ngTemplateOutlet="stepShow"></ng-container>
+            </div>
+            <div fxFlex="90" fxLayout="column" fxLayoutAlign="center center">
+                <h1>{{store.steps[3].title | translate}}</h1>
+                <img src="../assets/icons/spinner.gif" alt="">
+            </div>
+        </div>
+    </div>
+
+</ng-template>
+
+<ng-template #step5>
+    <div class="card" id="step5" fxLayout="column" fxLayoutAlign="center none">
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div fxFlex="10">
+                <ng-container *ngTemplateOutlet="stepShow"></ng-container>
+            </div>
+            <div fxFlex="90" fxLayout="column" fxLayoutAlign="center center">
+                <h2>{{store.steps[4].title | translate}}</h2>
+                <h1>{{store.steps[4].bodys | translate}}</h1>
+                <div fxLayout="row">
+                    <button class="btn btn1" md-raised-button type="button" (click)="goNext()">{{store.steps[4].btnsCaption[0]| translate}}</button>
+                    <button class="btn btn2" md-raised-button type="button">{{store.steps[4].btnsCaption[1]| translate}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+<ng-template #step6>
+    <div class="card" id="step5" fxLayout="column" fxLayoutAlign="center none">
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div fxFlex="10">
+                <ng-container *ngTemplateOutlet="stepShow"></ng-container>
+            </div>
+            <div fxFlex="90" fxLayout="column" fxLayoutAlign="center center">
+                <h2>{{store.steps[6].title | translate}}</h2>
+                
+                <h1>{{store.steps[6].bodys | translate}}</h1>
+                <button class="btn btn1" md-raised-button type="button" (click)="goNext()">{{store.steps[6].btnsCaption[0]| translate}}</button>
+            </div>
+        </div>
+    </div>
+</ng-template>
+<ng-template #step7>
+    <div class="card" id="step6" fxLayout="column" fxLayoutAlign="center none">
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div fxFlex="10">
+                <ng-container *ngTemplateOutlet="stepShow"></ng-container>
+            </div>
+            <div fxFlex="90" fxLayout="column" fxLayoutAlign="center center">
+                <h3>{{store.steps[7].title | translate}}</h3>
+                <p>{{store.steps[7].bodys | translate}}</p>
+                <button class="btn" md-raised-button type="button">{{store.steps[7].btnsCaption[0]| translate}}</button>
+
+            </div>
+        </div>
+    </div>
+</ng-template>

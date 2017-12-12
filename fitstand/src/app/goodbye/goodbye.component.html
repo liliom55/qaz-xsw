@@ -1,0 +1,15 @@
+<div>
+    <h3 i18n>Good choice! Hold on while we are bringing your selection</h3>
+    <div *ngIf="!client?.email">
+        <div>
+            <div >
+                <input name="email" type="email"/>
+                <span for="email" i18n>Make sure you get the right size every time you shop, enter your email here</span>:
+            </div>
+        </div>
+        <button type="submit" class="btn stefanka-button" i18n>SEND</button><br />
+        <span  i18n>Thank you for sharing your email with us</span>
+    </div>
+    <button class="return" (click)="back()" i18n>BACK</button>
+    <button class="exit" (click)="logout()" i18n>LOG OUT</button>
+</div>

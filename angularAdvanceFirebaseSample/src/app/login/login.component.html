@@ -1,0 +1,8 @@
+<h1>Hello</h1>
+<button (click)=register()>Register</button>
+<button (click)='loginFacebook()'>Login Via Facebook</button>
+<button (click)='loginEmailPasswrd()'>Login Via Email/Password</button>
+<button (click)='loguot()'>Logout</button>
+<h3>Hi {{displayName}}</h3>
+<img *ngIf="photoUrl" src ="{{photoUrl}}"  alt="" />
+<p *ngIf="errorMessage"> {{errorMessage}}</p>

@@ -1,0 +1,30 @@
+.message-spinner {
+    position: absolute;
+    top: calc(50% - 100px);
+    left: calc(50% - 100px);
+    width: 200px;
+    height: 200px;
+
+    text-align: center;
+    font-size: 26px;
+    letter-spacing: 2px;
+    line-height: 62px;
+}
+mat-progress-spinner{
+    width:500px;
+    height: 500px;
+}
+span{
+    font-size: 12px;
+    font-weight: 700;
+}
+p,span{
+    letter-spacing: 2px;
+}
+span{
+    font-size: 20px;
+    font-weight: 100;
+}
+.wait-div{
+    text-align: center;
+}

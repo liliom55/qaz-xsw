@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/app/shared/clients/client.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\..\index.html">All files</a> / <a href="index.html">src/app/shared/clients</a> client.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">70.77% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>46/65</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">45.45% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>5/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">52.38% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>11/21</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">72.41% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>42/58</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">61x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">61x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">61x</span>
+<span class="cline-any cline-yes">61x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">61x</span>
+<span class="cline-any cline-yes">61x</span>
+<span class="cline-any cline-yes">61x</span>
+<span class="cline-any cline-yes">61x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import { Headers, Http } from '@angular/http';
+&nbsp;
+import 'rxjs/add/operator/toPromise';
+import { Subject } from 'rxjs/Subject';
+&nbsp;
+import { Client, ClientCapture, ClientMetadata } from './client.model';
+&nbsp;
+//Use MapUtils to serialize JSON response from the server to a class object
+import { MapUtils } from '../../shared/json-mapper/map-utils';
+import { environment } from '../../../environments/environment'
+&nbsp;
+@Injectable()
+export class ClientService {
+&nbsp;
+&nbsp;
+    private apiUrl: string;  // URL to web api
+    private authorization: string
+    private headers: Headers;
+&nbsp;
+&nbsp;
+    // Observable string sources
+    private clientEmitter = new Subject&lt;Client&gt;();
+    // Observable string streams
+    clientEmmitter$ = this.clientEmitter.asObservable();
+&nbsp;
+&nbsp;
+    // ClientCapture 
+    private clientCaptureEmitter = new Subject&lt;ClientCapture&gt;();
+    clientCaptureEmitter$ = this.clientCaptureEmitter.asObservable();
+&nbsp;
+&nbsp;
+    constructor(private http: Http<span class="branch-1 cbranch-no" title="branch not covered" >) {</span>
+        this.apiUrl = environment.apiUrl;
+        this.authorization = environment.authorization;
+        this.headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': this.authorization });
+    }
+&nbsp;
+    //emit any changes on client to the AppController
+    emitClient(client: Client): void {
+        this.clientEmitter.next(client);
+    }
+&nbsp;
+&nbsp;
+<span class="fstat-no" title="function not covered" >    emitClientCapture(</span>clientCapture: ClientCapture): void {
+<span class="cstat-no" title="statement not covered" >        this.clientCaptureEmitter.next(clientCapture);</span>
+        // console.log(clientCapture);
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    editClient(</span>id: string, fields: Object): Promise&lt;Client&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return this.http</span>
+            .post(`${this.apiUrl}/clients/edit/${id}.json`, JSON.stringify(fields), { headers: this.headers })
+            .toPromise()
+            .then(<span class="fstat-no" title="function not covered" >res =&gt; <span class="cstat-no" title="statement not covered" >this.handleClient(res.json()))</span></span>
+            .catch(this.handleError);
+    }
+&nbsp;
+    checkExist(email: string): Promise&lt;Object&gt; {
+        return this.http
+            .post(`${this.apiUrl}/clients/exists.json`, JSON.stringify({ email: email }), { headers: this.headers })
+            .toPromise()
+            // Response can be either {client: null} or {client: &lt;Client&gt;}
+            .then(res =&gt;
+                res.json().client ?
+<span class="branch-0 cbranch-no" title="branch not covered" >                    { client: this.handleClient(res.json()), hasPassword: res.json().client.has_password } </span>:
+                    { client: false, hasPassword: false }
+            )
+            .catch(this.handleError);
+    }
+&nbsp;
+    password(id: string, password: string): Promise&lt;boolean&gt; {
+        return this.http
+            .post(`${this.apiUrl}/clients/password.json`, JSON.stringify({ id: id, password: password }), { headers: this.headers })
+            .toPromise()
+            .then(res =&gt; res.json())
+            .catch(this.handleError);
+    }
+&nbsp;
+    addClient(client: Client): Promise&lt;Client&gt; {
+        return this.http
+            .post(`${this.apiUrl}/clients/add.json`, JSON.stringify(MapUtils.serialize(Client, client)), { headers: this.headers })
+            .toPromise()
+            .then(res =&gt; this.handleClient(res.json()))
+            .catch(this.handleError);
+    }
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    addClientCapture(</span>clientCapture: ClientCapture, client: Client): Promise&lt;ClientCapture&gt; {</span>
+        //clientCapture.clientId = client.id;
+        //PATCH
+        let clientCaptureToSend: Object = <span class="cstat-no" title="statement not covered" >MapUtils.serialize(ClientCapture, clientCapture);</span>
+<span class="cstat-no" title="statement not covered" >        clientCaptureToSend['client_id'] = client.id;</span>
+<span class="cstat-no" title="statement not covered" >        return this.http</span>
+            .post(`${this.apiUrl}/clientCaptures/add.json`, clientCaptureToSend, { headers: this.headers })
+            .toPromise()
+            .then(<span class="fstat-no" title="function not covered" >res =&gt; <span class="cstat-no" title="statement not covered" >this.handleClientCapture(res.json()))</span></span>
+            .catch(this.handleError);
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    editClientCapture(</span>clientCapture: ClientCapture): Promise&lt;ClientCapture&gt; {</span>
+        // console.log(clientCapture);
+<span class="cstat-no" title="statement not covered" >        return this.http</span>
+            .post(`${this.apiUrl}/clientCaptures/edit/${clientCapture.id}.json`, JSON.stringify(MapUtils.serialize(ClientCapture, clientCapture)), { headers: this.headers })
+            .toPromise()
+            .then(<span class="fstat-no" title="function not covered" >res =&gt; <span class="cstat-no" title="statement not covered" >this.handleClientCapture(res.json()))</span></span>
+            .catch(this.handleError);
+    }
+<span class="fstat-no" title="function not covered" >    getClientCapture(</span>client: Client): Promise&lt;Object&gt; {
+        let jsonToSend = <span class="cstat-no" title="statement not covered" >{</span>
+            "client_id": client.id,
+            "garment_type": environment.garmentType
+        }
+<span class="cstat-no" title="statement not covered" >        return this.http</span>
+            .post(`${this.apiUrl}/clientCaptures/lastInContext.json`, JSON.stringify(jsonToSend), { headers: this.headers })
+            .toPromise()
+            .then(<span class="fstat-no" title="function not covered" >captureObject =&gt; <span class="cstat-no" title="statement not covered" >captureObject.json())</span></span>
+            .catch(this.handleError);
+    }
+&nbsp;
+    private handleError(error: any): Promise&lt;any&gt; {
+        console.error('An error occurred', error); // for demo purposes only
+        return Promise.reject(error.message || <span class="branch-1 cbranch-no" title="branch not covered" >error)</span>;
+    }
+&nbsp;
+    private handleClient(clientJson: Object): Client {
+&nbsp;
+        //this.handleClientCapture(clientJson['client']['clientCapture']);
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (clientJson['client']) {
+            let client: Client = MapUtils.deserialize(Client, clientJson['client']);
+            this.emitClient(client);
+            return client;
+        }
+    }
+    //  private updateClientCapture(clientMetrics:object){
+    //     if(clientMetrics){
+    //         if(clientMetrics['breast_band_size']){
+    //             clientMetrics['breast_band_size']
+    //         }
+&nbsp;
+    //     }
+    //  } 
+<span class="fstat-no" title="function not covered" >    private handleClientCapture(</span>clientCaptureJson: Object): ClientCapture {
+<span class="cstat-no" title="statement not covered" >        if (clientCaptureJson['clientCapture']) {</span>
+            let clientCapture: ClientCapture = <span class="cstat-no" title="statement not covered" >MapUtils.deserialize(ClientCapture, clientCaptureJson['clientCapture']);</span>
+<span class="cstat-no" title="statement not covered" >            this.emitClientCapture(clientCapture);</span>
+<span class="cstat-no" title="statement not covered" >            return clientCapture;</span>
+        }
+    }
+&nbsp;
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Oct 10 2017 14:14:23 GMT-0400 (Eastern Daylight Time)
+</div>
+</div>
+<script src="..\..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\..\sorter.js"></script>
+</body>
+</html>

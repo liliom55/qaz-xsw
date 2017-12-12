@@ -1,0 +1,236 @@
+
+
+# FitRoom - Lilianne Lingerie
+
+### New
+         app: "fitRoom",
+         retailer: "lilianne",
+
+         host: "localhost",
+         apiUrl: "//fitadmin.ces.stefanka.tech/api",
+         authorization: "Basic cGFuZHc6cGFuZHdhZG1pbg==",
+         gender: "F",
+         garmentType: "Bra",
+         email: { 
+           enabled: true,
+           emailContext: "sxsw"
+         },
+         defaultMeasurementSystem: "imperial",
+         measurements: null,
+         productMetadatas : ["collection", "fabric"],
+         productSizeDescription: false
+
+
+# FitStand - Lilianne Lingerie
+## New
+    app: "fitStand",
+    retailer: "lilianne",
+    host: "localhost",
+    apiUrl: "//fitadmin.ces.stefanka.tech/api",
+    authorization: "Basic cGFuZHc6cGFuZHdhZG1pbg==",
+    gender: "F",
+    garmentType: "Bra",
+    email: { 
+        enabled: true,
+        emailContext: "sxsw"
+    },
+    defaultMeasurementSystem: "imperial",
+    measurements: [
+    {
+        key: "breast_band_size",
+        label: "Bust",
+        required: true,
+        params: {
+			type: "textbox",
+            metric: {
+                order: 1
+            },
+            imperial: "same"
+        },
+        unit: {
+            metric: "cm",
+            imperial: "in"
+        }
+    },
+    {
+        key: "under-breast_band_size",
+        label: "Underbust",
+        required: true,
+        params: {
+			type: "textbox",
+			metric: {
+                order: 2
+            },
+            imperial: "same"
+        },
+        unit: {
+            metric: "cm",
+            imperial: "in"
+        }  
+    }
+    ],
+    productMetadatas : ["collection", "fabric"],
+    productSizeDescription: false
+
+
+# FitStand - Simons
+
+## New
+
+    app: "fitStand",
+    retailer: "simons",
+
+    host: "localhost",
+    apiUrl: "//admin.dev.stefanka.tech/api",
+    authorization: "Basic cGFuZHc6cGFuZHdhZG1pbg==",
+
+    gender: "M",
+    garmentType: "Shirt",
+
+    email: { 
+        enabled: true,
+        emailContext: "sxsw"
+    },
+
+    defaultMeasurementSystem: "imperial",
+    measurements: [
+        {
+            key: "feet",
+            label: "Feet",
+            required: true,
+            params: {
+                type: "dropdown",
+                metric: false,
+                imperial: {
+                    order: 1,
+                    options: [
+                        {key: "3", value: "3"},
+                        {key: "4", value: "4"},
+                        {key: "5", value: "5"},
+                        {key: "6", value: "6"},
+                        {key: "7", value: "7"}
+                    ]
+                }
+            },
+            unit: {
+                metric: "height",
+                imperial: "ft"
+            }
+        },
+        {
+            key: "inch",
+            label: "Inch",
+            required: true,
+            params: {
+                type: "dropdown",
+                metric: false,
+                imperial: {
+                    order: 1.5,
+                    options: [
+                        {key: "1", value: "1"},
+                        {key: "2", value: "2"},
+                        {key: "3", value: "3"},
+                        {key: "4", value: "4"},
+                        {key: "5", value: "5"},
+                        {key: "6", value: "6"},
+                        {key: "7", value: "7"}
+                    ]
+                }
+            },
+            unit: {
+                metric: "height",
+                imperial: "in"    
+            }
+        },
+        {
+            key: "height",
+            label: "Height",
+            required: true,
+            params: {
+                type: "textbox",
+                metric: {
+                    order: 2
+                },
+                imperial: false
+            },
+            unit: {
+                metric: "cm",
+                imperial: "in"
+              }
+        },
+        {
+            key: "weight",
+            label: "Weight",
+            required: true,
+            params: {
+                type: "textbox",
+                metric: {
+                    order: 3
+                },
+                imperial: "same"
+            },
+              unit: {
+                metric: "kg",
+                imperial: "lb"
+              }
+        },
+        {
+            key: "neck_size",
+            label: "Neck Size",
+            required: true,
+            params: {
+                type: "textbox",
+                metric: {
+                    order: 4
+                },
+                imperial: "same"
+            },
+            unit: {
+                metric: "cm",
+                imperial: "in" 
+              }   
+        },
+        {
+            key: "waist_size",
+            label: "Waist Size",
+            required: false,
+            params: {
+                type: "textbox",
+                metric: {
+                    order: 5
+                },
+                imperial: "same"
+            },
+              unit: {
+                metric: "cm",
+                imperial: "in"    
+            }
+        },
+        {
+            key: "chest_size",
+            label: "Chest Size",
+            required: false,
+            params: {
+                type: "textbox",
+                metric: {
+                    order: 6
+                },
+                imperial: "same"
+            },
+            unit: {
+                metric: "cm",
+                imperial: "in"    
+            }    
+        }
+    ],
+    productMetadatas : ["cut_style", "fabric"],
+    productSizeDescription: {
+        separator: {
+            separatorKey: "_",
+            display: [
+                {display: false, name: ""},
+                {display: true, displayName: false, name: ""}
+            ]
+        }
+    }
+

@@ -1,0 +1,171 @@
+#prdDetail_container{
+    width:100%;
+    display:inline-block;
+}
+#main_info{
+    padding-top:20px;
+    padding-left:30px;
+    /*padding-bottom:20px;*/
+    border-bottom:1px solid rgba(0,0,0,0.1);
+}
+/*#rest_info{
+    padding-left:30px;
+}*/
+#pic img{
+    background-color:#95989A;
+}
+#img_wraper,#color_pic,.left_div{
+    width:35%;
+    max-width:150px;
+    min-width:96px;
+    min-height:120px;
+    float:left;
+    /*border:1px solid;*/
+}
+#img_wraper{
+    max-height: 250px;
+}
+
+#img_wraper img{
+    width:100%;
+    height:100%;
+}
+.left_div2{
+    width:35%;
+    max-width:150px;
+    min-width:96px;
+    float:left;
+}
+#nameAndSku{
+    float:left;
+    padding-left:20px;
+    padding-right:5px;
+    width:65%;
+    
+}
+#nameAndSku label:first-child{
+    font-family: 'Raleway-Medium';
+    font-size:16px;
+    color:black;
+    width:100%;
+    height:auto;
+    display:block;
+}
+#nameAndSku label:last-child{
+    font-family: 'Raleway-Regular';
+    font-size:16px;
+    color:rgba(0,0,0,0.54)
+}
+#color_pic img{
+    width:48px;
+    height:48px;
+    margin:auto;
+    background-color:#95989A;
+}
+#color_div ul{
+    width:100%;
+}
+#color_div ul li{
+    display:inline-block;
+}
+#color_div label {
+    float:left;
+    width:100%;
+    margin-left:20px;
+    font-family: 'Raleway-Regular';
+    font-size:14px;
+    color:rgba(0,0,0,0.54)
+}
+#color_title label{
+    margin-left:0;
+}
+.right_div ul{
+    margin-left:20px;
+}
+.right_div label,.right_div1 label{
+    font-family: 'Raleway-Regular';
+    font-size:14px;
+    color:rgba(0,0,0,0.54)
+}
+.left_div label,.left_div1 label,.left_div2 label{
+    font-family: 'Raleway-Medium';
+    font-size:14px;
+    color:black;
+}
+#lessImpFeature_div,#brand_div,#cut_div,#fabric_div,#price_div{
+    height:45px;
+    border-bottom:1px solid rgba(0,0,0,0.1);
+}
+.right_div1 label{
+    display:inline-block;
+    margin-left:20px;
+    line-height:45px;
+}
+.left_div1 label{
+    width:120%;
+    line-height:45px;
+}
+.left_div1{
+    width:35%;
+    max-width:150px;
+    min-width:96px;
+    float:left;
+    height:45px;
+    margin-left: 20px;
+    /*border:1px solid;*/
+}
+
+
+
+@media screen and (min-width: 768px) {
+    #img_wraper{
+        position: absolute;
+        right: 50px;
+        top: 40px;
+    }
+    #main_info {
+      padding-left:0;
+    }
+    #nameAndSku{
+        margin-top: 10px;
+    }
+    #features_div{
+        padding-left: 20px;
+    }
+    #color_pic {
+        max-width: 130px;
+    }
+    #color_title{
+        margin-left: 30px;
+    }
+}
+
+@media screen and (max-width:736px) {
+   
+    .right_div label,.right_div1 label{
+        white-space: nowrap;
+        width: 50%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .right_div ul{
+        width:100%;
+    }
+    #color_pic{
+        min-width:68px;
+        min-height:68px;
+    }
+    #color_title label{
+        margin-left:30px;
+    }
+    #color_div ul li{
+        display:table;
+    }
+    #color_title{
+        float:left;
+        margin-top: 20px;
+    }
+    #color_div ul,#color_div ul li{
+        width:100%;
+    }
+}

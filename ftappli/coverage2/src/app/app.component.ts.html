@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/app/app.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\index.html">All files</a> / <a href="index.html">src/app</a> app.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">77.55% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>38/49</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">72% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>18/25</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">27.27% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">83.72% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>36/43</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnInit } from '@angular/core';
+&nbsp;
+import { Subscription } from 'rxjs/Subscription';
+&nbsp;
+import { Product } from './shared/products/product.model';
+import { ProductService } from './shared/products/product.service';
+import { Client, ClientCapture } from './shared/clients/client.model';
+import { ClientService } from './shared/clients/client.service';
+import { CustomRouting } from './shared/custom-routing/custom-routing';
+import { CustomRoutingService } from './shared/custom-routing/custom-routing.service';
+import { EmailService } from './shared/email/email.service';
+&nbsp;
+&nbsp;
+import { fakeProducts } from './shared/products/fakeproducts';
+import { MapUtils } from './shared/json-mapper/map-utils';
+&nbsp;
+import { Title } from '@angular/platform-browser';
+import { environment } from '././../environments/environment'
+import { TranslateService } from 'ng2-translate';
+&nbsp;
+&nbsp;
+@Component({
+  selector: 'app-root',
+  template: `
+    &lt;app-home *ngIf="customRouting.current == 'app-home'" [client]="client" [clientCapture]="clientCapture" [selectedLang]="selectedLang" (switchLanguage) = selectLang($event)&gt;&lt;/app-home&gt;
+    &lt;app-catalog *ngIf="customRouting.current == 'app-catalog'" [(selectedProducts)]="selectedProducts" [products]="products" [client]="client" [clientCapture]="clientCapture" [selectedLang]="selectedLang" (switchLanguage) = selectLang($event)&gt;&lt;/app-catalog&gt;
+    &lt;app-goodbye *ngIf="customRouting.current == 'app-goodbye'" [client]="client" [selectedProducts]="selectedProducts" [clientCapture]="clientCapture" &gt;&lt;/app-goodbye&gt;`,
+&nbsp;
+  providers: [EmailService,CustomRoutingService,ClientService,ProductService],
+})
+export class AppComponent implements OnInit {
+&nbsp;
+  products: Product[];
+  selectedProducts: Product[] = [];
+  client: Client = new Client;
+  clientCapture: ClientCapture = new ClientCapture(); //ClientCapture object for this session
+  //Custom Routing to change between views and pass data from one chil component to another since the app has a simple flow (one direction)
+  customRouting: CustomRouting = {
+    current: 'app-home',
+    previous: null
+  };
+&nbsp;
+  //translation
+  selectedLang = "en";
+  supportedLangs = [];
+&nbsp;
+  constructor(
+    private titleService: Title<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+    private productService: ProductService<span class="branch-2 cbranch-no" title="branch not covered" >,</span>
+    private clientService: ClientService<span class="branch-2 cbranch-no" title="branch not covered" >,</span>
+    private customRoutingService: CustomRoutingService<span class="branch-2 cbranch-no" title="branch not covered" >,</span>
+    private translate: TranslateService<span class="branch-2 cbranch-no" title="branch not covered" ></span>
+  ) {
+    //Receive new Products from product service
+    productService.productEmmitter$.subscribe(<span class="fstat-no" title="function not covered" >products =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      this.products = products;</span>
+      //Extract all metadatas into one object
+<span class="cstat-no" title="statement not covered" >      this.products.map(<span class="fstat-no" title="function not covered" >product =&gt; <span class="cstat-no" title="statement not covered" >product.extractMeta())</span></span></span>
+    });
+&nbsp;
+    //Receive any change on Client or ClientCapture
+    clientService.clientEmmitter$.subscribe(<span class="fstat-no" title="function not covered" >client =&gt; <span class="cstat-no" title="statement not covered" >this.client = client)</span>;</span>
+    clientService.clientCaptureEmitter$.subscribe(<span class="fstat-no" title="function not covered" >clientCapture =&gt; <span class="cstat-no" title="statement not covered" >this.clientCapture = clientCapture)</span>;</span>
+&nbsp;
+    customRoutingService.routingEmmitter$.subscribe(<span class="fstat-no" title="function not covered" >routing =&gt; <span class="cstat-no" title="statement not covered" >this.customRouting = routing)</span>;</span>
+&nbsp;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  switchView(</span>comp: string) {
+<span class="cstat-no" title="statement not covered" >    (this.customRouting['previous'] ? this.customRouting['previous'] : []).push(this.customRouting['current']);</span>
+<span class="cstat-no" title="statement not covered" >    this.customRouting['current'] = comp;</span>
+  }
+&nbsp;
+  ngOnInit() {
+    //this.fakeData();
+    this.titleService.setTitle((environment.app+'-'+environment.retailer).toUpperCase());
+    //Language setting
+    this.supportedLangs = [
+      { display: 'En', value: 'en' },
+      { display: 'Fr', value: 'fr' }
+    ];
+    this.translate.addLangs(["en", "fr"]);
+    this.translate.setDefaultLang('en');
+    this.translate.use(this.selectedLang);
+  }
+  //language functions
+<span class="fstat-no" title="function not covered" >  isCurrentLang(</span>lang: string) {
+<span class="cstat-no" title="statement not covered" >    return lang === this.selectedLang;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  selectLang(</span>lang: string) {
+<span class="cstat-no" title="statement not covered" >    this.selectedLang = lang;</span>
+<span class="cstat-no" title="statement not covered" >    this.translate.use(lang);</span>
+  }
+  
+  // fakeData() {
+  //   //Fake products &amp; client for development
+  //   let products: Product[] = [];
+  //   fakeProducts['products'].forEach(product =&gt; products.push(MapUtils.deserialize(Product, product)));
+  //   products.forEach(product =&gt; product.extractMeta());
+  //   this.products = products;
+  //   this.clientService.checkExist('witoldwrob@gmail.com');
+  // }
+&nbsp;
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Oct 19 2017 16:43:26 GMT-0400 (Eastern Daylight Time)
+</div>
+</div>
+<script src="..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\sorter.js"></script>
+</body>
+</html>

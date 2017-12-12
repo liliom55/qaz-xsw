@@ -1,0 +1,46 @@
+@import "range.css";
+@import "toggle-switch.css";
+.info{
+    width: 100%;
+    margin-bottom: 3px;
+}
+input[type=text]{
+    width:40px;
+    height: 10px;
+    margin-right: 5%;
+    text-align: center;
+}
+input[type=range]{
+    width:90%;
+}
+h3{
+    text-align: center;
+    text-transform: capitalize;
+
+}
+div label{
+    margin-left: 5%;
+    text-transform: capitalize;
+    font-size: 11px;
+
+}
+.submit-btn{
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+input[type=button]{
+    width:70%;
+    height: 30px;
+    border-radius: 25px;
+    color:white;
+    background-color: #001528;
+    text-transform:uppercase;
+    outline:none;
+}
+
+
+
+
+

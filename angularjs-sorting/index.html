@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    
+    <link href="Style.css" rel="stylesheet" />
+</head>
+<body ng-app="myModule">
+    <div ng-controller="myController">
+        <table>
+            <thead>
+                <tr>
+                    <th ng-click="sortData('name')">
+                        Name <div ng-class="getSortClass('name')"></div>
+                    </th>
+                    <th ng-click="sortData('dateOfBirth')">
+                        Date of Birth <div ng-class="getSortClass('dateOfBirth')"></div>
+                    </th>
+                    <th ng-click="sortData('gender')">
+                        Gender <div ng-class="getSortClass('gender')"></div>
+                    </th>
+                    <th ng-click="sortData('salary')">
+                        Salary <div ng-class="getSortClass('salary')"></div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees | orderBy:sortColumn:reverseSort">
+                    <td> {{ employee.name }} </td>
+                    <td> {{ employee.dateOfBirth | date:"dd/MM/yyyy" }} </td>
+                    <td> {{ employee.gender }} </td>
+                    <td> {{ employee.salary  }} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="script/angular.min.js"></script>
+    <script src="Script/Script.js"></script>
+</body>
+</html>

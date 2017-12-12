@@ -1,0 +1,32 @@
+username:usretail
+password:retail1234
+
+ng build --base-href "https://liliom55.github.io/CreateLibraryByAngular4" ngh
+
+ angular-cli-ghpages --repo=https://GH_TOKEN@github.com/organisation/CreateLibCreateLib.git --name="Displayed liliom55" --email=leila_onsori@yahoo.com --no-silent
+ 
+ git remote add origine git@github.com:liliom55/CreateLibraryByAngular4/
+ 
+  ng build --prod --base-href  https://liliom55.github.io/CreateLibraryByAngular4/
+  
+   git clone -b gh-pages --single-branch git@github.com:liliom55/CreateLibraryByAngular4.git
+   
+   
+   cmd:
+   Lilianne : 
+   ng build  --env=prod --aot --output-path /Users/leila/Documents/Heroku/fitStansLilianne/public/ --watch
+   ng build  --env=prod --aot --output-path /Users/leila/Documents/Heroku/fitRoomLilianne/public/ --watch
+   
+   ng build  --env=prod --aot --output-path /Users/leila/Documents/deployed/ --watch
+   
+   
+   
+   
+   npm install -g npm@4.6.1
+   npm update -g // latest version
+		
+   nvm list
+   nvm install 6.9.1  // installs nodejs 6.9.1
+   
+  Uncaught SyntaxError: Invalid or unexpected token at @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+  

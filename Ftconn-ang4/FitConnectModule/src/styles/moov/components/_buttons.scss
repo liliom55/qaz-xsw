@@ -1,0 +1,18 @@
+button{
+    transition: opacity 300ms linear;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: 900;
+    outline: none;
+    height: 57px;
+    &[disabled]{
+        opacity: 0.4;
+    }
+    .mat-ripple{
+        border-radius: 50px;
+    }
+}
+
+.btn{
+    margin: 0px 20px;
+}

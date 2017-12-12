@@ -1,0 +1,63 @@
+<h1>{{title}}</h1>
+<div class="col-md-6 col-lg-6 well">
+  <form [formGroup]="formValid.userForm" (ngSubmit)="onSubmit()">
+    <fieldset>
+      <legend>User</legend>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" class="form-control" formControlName="name" [(ngModel)]="user.name" required>
+        <div *ngIf="formValid.formErrors.name" class="alert alert-danger">
+          {{ formValid.formErrors.name }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" class="form-control" formControlName="email" [(ngModel)]="user.email" required>
+        <div *ngIf="formValid.formErrors.email" class="alert alert-danger">
+          {{ formValid.formErrors.email }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="text" id="phone" class="form-control" formControlName="phone" [(ngModel)]="user.phone" required>
+        <div *ngIf="formValid.formErrors.phone" class="alert alert-danger">
+          {{ formValid.formErrors.phone }}
+        </div>
+      </div>
+    </fieldset>
+    <fieldset formGroupName="address">
+      <legend>Address</legend>
+      <div class="form-group">
+        <label for="street">Street</label>
+        <input type="text" #street id="street" class="form-control" formControlName="street" [(ngModel)]="user.address.street" required>
+        <div *ngIf="formValid.formErrors.address.street" class="alert alert-danger">
+          {{ formValid.formErrors.address.street }}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="suite">Suite</label>
+        <input type="text" id="suite" class="form-control" formControlName="suite" [(ngModel)]="user.address.suite" required>
+        <div *ngIf="formValid.formErrors.address.suite" class="alert alert-danger">
+          {{ formValid.formErrors.address.suite }}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" id="city" class="form-control" formControlName="city" [(ngModel)]="user.address.city" required>
+        <div *ngIf="formValid.formErrors.address.city" class="alert alert-danger">
+          {{ formValid.formErrors.address.city }}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="zipcode">ZipCode</label>
+        <input type="text" id="zipcode" #zipcode class="form-control" formControlName="zipcode" [(ngModel)]="user.address.zipcode" required>
+        <div *ngIf="formValid.formErrors.address.zipcode" class="alert alert-danger">
+          {{ formValid.formErrors.address.zipcode }}
+        </div>
+      </div>
+    </fieldset>
+    <button [disabled]="!formValid.userForm.valid || submitted" class="btn btn-primary" type="submit">Save</button>
+  </form>
+</div>

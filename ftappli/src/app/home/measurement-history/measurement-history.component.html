@@ -1,0 +1,7 @@
+<div id="NewOrOldSizes" *ngIf="products">
+    <span translate>We already got your measurement. We can use them or take new ones if you prefer?</span>
+    <div>
+        <button [disabled]="isClickedNew" id="new_sizeStat_btn" type="button" class="stefanka-button-large stefanka-button-accent" (click)="routeDecision('new')" translate>New measurements</button>
+        <button [disabled]="isClickedOld" id="old_sizeStat_btn" type="button" class="stefanka-button-large stefanka-button-secondary" (click)="routeDecision('old')" translate>Previous measurements</button>
+    </div>
+</div>

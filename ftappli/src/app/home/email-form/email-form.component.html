@@ -1,0 +1,15 @@
+<form [formGroup]="fv.emailForm" >
+    <div class="form-group">
+        <mat-form-field class="example-full-width" color="accent">
+            <input matInput formControlName="email" [placeholder]="'Email'|translate"  type="email" [(ngModel)]="client.email">
+        </mat-form-field>
+        <div *ngIf="fv.formErrors_email.email" class="errorMessage" >
+            <div *ngFor = "let error of fv.formErrorsList">
+                <span translate>{{error}}.</span>
+            </div>
+        </div>
+    </div>
+</form>
+<button #suivant [disabled]="!fv.emailForm.valid || isClickedNext" (click)="next(false);" type="button" class="stefanka-button-large stefanka-button-accent" translate >NEXT</button><br/>
+<button #incognito [disabled]="isClickedIncognito" (click)="next(true);" type="button" class="stefanka-button-large stefanka-button-secondary" translate>INCOGNITO</button>
+

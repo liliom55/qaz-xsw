@@ -1,0 +1,16 @@
+<div id="productItem_container">
+
+    <div id="img_div"><img [src]="imgUrl" alt="product" /></div>
+    <div id="info_div">
+        <label id="prd_name">{{prd_name}}</label>
+        <div id="left_info">
+            <label id="sku">sku &nbsp;<span>{{prd_sku}}</span></label> 
+            <label id="color">{{"Couleur" | translate}}&nbsp;<span *ngFor="let item of prd_color;let i = index">{{item.name}}<span *ngIf="i < prd_color.length-1">,</span>&nbsp;</span></label> 
+        </div>
+        <div id="right_info">
+            <label id="size">{{"Taille" | translate}}&nbsp;<span>{{prd_size}}</span></label>
+            <label id="brand">{{"Marque" | translate}}&nbsp;<span>{{prd_brand}}</span></label>
+        </div>
+    </div>
+    
+</div>

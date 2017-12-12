@@ -1,0 +1,45 @@
+{
+    id : '1',
+    sku : undefined,
+    productVersions : undefined,
+    productMetadatas : undefined,
+    productFloatmetadatas : undefined,
+    productIntmetadatas : undefined,
+    productTxtmetadatas : undefined,
+    thumbUrl : undefined,
+    retailerId : undefined,
+    manufacturerId : undefined,
+    created : undefined,
+    modified : undefined,
+}
+
+{
+    "id": "19d16c12-4a1f-48de-b0ab-4854d75c3740",
+    "sku": "7063-59053",
+    "productVersions": [],
+    "productMetadatas": {},
+    "productFloatmetadatas": [ ],
+    "productIntmetadatas": [],
+    "productTxtmetadatas": [ ],
+    "thumbUrl": "http://images.simonscdn.ca/images/7063/88626/69/A1_1.jpg?__=3",
+    "retailerId": "95cfc0f1-adad-11e6-b0b1-0628e555ee6f",
+    "manufacturerId": null,
+    "created": "2017-01-25T19:43:15+00:00",
+    "modified": "2016-12-21T19:12:06+00:00"
+}
+
+{
+"id":"1",
+"sku":"7063-59053",
+"productVersions":[],
+"productMetadatas":{},
+"productFloatmetadatas":[],
+"productIntmetadatas":[],
+"productTxtmetadatas":[],
+"thumbUrl":"",
+"retailerId":"",
+"manufacturerId":null,
+"created":null,
+"modified":null
+}
+ng test -sm=false

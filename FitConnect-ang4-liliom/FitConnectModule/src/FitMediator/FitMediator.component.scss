@@ -1,0 +1,30 @@
+#mediator {
+    @import '../styles/base/shadows';
+    $sidenav-width: 250px;
+    z-index: 100;
+    padding: 30px;
+    background-color: transparent;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    box-shadow: none;
+    md-sidenav-container {
+        background-color: transparent;
+        border-radius: 26px;
+        md-sidenav {
+            width: $sidenav-width;
+            border-radius: 26px;
+            background-color: transparent;
+            div {
+                padding: 10px;
+                font-size: 12px;
+            }
+        }
+        .mat-sidenav-content {
+            overflow: visible;
+        }
+        button {
+            z-index: 100;
+        }
+    }
+}

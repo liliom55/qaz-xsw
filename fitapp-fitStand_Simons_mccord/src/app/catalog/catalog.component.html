@@ -1,0 +1,143 @@
+﻿<div id="container">
+    <!----------------------------------------   appBar panel   ------------------------------------------------->
+    <!-- Dropdown Structure -->
+    <ul id="dropdown1" class="dropdown-content">
+        <li #tous>{{'TOUS' | translate}}<i class="material-icons right">&#xE5C7;</i></li>
+        <!--<li class="divider"></li>-->
+        <li #sexy>{{'HABILLE' | translate}}</li>
+        <li #sport>{{'SPORT' | translate}}</li>
+        <li #classique>{{'CASUAL' | translate}}</li>
+    </ul>
+    <ul id="dropdown2" (click)="closeDropdown2()" (touch)="closeDropdown2()">
+        <li #assist><a><i class="material-icons">&#xE887;</i>&nbsp; <label>{{'Assistance' | translate}}</label></a> </li>
+        <li #exit><a><i class="material-icons">&#xE879;</i>&nbsp; <label>{{'Déconnexion' | translate}}</label></a> </li>
+    </ul>
+    <ul id="menu3">
+        <li (click)="selectLang('en')" (touch)="selectLang('en')">English<i class="material-icons right">&#xE5C7;</i></li>
+        <li (click)="selectLang('fr')" (touch)="selectLang('fr')">Français</li>
+
+    </ul>
+    <nav #nav>
+        <div class="nav-wrapper">
+            <h3>{{'Vos' | translate}}&nbsp;{{matchNo}}&nbsp;{{'recommandations' | translate}}</h3>
+            <ul class="right hide-on-med-and-down">
+                <li><label id="language_sel">{{viewLang}} <i class="material-icons right">&#xE5C5;</i></label></li>
+                <!--<li><label class="dropdown-button" data-activates="dropdown1" >{{titr_selected | translate}} <i class="material-icons right">&#xE5C5;</i></label></li>-->
+                <li #cart>
+                    <div id="basket_number" *ngIf="addTocartService.orderNumber>0">{{addTocartService.orderNumber}}</div>
+                    <label><i class="material-icons">&#xE8CB;</i></label>
+
+                </li>
+                <li><label class="dropdown-button" (click)="openDropdown2()" (touch)="openDropdown2()"><i class="material-icons">&#xE5D4;</i></label></li>
+            </ul>
+        </div>
+
+    </nav>
+    <div class="clr_both"></div>
+
+    <!-------------------------------------  list of products panel  ---------------------------------->
+    <div #result id="result">
+          <div id="ul_wrapper">
+            <ul id="ul_card">
+
+                <li id="card_" class="product_cart" *ngFor="let item of products |priceFilter:filterRange ;let i = index" (click)="onClickProduct(item.id,$event)" (touch)="onClickProduct(item.id,$event)">
+                    <card [prdPicUrl]="item.large_picture" [prdName]="item.name" [PrdBrand]="item.brand" [prdPrice]="item.price" ></card>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--<div #btn_filter id="btn_filter">
+        <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons" [innerHtml]="icon_filter"></i></a>
+    </div>-->
+    <!---------------------------    filter panel   -------------------------------------------->
+    <div id="filter_panel">
+        <label>{{'Couleur' | translate}}</label>
+
+        <div class="pallet">
+            <ul>
+                <!--<li #black  *ngFor ="let colr_item of color_prd" ><div></div></li>-->
+                <li #black *ngIf="check_color('black')" class="black"><div></div></li>
+                <li #lightblue *ngIf="check_color('lightblue')" class="lightblue"><div></div></li>
+                <li #purple *ngIf="check_color('purple')" class="purple"><div></div></li>
+                <li #redpurple *ngIf="check_color('redpurple')" class="redpurple"><div></div></li>
+                <li #greenblue *ngIf="check_color('greenblue')" class="greenblue"><div></div></li>
+                <li #red *ngIf="check_color('red')" class="red"><div></div></li>
+                <li #beige *ngIf="check_color('beige')" class="beige"><div></div></li>
+                <li #pink *ngIf="check_color('pink')" class="pink"><div></div></li>
+                <li #blue *ngIf="check_color('blue')" class="blue"><div></div></li>
+            </ul>
+        </div><br />
+
+        <div id="range_price">
+            <label>{{'Prix Minimum' | translate}}:</label>
+
+            <form action="#">
+                <p class="range-field">
+                    <input #minPrice type="range" id="minPrice" [min]="minPriceRange" [max]="maxPriceRange" /><span>{{minPriceVal}}</span>
+                </p>
+            </form>
+            <div class="clr_both"></div>
+            <label>{{'Prix Maximum'| translate}}:</label>
+            <form action="#">
+                <p class="range-field">
+                    <input #maxPrice type="range" id="maxPrice" [min]="minPriceRange" [max]="maxPriceRange" /><span>{{maxPriceVal}}</span>
+                </p>
+            </form>
+        </div>
+    </div>
+    <!------------------------------------- product detail component   ----------------------------------------->
+    <div id="product_panel" (swiperight)="swipe($event.type)" >
+        <product-detail class="productDetail" [prdId]="idPrd" [prdPicUrl]="picPrd" [prdName]="namePrd" [PrdBrand]="brandPrd" [prdQuant]="quantPrd" [prdPrice]="pricePrd" [prdDesc]="descPrd" [prdSize]="sizePrd" [prdFeatures]="featrPrd" [prdColor]="colorPrd" [prdSku]="skuPrd" [prdCut]="cutPrd" [prdFabric]="fabricPrd" [prdSleeve]="sleevePrd" [prdVersionId]="versionId">
+
+        </product-detail>
+    </div>
+    <!-------------------------------------  add to card panel  ------------------------------------------->
+    <div class="cart_list">
+        <cart-list></cart-list>
+    </div>
+
+</div>
+<!-------------------------------  calling assistant view  ------------------------------------------>
+<div id="content_assist">
+    <div id="assistance_div">
+        <h3>
+            {{'Un instant, on vient vous assister' | translate}}
+        </h3>
+        <button>{{'RETOUR' | translate}}</button>
+        <!--<button class="exit" >{{'DÉCONNEXION' | translate}}</button>-->
+    </div>
+</div>
+<!-------------------------------------  pass to fitting room view  ------------------------------------->
+<div id="content_essayage">
+    <!--if firsteval client registered his email-->
+    <div id="not_register_div" *ngIf='email !="" '>
+        <h3>
+            {{"Très bon choix! Ne bougez pas, quelqu'un va arriver avec votre selection" | translate}}
+        </h3>
+        <button class="return">{{'RETOUR' | translate}}</button>
+        <button class="exit" (click)="createRelation()" (touch)="createRelation()">{{'DÉCONNEXION' | translate}}</button>
+    </div>
+    <!--if firsteval client did not register his email-->
+    <div id="register_div" *ngIf='email =="" '>
+        <h3>
+            {{"Très bon choix! Ne bougez pas, quelqu'un va arriver avec votre selection" | translate}}
+        </h3>
+        <form id="form_login" class="col s12">
+            <div class="row">
+                <div class="input-field inline col s12">
+                    <input id="email" name="email" type="email" data-error=".errorTxt0" (input)="onInput($event.target.value)" />
+                    <div class="errorTxt0"></div>
+                    <div id="invalid_msg">{{msg_invalidEmail | translate}}.</div>
+                    <label for="email" data-error="wrong" data-success="right">{{'Assurez-vous de toujours choisir la bonne taille pour tous vos achats, en entrant votre courriel ici:' | translate}} </label>
+                </div>
+            </div>
+            <button id="envoyer_btn" type="submit" class="btn" (click)="registerClient()" (touch)="registerClient()" >{{'ENVOYER' | translate}}</button><br />
+            <label id="sendMessage">{{'Merci de nous avoir partagé votre courriel' | translate}}! </label>
+        </form>
+        <button class="return">{{'RETOUR' | translate}}</button>
+        <button class="exit" (click)="createRelation()" (touch)="createRelation()">{{'DÉCONNEXION' | translate}}</button>
+    </div>
+
+</div>
+
+

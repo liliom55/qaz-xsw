@@ -1,0 +1,11 @@
+<div class="detail-container" fxLayout="row" fxLayoutAlign="start center" (click)="selectProduct()">
+  <div class="left" fxFlex = "30">
+    <img [src]="product.imgUrl" alt="pic">
+  </div>
+  <div class="right" fxFlex>
+    <p>{{product.brand}}</p>
+    <p>{{product.sku}}</p>
+    <p>{{product.title}}</p>
+    <p>{{product.color}}</p>
+  </div>
+</div>

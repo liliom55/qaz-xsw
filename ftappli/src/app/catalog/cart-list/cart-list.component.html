@@ -1,0 +1,25 @@
+﻿<!--   Add to card list  -->
+<button mat-icon-button [matMenuTriggerFor]="menuCart">
+    <mat-icon>shopping_cart</mat-icon><span *ngIf="selectedProducts?.length>0" class="stefanka-basket-accent counter-shopping">{{selectedProducts?.length}}</span>
+</button>
+
+<mat-menu #menuCart="matMenu">
+   
+    <div [ngClass]="{ 'empty-cart': selectedProducts?.length == 0, 'full-cart':  selectedProducts?.length != 0, 'cart-container': true }">
+        <mat-list *ngIf="selectedProducts" class="cart-list-content">
+            <mat-list-item *ngFor="let product of selectedProducts">
+                <img mat-list-avatar [src]="product.thumbUrl" alt="Product item in Cart">
+                <h3 mat-line> {{product.productMetadatas._product_name}} </h3>
+                <p mat-line>
+                    <span> {{product.productMetadatas._product_price| currency:'CAD':true}} </span>
+                    <span> -- <button mat-icon-button (click)="deleteProduct(product)" (touch)="deleteProduct(product)"> <mat-icon>delete</mat-icon> </button> </span>
+                </p>
+            </mat-list-item>
+        </mat-list>
+        <div class="cart-list-content " *ngIf="selectedProducts?.length == 0">
+            <span class="aaa" translate>Empty basket</span>
+        </div>
+        <button class="stefanka-button-large stefanka-button-accent" *ngIf="selectedProducts?.length>0" (click)="switchToGoodbye()"
+            translate>TRY ON MY SELECTION</button>
+    </div>
+</mat-menu>

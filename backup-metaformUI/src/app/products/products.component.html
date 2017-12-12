@@ -1,0 +1,18 @@
+<div class="product-container"  fxLayout="row" fxLayoutAlign="center stretch"> 
+  <div class="left" fxFlex="40">
+    <h3>category</h3>
+    <ul>
+      <li *ngFor="let category of categories" (click)="selectCatg(category)" [ngClass]="{'selected': (category===selCat)}">
+        <span >{{category}}</span>
+      </li>
+    </ul>
+    <input type="text" class="search" placeholder="Search">
+  </div>
+  <div class="right" fxFlex>
+    <ul>
+      <li *ngFor="let product of selProducts">
+        <app-product-detail [product]="product"></app-product-detail>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="body-type">
+    <div *ngFor="let bodyType of bodyTypes[gender]; let i = index;">
+        <div *ngIf="currentIndex === i">
+            <h3 class="stfk-title" i18n>{{bodyType.title}}</h3>
+            <ul fxLayout="row" fxLayoutAlign="space-around center" >
+                <li class="content-li" *ngFor="let bodyTypeItem of bodyType.bodyTypeItems" (click)="selectType(bodyTypeItem)">
+                        <div class="bodyTypesItem">
+                            <div class="imgContainer">
+                                <img [src]="imageSource+bodyType.type+'/'+bodyTypeItem.id+'.png'" alt={{bodyTypeItem.title}} />
+                            </div>
+                            <div class="textContainer">
+                                <h4>{{bodyTypeItem.title}}</h4>
+                            </div>
+                    </div>
+                </li>
+            </ul>
+            <md-radio-group  [(ngModel)]="selectedType" fxLayout="row" fxLayoutAlign="space-around center" >
+                <md-radio-button *ngFor="let bodyTypeItem of bodyType.bodyTypeItems"
+                [value]="bodyTypeItem" [checked]="bodyTypeItem.id === selectedType.id"></md-radio-button>
+            </md-radio-group>
+            <br />
+            <button [disabled]="!selectedType.title" class="stefanka-button-large stefanka-button-accent" 
+            (touch)="gatherBodyType(bodyType.type, selectedType.id)" (click)="gatherBodyType(bodyType.type, selectedType.id)" i18n>NEXT</button>
+        </div>
+    </div>
+</div>

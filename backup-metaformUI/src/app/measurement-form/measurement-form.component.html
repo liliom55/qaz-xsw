@@ -1,0 +1,56 @@
+<div fxLayout="column" fxLayoutAlign="center center" class="measurement-container">
+
+  <h3>measurements</h3>
+
+  <label class="switch switch-gray">
+      <input type="checkbox"  class="switch-input" 
+      [(ngModel)]="unit"  (change)="changeUnit()">
+      <span class="switch-label" data-on="metrics" data-off="imperial"></span>
+      <span class="switch-handle"></span>
+  </label>
+
+  <div class="info" fxLayout="row" fxLayoutAlign="space-between center">
+    <label for="">hieght</label>
+    <input type="text" [value]="heighRange">
+  </div>
+  <input type="range" [min]="changedMeasurement.height.min" [max]="changedMeasurement.height.max" [(ngModel)]="heighRange" (ngModelChange)="heighRange=$event"><br>
+
+
+  <div class="info" fxLayout="row" fxLayoutAlign="space-between center">
+    <label for="">chest</label>
+    <input type="text" [value]="chestRange">
+  </div>
+  <input type="range" [min]="changedMeasurement.chest.min" [max]="changedMeasurement.chest.max" [(ngModel)]="chestRange" (ngModelChange)="chestRange=$event"><br>
+
+
+  <div class="info" fxLayout="row" fxLayoutAlign="space-between center">
+    <label for="">neck</label>
+    <input type="text" [value]="neckRange">
+  </div>
+  <input type="range" [min]="changedMeasurement.neck.min" [max]="changedMeasurement.neck.max" [(ngModel)]="neckRange" (ngModelChange)="neckRange=$event"><br>
+
+
+  <div class="info" fxLayout="row" fxLayoutAlign="space-between center">
+    <label for="">hip</label>
+    <input type="text" [value]="hipRange">
+  </div>
+  <input type="range" [min]="changedMeasurement.hip.min" [max]="changedMeasurement.hip.max" [(ngModel)]="hipRange" (ngModelChange)="hipRange=$event"><br>
+
+
+  <div class="info" fxLayout="row" fxLayoutAlign="space-between center">
+    <label for="">waist</label>
+    <input type="text" [value]="waistRange">
+  </div>
+  <input type="range" [min]="changedMeasurement.waist.min" [max]="changedMeasurement.waist.max" [(ngModel)]="waistRange" (ngModelChange)="waistRange=$event"><br>
+
+
+  <div class="info" fxLayout="row" fxLayoutAlign="space-between center">
+    <label for="">sleeve lenght</label>
+    <input type="text" [value]="sleeveRange">
+  </div>
+  <input type="range" [min]="changedMeasurement.sleeveLength.min" [max]="changedMeasurement.sleeveLength.max" [(ngModel)]="sleeveRange" (ngModelChange)="sleeveRange=$event"><br>
+
+
+  <div class="submit-btn">
+    <input type="button" value="fit me" (click)="onFitMe()">
+  </div>

@@ -1,0 +1,49 @@
+<div>
+    <h3 style="margin-bottom:100px;" class="stfk-title" translate> Enter your measurement</h3>
+    <div style="margin-bottom:20px">
+        <span translate>Metrics</span> (cm, kg)
+        <!--<mat-slide-toggle [checked]="systemChoice" (change)="toggleSystemChoice()" type="checkbox"></mat-slide-toggle>-->
+        <mat-slide-toggle (change)="toggleSystemChoice()" type="checkbox" [checked]="systemChoice=='imperial'"></mat-slide-toggle>
+        <span translate>Imperial </span>(ft, in, lb)
+    </div>
+
+    <!-- <dynamic-form *ngIf="questions" [questions]="questions"></dynamic-form> -->
+    <form [formGroup]="form">
+        <div *ngIf="systemChoice==='imperial' && hasHeight" style="float:left;margin-right:30px;margin-top:15px;color:rgba(0,0,0,0.6)" translate>
+          Height
+        </div>
+
+        <div *ngFor="let measurement of measurementElem" class="form-row">
+            <div [ngSwitch]="measurement.params.type">
+                <div *ngIf="systemChoice==='metric' || (systemChoice ==='imperial' && measurement.key !=='height')">
+                    <mat-input-container *ngSwitchCase="'textbox'" color="accent">
+                        <input matInput
+                        pattern="\d*"
+                        [formControlName]="measurement.key"
+                        [id]="measurement.key"
+                        [type]="measurement.type"
+                        [(ngModel)]="measurement.value"
+                        [placeholder]="measurement.label | translate"
+                        [required]="measurement.required">
+                    </mat-input-container>
+                </div>
+
+                <div *ngIf="systemChoice==='imperial'" >
+
+                    <mat-select *ngSwitchCase="'dropdown'" [id]="measurement.key" [formControlName]="measurement.key" [placeholder]="measurement.label | translate"
+                        [required]="measurement.required" style="float:left;margin-right:10px">
+                        <mat-option *ngFor="let opt of measurement.params.imperial.options" [value]="opt.key">{{opt.value}}</mat-option>
+                    </mat-select>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+        </div>
+    </form>
+    <!-- {{form.value | json}} -->
+
+    <div>
+        <button [disabled]="!form.valid" style="margin-top:80px" (click)="updateClientCapture()" class="stefanka-button-large stefanka-button-accent"
+            type="button" name="Suivant" translate>NEXT</button>
+    </div>
+</div>

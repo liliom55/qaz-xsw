@@ -1,0 +1,88 @@
+﻿<ul id="dropdown3">
+    <li id="assist"><a><i class="material-icons">&#xE887;</i>&nbsp; <label>{{'Assistance' | translate}}</label></a> </li>
+    <li id="exit"><a><i class="material-icons">&#xE879;</i>&nbsp; <label>{{'Déconnexion' | translate}}</label></a> </li>
+</ul>
+<nav>
+    <div id="header_prd" class="nav-wrapper">
+        <div id="back_btn">
+            <label><i class="material-icons">&#xE5C4;</i></label>
+            <label>{{prdName}}</label>
+        </div>
+        <ul class="right hide-on-med-and-down">
+
+            <li #cart>
+                <div id="basket_number2" *ngIf="addTocartService.orderNumber>0">{{addTocartService.orderNumber}}</div>
+                <label><i class="material-icons" id="shopping_icon">&#xE8CB;</i></label>
+
+            </li>
+            <li>
+                <label class="dropdown-button" (click)="openDropdown3()" (touch)="openDropdown3()">
+                    <i class="material-icons">&#xE5D4;</i>
+                </label>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+
+<div id="body_prd">
+    <div id="prd_img">
+        <img [src]="prdPicUrl" alt="produit" />
+    </div>
+    <div id="prd_color">
+        <ul>
+            <li *ngFor="let item of prdColor;let i = index" (click)="onClickColor(i)" (touch)="onClickColor(i)">
+                <div ><img [src]="item.small_image" /></div>
+            </li>
+            <!--<li #black2 *ngIf="check_color2('black')" class="black2"><div  [class]="prdColor=='black'?'show_div':'hide_div'"></div></li>
+            <li #lightblue2 *ngIf="check_color2('lightblue')" class="lightblue2"><div [class]="prdColor=='lightblue'?'show_div':'hide_div'"></div></li>
+            <li #purple2 *ngIf="check_color2('purple')" class="purple2"><div [class]="prdColor=='purple'?'show_div':'hide_div'"></div></li>
+            <li #redpurple2 *ngIf="check_color2('redpurple')" class="redpurple2"><div [class]="prdColor=='redpurple'?'show_div':'hide_div'"></div></li>
+            <li #greenblue2 *ngIf="check_color2('greenblue')" class="greenblue2"><div [class]="prdColor=='greenblue'?'show_div':'hide_div'"></div></li>
+            <li #red2 *ngIf="check_color2('red')" class="red2"><div [class]="prdColor=='red'?'show_div':'hide_div'"></div></li>
+            <li #beige2 *ngIf="check_color2('beige')" class="beige2"><div [class]="prdColor=='beige'?'show_div':'hide_div'"></div></li>
+            <li #pink2 *ngIf="check_color2('pink')" class="pink2"><div [class]="prdColor=='pink'?'show_div':'hide_div'"></div></li>
+            <li #blue2 *ngIf="check_color2('blue')" class="blue2"><div [class]="prdColor=='blue'?'show_div':'hide_div'"></div></li>-->
+        </ul>
+    </div>
+    <div class="clr_both"></div>
+    <div id="detail">
+        
+        <div id="prd_brand"><label >{{PrdBrand | uppercase}}</label><label>{{'TAILLE' | translate}}: &nbsp; {{prdSize}}</label></div>
+        <div class="clr_both"></div>
+        <div id="sku_div">
+            <label>#{{prdSku}}</label>
+        </div>
+        <div id="prd_price"><label>{{prdPrice}}</label></div>
+        <div class="clr_both"></div>
+        <br />
+        <div id="cut_div">
+            <label>{{'Collection'|translate|uppercase}}:</label>
+            <label>{{prdCut}}</label>
+        </div>
+        <div id="fabric_div">
+            <label>{{'Matière'|translate|uppercase}}:</label>
+            <label>{{prdFabric}}</label>
+        </div>
+        <!--<div id="sleeve_div">
+            <label>{{'Longueur de manches'|translate}}:</label>
+            <label >{{prdSleeve}}</label>
+        </div>-->
+        
+        <div id="prd_description"><label [innerHTML]="prdDesc"></label> </div>
+        <div id="prd_feature">
+            <label>{{'Principales caractéristiques' | translate |uppercase}}</label>
+            <div id="list_feature">
+                <ul>
+                    <li *ngFor="let item of prdFeatures" >{{item}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div #btnAdd id="btn_add"  (click)="addToCart()" (touch)="addToCart()">
+        <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">&#xE145;</i></a>
+    </div>
+    <div class="cart_list">
+        <cart-list></cart-list>
+    </div>
+</div>

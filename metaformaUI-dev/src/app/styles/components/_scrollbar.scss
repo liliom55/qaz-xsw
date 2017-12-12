@@ -1,0 +1,17 @@
+
+*::-webkit-scrollbar{
+    width:5px;
+    background-color:transparent;
+}
+*::-webkit-scrollbar-thumb{
+    background-color:rgb(66,85,91);
+    border-radius:30px;
+}
+*::-moz-scrollbar{
+    width:5px;
+    background-color:transparent;
+}
+*::-moz-scrollbar-thumb{
+    background-color:rgb(66,85,91);
+    border-radius:30px;
+}

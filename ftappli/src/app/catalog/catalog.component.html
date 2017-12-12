@@ -1,0 +1,32 @@
+﻿<mat-toolbar color="primary">
+    <span class="stfk-title toolbar-title"><span translate>Your</span> {{products.length}} <span translate>recommendations</span>    </span>
+    <span class="app-bar-fill"></span>
+    <div>
+        <mat-select class="mat-no-underline" [(ngModel)]="selectedLang" (change)="selectLang(selectedLang)">
+            <mat-option *ngFor="let lang of supportedLangs" [value]="lang.value">
+                {{ lang.display }}
+            </mat-option>
+        </mat-select>
+        <cart-list [selectedProducts]="selectedProducts" (selectedProductsUpdate)="selectedProductsUpdate($event)" [client]="client">
+        </cart-list>
+        <app-menu-global (logout)="logout()"></app-menu-global>
+
+    </div>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav align="end" mode="side">
+        <product-detail *ngIf="productSelected" [product]="productSelected" [selectedProducts]="selectedProducts" [client]="client"
+            (selectedProductsUpdate)="selectedProductsUpdate($event)">
+        </product-detail>
+    </mat-sidenav>
+
+    <div fxLayoutAlign="center">
+        <mat-grid-list #catalogList [cols]="sidenav.opened ? 1 : 2" gutterSize="8" fxFlex.xs="90" fxFlex.sm="85" [fxFlex]="sidenav.opened ? 90 : 70"
+            [rowHeight]="sidenav.opened ? '8:10' : '1:1'">
+            <mat-grid-tile *ngFor="let product of products">
+                <app-product-tile [attr.class]="sidenav.opened ? 'reduced' : 'expanded'" [product]="product" (click)="onSelect(product)"></app-product-tile>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+
+</mat-sidenav-container>

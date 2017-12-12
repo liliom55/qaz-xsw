@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>SignupFormUdemy</title>
+    <base href="/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <button onclick="add()">Add</button>
+    <script>
+        function add() {
+            let trackerList = [];
+            trackerList = JSON.parse(localStorage.getItem('trackerlst'));
+            let tracker = { currentComp: 'a', advanceSearches: ['a'] };
+            if (!trackerList) trackerList = [];
+            let idxExistObj = index(tracker, trackerList);
+            if (idxExistObj < 0) {
+                trackerList.push(tracker);
+            } else {
+                let obj = trackerList[idxExistObj];
+                console.log(obj);
+                obj.advanceSearches = tracker.advanceSearches;
+                console.log(trackerList);
+            }
+            // console.log(trackerList);
+            // trackerlst = [...new Set(trackerList.map(comp=>comp.currentComp))];
+            // console.log(trackerList);
+            localStorage.setItem('trackerlst', JSON.stringify(trackerList));
+        }
+        function index(item, list) {
+            return list.findIndex(obj => obj.currentComp === item.currentComp)
+        }
+    </script>
+</body>
+
+</html>

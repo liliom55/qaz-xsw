@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Myapp">
+<head>
+    <meta charset="UTF-8">
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<div class="container">
+    <ul>
+        <li><a href="#!/home">home</a></li>
+        <li><a href="#!/courses">courses</a></li>
+        <li><a href="#!/students">students</a></li>
+    </ul>
+    <ng-view></ng-view>
+</div>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>    
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>    
+<script src="app.module.js"></script>
+<script src="app.config.js"></script>
+<script src="home/home.controller.js"></script>
+<script src="courses/courses.controller.js"></script>
+<script src="students/students.controller.js"></script>
+<script src="students/filter.js"></script>
+<script src="shared/students.service.js"></script>
+<script src="studentDetail/studentDetail.Controller.js"></script>
+
+</html>

@@ -1,0 +1,15 @@
+{
+    "version": "1.0.0",
+    "medusa_configs": {
+        "web_ui_url": "http://fitroom.stefanka.tech/",
+        "mq_rabit_pool_id": "pool_001",
+        "mq_rabit_url_port": "amqp://medusa:m3dus4!@dev.stefanka.tech:5672",
+        "mesh_upload_url": "https://admin.dev.stefanka.tech/api/scans/upload.json",
+        "mesh_upload_auth_key": "Basic cGFuZHc6cDMzNG5kdzAw",
+        "home_kit_location": "Home",
+        "home_kit_fitroom": "Fitroom",
+        "home_kit_turntable_device": "Turntable",
+        "scan_timeout": 35,
+        "auto_nextStep_time":3
+    }
+}

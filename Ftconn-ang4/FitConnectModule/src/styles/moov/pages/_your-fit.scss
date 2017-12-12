@@ -1,0 +1,25 @@
+#your-fit{
+    .btn{
+        width: 178px;
+    }
+    .btn1{
+        border: 1px solid $blue;
+        background-color: $white;
+        color:$blue;
+        white-space: normal;
+    }
+    .btn2{
+        background-color: $blue;
+        color:$white;
+        
+    }
+    h2{
+        color:$blue;
+    }
+    h1{
+        color:$pink;
+    }
+    .mat-button,.mat-raised-button {
+        line-height: 20px;
+    }
+}

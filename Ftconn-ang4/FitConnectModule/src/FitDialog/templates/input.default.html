@@ -1,0 +1,9 @@
+<md-input-container>
+    <input mdInput type="number" [min]="input.min" [max]="input.max" [formControlName]="input.name" [placeholder]="getInputPlacerholder(inputsForm, input)"
+        [value]="getInImperial(input.value, input.imperialUnit)" (change)="input.value = setValue($event.target.value, input.imperialUnit)"
+        required>
+    <span mdSuffix>
+                <span *ngIf='isMetric(); else elseBlock'>{{input.metricUnit}}</span>
+    <ng-template #elseBlock>{{input.imperialUnit}}</ng-template>
+    </span>
+</md-input-container>

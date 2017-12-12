@@ -1,0 +1,20 @@
+  <!--  step 1 scan  -->
+    <div class="scan-instruction-container" *ngIf="step == 1">
+        <p>1 / 2</p>
+        <p translate>Put on the light bra.</p>
+        <p translate>This will ensure to get the most accurate measurements.</p>
+        <div class="img-div">
+            <img src="assets/images/scan/light-bra.png" />
+        </div>
+        <button translate (click)="nextStep()" class="stefanka-button-large stefanka-button-accent">NEXT</button>
+    </div>
+    <!-- Step 2 scan -->
+    <div class="scan-instruction-container" *ngIf="step == 2">
+        <p>2 / 2</p><br/>
+        <p translate>Put your hands on your hips, straighten your back, look ahead.</p><br/>
+        <p translate>Press Start when you are ready.</p>
+        <div class="img-div">
+            <img src="assets/images/scan/silouhette.svg" height="100px" />
+        </div>
+        <button translate (click)="next()" class="stefanka-button-large stefanka-button-accent">START</button>
+    </div>

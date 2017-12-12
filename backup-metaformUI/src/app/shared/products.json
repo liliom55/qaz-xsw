@@ -1,0 +1,301 @@
+{
+    "products":[
+        {
+            "id":0,
+            "brand":"Pants_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"pants",
+            "title":"male pants",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/pants.png"
+        },
+        {
+            "id":1,
+            "brand":"Pants_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"pants",
+            "title":"male pants",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/pants.png"
+        },
+        {
+            "id":2,
+            "brand":"Pants_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"pants",
+            "title":"male pants",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/pants.png"
+        },
+        {
+            "id":3,
+            "brand":"Pants_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"pants",
+            "title":"male pants",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/pants.png"
+        },
+        {
+            "id":4,
+            "brand":"Pants_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"pants",
+            "title":"male pants",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/pants.png"
+        },
+        {
+            "id":5,
+            "brand":"Pants_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"pants",
+            "title":"male pants",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/pants.png"
+        },
+        {
+            "id":6,
+            "brand":"Pants_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"pants",
+            "title":"male pants",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/pants.png"
+        },
+        {
+            "id":7,
+            "brand":"Pants_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"pants",
+            "title":"male pants",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/pants.png"
+        },
+        {
+            "id":8,
+            "brand":"Pants_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"pants",
+            "title":"male pants",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/pants.png"
+        },
+        {
+            "id":9,
+            "brand":"Pants_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"pants",
+            "title":"male pants",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/pants.png"
+        },
+        {
+            "id":10,
+            "brand":"Pants_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"pants",
+            "title":"male pants",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/pants.png"
+        },
+        {
+            "id":11,
+            "brand":"Vests_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"pants",
+            "title":"male pants",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/pants.png"
+        },
+        {
+            "id":12,
+            "brand":"Vests_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"vests",
+            "title":"male vests",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/vests.png"
+        },
+        {
+            "id":13,
+            "brand":"Vests_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"vests",
+            "title":"male vests",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/vests.png"
+        },
+        {
+            "id":14,
+            "brand":"Vests_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"vests",
+            "title":"male vests",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/vests.png"
+        },
+        {
+            "id":15,
+            "brand":"Vests_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"vests",
+            "title":"male vests",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/vests.png"
+        },
+        {
+            "id":16,
+            "brand":"Vests_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"vests",
+            "title":"male vests",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/vests.png"
+        },
+        {
+            "id":17,
+            "brand":"Vests_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"vests",
+            "title":"male vests",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/vests.png"
+        },
+        {
+            "id":18,
+            "brand":"Vests_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"vests",
+            "title":"male vests",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/vests.png"
+        },
+        {
+            "id":19,
+            "brand":"Vests_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"vests",
+            "title":"male vests",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/vests.png"
+        },
+        {
+            "id":20,
+            "brand":"Vests_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"vests",
+            "title":"male vests",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/vests.png"
+        },
+        {
+            "id":21,
+            "brand":"Vests_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"vests",
+            "title":"male vests",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/vests.png"
+        },
+        {
+            "id":22,
+            "brand":"Shirts_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"shirts",
+            "title":"male shirts",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/shirts.png"
+        },
+        {
+            "id":23,
+            "brand":"Shirts_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"shirts",
+            "title":"male shirts",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/shirts.png"
+        },
+        {
+            "id":24,
+            "brand":"Shirts_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"shirts",
+            "title":"male shirts",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/shirts.png"
+        },
+        {
+            "id":25,
+            "brand":"Shirts_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"shirts",
+            "title":"male shirts",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/shirts.png"
+        },
+        {
+            "id":26,
+            "brand":"Shirts_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"shirts",
+            "title":"male shirts",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/shirts.png"
+        },
+        {
+            "id":27,
+            "brand":"Shirts_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"shirts",
+            "title":"male shirts",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/shirts.png"
+        },
+        {
+            "id":28,
+            "brand":"Shirts_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"shirts",
+            "title":"male shirts",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/shirts.png"
+        },
+        {
+            "id":29,
+            "brand":"Shirts_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"shirts",
+            "title":"male shirts",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/shirts.png"
+        },
+        {
+            "id":30,
+            "brand":"Shirts_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"shirts",
+            "title":"male shirts",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/shirts.png"
+        },
+        {
+            "id":31,
+            "brand":"Shirts_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"shirts",
+            "title":"male shirts",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/shirts.png"
+        },
+        {
+            "id":32,
+            "brand":"Shirts_DND_25",
+            "sku":"8405-21-899-02-37",
+            "category":"shirts",
+            "title":"male shirts",
+            "color":"blue",
+            "imgUrl":"./assets/images/products/shirts.png"
+        }
+    ]
+}

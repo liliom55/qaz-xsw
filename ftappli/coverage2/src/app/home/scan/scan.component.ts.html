@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/app/home/scan/scan.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\..\index.html">All files</a> / <a href="index.html">src/app/home/scan</a> scan.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">44.21% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>42/95</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">33.33% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>13/39</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">45% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>9/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">43.21% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>35/81</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { Subscription }   from 'rxjs/Subscription';
+&nbsp;
+&nbsp;
+import { StompService } from '@stomp/ng2-stompjs';
+import { Message } from '@stomp/stompjs';
+&nbsp;
+import { ProductService } from '../../shared/products/product.service';
+import { HomeRoutingService } from '../home-routing/home-routing.service';
+&nbsp;
+import { environment } from '../../../environments/environment'
+&nbsp;
+@Component({
+  selector: 'app-scan',
+  templateUrl: './scan.component.html',
+  styleUrls: ['./scan.component.css'],
+  providers: [StompService]
+})
+export class ScanComponent implements OnInit {
+&nbsp;
+&nbsp;
+  viewerStatus : Observable&lt;Message&gt;;
+  allureResults : Observable&lt;Message&gt;;
+  subscriptions: Observable&lt;Message&gt;[];
+&nbsp;
+  started: boolean;
+  scanProgression: number = 0;
+  scanCounterTimer: Subscription;     //  Scan Progression Timer
+  scanStartTimeout: Subscription;     //  Timeout after SCAN_START if no SCAN_STARTED
+  scanStopTimeout: Subscription;      //  Timeout after SCAN_STARTED + scanCounterTimer if no SCAN_STOP
+  scanAnalysisTimeout: Subscription;  //  Timeout after SCAN_STOP if no results
+&nbsp;
+  spinnerMode: string = 'determinate';
+  messageToDisplay: string;
+  error: boolean;
+  
+&nbsp;
+  constructor( 
+    private stompService: StompService<span class="branch-1 cbranch-no" title="branch not covered" >, </span>
+    private productService: ProductService<span class="branch-2 cbranch-no" title="branch not covered" >, </span>
+    private homeRoutingService: HomeRoutingService <span class="branch-2 cbranch-no" title="branch not covered" ></span>
+  ) {
+   } 
+&nbsp;
+  ngOnInit() {
+    this.viewerStatus = this.stompService.subscribe('/exchange/pool_001/viewer.status');
+    this.allureResults = this.stompService.subscribe('/exchange/pool_001/allure.results');
+    this.subscriptions = [ this.viewerStatus, this.allureResults ];
+    this.subscribe();
+  }
+&nbsp;
+&nbsp;
+  subscribe() {
+    this.subscriptions.forEach((subscription, index) =&gt; subscription.map(<span class="fstat-no" title="function not covered" >(</span>message: Message) =&gt; {
+<span class="cstat-no" title="statement not covered" >      return message.body;</span>
+    }).subscribe(<span class="fstat-no" title="function not covered" >(</span>msg_body: string) =&gt; {
+<span class="cstat-no" title="statement not covered" >      if(index == 0) { //viewer.results</span>
+<span class="cstat-no" title="statement not covered" >        this.onViewerResponse(msg_body);</span>
+      } else <span class="cstat-no" title="statement not covered" >if(index == 1) { // allure.results</span>
+<span class="cstat-no" title="statement not covered" >        this.onResults(msg_body);</span>
+      }
+    }));
+&nbsp;
+    this.stompService.publish('/exchange/pool_001/scanner.status', 'SCAN_START'); //Scan start trigger
+    let timerScanStart = Observable.timer(0, 100);
+    this.scanStartTimeout = timerScanStart.subscribe(t =&gt; this.timeoutHandling(t, 150, 'scanStartTimeout', "SCAN DIDN'T START") );
+&nbsp;
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  onViewerResponse(</span>message: string) {</span>
+    let messageSplit = <span class="cstat-no" title="statement not covered" >message.split('_');</span>
+<span class="cstat-no" title="statement not covered" >    if(messageSplit[0] == 'SCAN') {</span>
+<span class="cstat-no" title="statement not covered" >      switch(messageSplit[1]) {</span>
+        case 'STARTED':
+<span class="cstat-no" title="statement not covered" >          this.scanStartTimeout.unsubscribe();</span>
+<span class="cstat-no" title="statement not covered" >          this.started = true;</span>
+<span class="cstat-no" title="statement not covered" >          this.error = false;</span>
+          let timer = <span class="cstat-no" title="statement not covered" >Observable.timer(0, 100); </span>
+<span class="cstat-no" title="statement not covered" >          this.scanCounterTimer = timer.subscribe(<span class="fstat-no" title="function not covered" >t =&gt; <span class="cstat-no" title="statement not covered" >this.scanCounter(t))</span>; </span>//30sec counter for UI</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+&nbsp;
+        case 'STOP':
+<span class="cstat-no" title="statement not covered" >        if(this.scanStopTimeout) {</span>
+<span class="cstat-no" title="statement not covered" >        this.scanStopTimeout.unsubscribe();</span>
+        }
+        let timerServerTimeout = <span class="cstat-no" title="statement not covered" >Observable.timer(0, 100);</span> // 45sec timer for server response timeout
+<span class="cstat-no" title="statement not covered" >        this.scanAnalysisTimeout = timerServerTimeout.subscribe(<span class="fstat-no" title="function not covered" >t =&gt; <span class="cstat-no" title="statement not covered" >this.timeoutHandling(t, 450, 'scanAnalysisTimeout', "NO RESULT FROM SERVER"))</span>;</span></span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+&nbsp;
+      }
+    }
+&nbsp;
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  scanCounter(</span>second: number) {</span>
+<span class="cstat-no" title="statement not covered" >    if(this.scanProgression &gt; 100) {</span>
+<span class="cstat-no" title="statement not covered" >      this.scanCounterTimer.unsubscribe();</span>
+<span class="cstat-no" title="statement not covered" >      this.spinnerMode = 'indeterminate';</span>
+      let timerScanTimeout = <span class="cstat-no" title="statement not covered" >Observable.timer(0, 100);</span> // 20sec timer for SCAN_STOP response timeout
+<span class="cstat-no" title="statement not covered" >      this.scanStopTimeout = timerScanTimeout.subscribe(<span class="fstat-no" title="function not covered" >t =&gt; <span class="cstat-no" title="statement not covered" >this.timeoutHandling(t, 200, 'scanStopTimeout', "SCAN DIDN'T STOP"))</span>;</span></span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      this.scanProgression = second/10*3.33;</span>
+    }
+  }
+&nbsp;
+  //RESPONSE from server as follow { "status": "ok"|"error", message: string }
+<span class="fstat-no" title="function not covered" >  onResults(</span>rawMessage: string) {
+<span class="cstat-no" title="statement not covered" >    if(this.scanAnalysisTimeout) {</span>
+<span class="cstat-no" title="statement not covered" >    this.scanAnalysisTimeout.unsubscribe();</span>
+    }
+    let result = <span class="cstat-no" title="statement not covered" >JSON.parse(rawMessage);</span>
+    let status = <span class="cstat-no" title="statement not covered" >result['status'];</span>
+    let message = <span class="cstat-no" title="statement not covered" >result['message'];</span>
+<span class="cstat-no" title="statement not covered" >    if(status == 'error') {</span>
+<span class="cstat-no" title="statement not covered" >      this.handleError();</span>
+<span class="cstat-no" title="statement not covered" >      console.log(`Error: ${message}`);</span>
+    } else <span class="cstat-no" title="statement not covered" >if(status = 'ok') {</span>
+<span class="cstat-no" title="statement not covered" >      if(!environment.production) <span class="cstat-no" title="statement not covered" >console.log('Capture received')</span></span>
+      let capture = <span class="cstat-no" title="statement not covered" >message;</span>
+<span class="cstat-no" title="statement not covered" >      this.productService.match(capture['id']);</span>
+<span class="cstat-no" title="statement not covered" >      this.next();</span>
+    }
+  }
+&nbsp;
+  timeoutHandling(progress: number, delay: number, timeoutName: string, why?:string) {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if(progress &gt; delay) {
+<span class="cstat-no" title="statement not covered" >      this[timeoutName].unsubscribe();</span>
+<span class="cstat-no" title="statement not covered" >      if(!environment.production) <span class="cstat-no" title="statement not covered" >console.log(why);</span></span>
+<span class="cstat-no" title="statement not covered" >      this.handleError();</span>
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  handleError() {</span>
+<span class="cstat-no" title="statement not covered" >    this.spinnerMode = 'determinate';</span>
+    // this.started = true;
+    // this.scanProgression = 100;
+<span class="cstat-no" title="statement not covered" >    this.error = true;</span>
+<span class="cstat-no" title="statement not covered" >    document.body.style.cursor = 'auto';</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  next() {</span>
+<span class="cstat-no" title="statement not covered" >    this.homeRoutingService.next(this.constructor.name);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  tryAgain() {</span>
+<span class="cstat-no" title="statement not covered" >    this.homeRoutingService.back('ScanInstructionComponent');</span>
+  }
+&nbsp;
+  ngOnDestroy() {
+    this.stompService.disconnect();
+    let timers = [this.scanStartTimeout, this.scanStopTimeout, this.scanAnalysisTimeout];
+    timers.forEach(sub =&gt; {if(sub){ sub.unsubscribe() }});
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Oct 19 2017 16:43:26 GMT-0400 (Eastern Daylight Time)
+</div>
+</div>
+<script src="..\..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\..\sorter.js"></script>
+</body>
+</html>

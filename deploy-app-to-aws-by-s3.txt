@@ -1,0 +1,3 @@
+publish app aws s3 cloudfront
+
+https://www.youtube.com/watch?v=sshXVtr29HU

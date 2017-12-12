@@ -1,0 +1,187 @@
+input[type=range].rotate {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 11px 0;
+}
+input[type=range].rotate:focus {
+  outline: none;
+}
+input[type=range].rotate::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+  box-shadow: 0.9px 0.9px 1.7px rgba(0, 34, 0, 0.1), 0px 0px 0.9px rgba(0, 60, 0, 0.1);
+  background: rgba(32, 89, 40, 0);
+  border-radius: 1px;
+  border: 0px solid rgba(0, 0, 0, 0);
+  margin-top: -5px;
+}
+input[type=range].rotate::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px rgba(0, 170, 0, 0), 0px 0px 0px rgba(0, 195, 0, 0);
+  border: 0.1px solid rgba(0, 0, 0, 0.01);
+  height: 10px;
+  width: 10px;
+  border-radius: 0px;
+  /*background: rgba(0, 0, 0, 0);*/
+  cursor: pointer;
+  -webkit-appearance: none;
+  /*margin-top: -11px;*/
+  background: transparent;
+  background-image: url("/assets/images/avatar/arrow.png");
+}
+input[type=range].rotate:focus::-webkit-slider-runnable-track {
+  background: rgba(39, 108, 48, 0);
+}
+input[type=range].rotate::-moz-range-track {
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+  box-shadow: 0.9px 0.9px 1.7px rgba(0, 34, 0, 0.1), 0px 0px 0.9px rgba(0, 60, 0, 0.1);
+  background: rgba(32, 89, 40, 0);
+  border-radius: 1px;
+  border: 0px solid rgba(0, 0, 0, 0);
+}
+input[type=range].rotate::-moz-range-thumb {
+  box-shadow: 0px 0px 0px rgba(0, 170, 0, 0), 0px 0px 0px rgba(0, 195, 0, 0);
+  border: 0.01px solid rgba(0, 0, 0, 0.01);
+  height: 10px;
+  width: 10px;
+  border-radius: 0px;
+  /*background: rgba(0, 0, 0, 0);*/
+  cursor: pointer;
+  background: transparent;
+  background-image: url("/assets/images/avatar/arrow.png");
+}
+input[type=range].rotate::-ms-track {
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range].rotate::-ms-fill-lower {
+  background: rgba(25, 70, 32, 0);
+  border: 0px solid rgba(0, 0, 0, 0);
+  border-radius: 2px;
+  box-shadow: 0.9px 0.9px 1.7px rgba(0, 34, 0, 0.1), 0px 0px 0.9px rgba(0, 60, 0, 0.1);
+}
+input[type=range].rotate::-ms-fill-upper {
+  background: rgba(32, 89, 40, 0);
+  border: 0px solid rgba(0, 0, 0, 0);
+  border-radius: 2px;
+  box-shadow: 0.9px 0.9px 1.7px rgba(0, 34, 0, 0.1), 0px 0px 0.9px rgba(0, 60, 0, 0.1);
+}
+input[type=range].rotate::-ms-thumb {
+  box-shadow: 0px 0px 0px rgba(0, 170, 0, 0), 0px 0px 0px rgba(0, 195, 0, 0);
+  border: 0.1px solid rgba(0, 0, 0, 0.01);
+  height: 10px;
+  width: 10px;
+  border-radius: 0px;
+  /*background: rgba(0, 0, 0, 0);*/
+  cursor: pointer;
+  height: 1px;
+  background: transparent;
+  background-image: url("/assets/images/avatar/arrow.png");
+}
+input[type=range].rotate:focus::-ms-fill-lower {
+  background: rgba(32, 89, 40, 0);
+}
+input[type=range].rotate:focus::-ms-fill-upper {
+  background: rgba(39, 108, 48, 0);
+}
+/*--------------------------- zoom -----------------------------------------------*/
+ input[type=range].zoom {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 4.5px 0;
+}
+input[type=range].zoom:focus {
+  outline: none;
+}
+input[type=range].zoom::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+  box-shadow: 0.9px 0.9px 1.7px rgba(0, 34, 0, 0.1), 0px 0px 0.9px rgba(0, 60, 0, 0.1);
+  background: rgba(32, 89, 40, 0);
+  border-radius: 1px;
+  border: 0px solid rgba(0, 0, 0, 0);
+  margin-top: -5px;
+}
+input[type=range].zoom::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px rgba(0, 170, 0, 0), 0px 0px 0px rgba(0, 195, 0, 0);
+  border: 0.1px solid rgba(0, 0, 0, 0.01);
+  height: 10px;
+  width: 10px;
+  border-radius: 0px;
+  /*background: rgba(0, 0, 0, 0);*/
+  cursor: pointer;
+  -webkit-appearance: none;
+  background: transparent;
+  margin-top:3px;
+  background-image: url("/assets/images/avatar/arrow.png");
+}
+input[type=range].zoom:focus::-webkit-slider-runnable-track {
+  background: rgba(39, 108, 48, 0);
+}
+input[type=range].zoom::-moz-range-track {
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+  box-shadow: 0.9px 0.9px 1.7px rgba(0, 34, 0, 0.1), 0px 0px 0.9px rgba(0, 60, 0, 0.1);
+  background: rgba(32, 89, 40, 0);
+  border-radius: 1px;
+  border: 0px solid rgba(0, 0, 0, 0);
+}
+input[type=range].zoom::-moz-range-thumb {
+  box-shadow: 0px 0px 0px rgba(0, 170, 0, 0), 0px 0px 0px rgba(0, 195, 0, 0);
+  border: 0.1px solid rgba(0, 0, 0, 0.01);
+  height: 10px;
+  width: 10px;
+  border-radius: 0px;
+  /*background: rgba(0, 0, 0, 0);*/
+  cursor: pointer;
+  background: transparent;
+  background-image: url("/assets/images/avatar/arrow.png");
+}
+input[type=range].zoom::-ms-track {
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range].zoom::-ms-fill-lower {
+  background: rgba(25, 70, 32, 0);
+  border: 0px solid rgba(0, 0, 0, 0);
+  border-radius: 2px;
+  box-shadow: 0.9px 0.9px 1.7px rgba(0, 34, 0, 0.1), 0px 0px 0.9px rgba(0, 60, 0, 0.1);
+}
+input[type=range].zoom::-ms-fill-upper {
+  background: rgba(32, 89, 40, 0);
+  border: 0px solid rgba(0, 0, 0, 0);
+  border-radius: 2px;
+  box-shadow: 0.9px 0.9px 1.7px rgba(0, 34, 0, 0.1), 0px 0px 0.9px rgba(0, 60, 0, 0.1);
+}
+input[type=range].zoom::-ms-thumb {
+  box-shadow: 0px 0px 0px rgba(0, 170, 0, 0), 0px 0px 0px rgba(0, 195, 0, 0);
+  border: 0.1px solid rgba(0, 0, 0, 0.01);
+  height: 10px;
+  width: 10px;
+  border-radius: 0px;
+  /*background: rgba(0, 0, 0, 0);*/
+  cursor: pointer;
+  height: 1px;
+  background: transparent;
+  background-image: url("/assets/images/avatar/arrow.png");
+}
+input[type=range].zoom:focus::-ms-fill-lower {
+  background: rgba(32, 89, 40, 0);
+}
+input[type=range].zoom:focus::-ms-fill-upper {
+  background: rgba(39, 108, 48, 0);
+}
+
+  

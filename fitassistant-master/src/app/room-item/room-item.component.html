@@ -1,0 +1,9 @@
+<div id="roomItem_container" [style.cursor]="getStyle(cabin_status)">
+    <div id="status_div"><i class="material-icons">{{ico_status}}</i><label [style.cursor]="getStyle(cabin_status)">{{cabin_status | translate}}</label></div>
+    <div id="midd_div">
+        <div id="cabinName_div"><label [style.cursor]="getStyle(cabin_status)">{{cabin_name_first | translate}}&nbsp;{{cabin_name_second}} </label></div>
+        <div id="sellerName_div"><label [style.cursor]="getStyle(cabin_status)">{{seller_name | translate}}</label></div>
+    </div>
+    
+    <div id="sign_div" *ngIf="alert_msg"><i class="material-icons" [style.cursor]="getStyle(cabin_status)">warning</i></div>
+</div>

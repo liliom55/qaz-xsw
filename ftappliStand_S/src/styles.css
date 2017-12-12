@@ -1,0 +1,22 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+
+@font-face {
+    font-family: 'Raleway-Regular';
+    src: url('fonts/Raleway-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Raleway-SemiBold';
+    src: url('fonts/Raleway-SemiBold.ttf') format('truetype');
+}
+body {
+    font-family: 'Raleway-Regular';
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;  
+    /*for avoiding zoom in and out*/
+    transform:scale(1);
+    -webkit-transform:scale(1);
+    -moz-transform:scale(1);
+}

@@ -1,0 +1,107 @@
+#roomDetail_containet{
+    width:100%;
+    /*height:100%;*/
+    /*position:fixed;*/
+    padding:0;
+    margin:0;
+    overflow-y:auto;
+}
+#prd_label{
+    font-family: 'Raleway-Regular';
+    font-size:12px;
+    height:48px;
+    border-bottom:1px solid rgba(0,0,0,0.1);
+    padding-left:32px;
+    line-height:48px;
+    color:#6E6E6E;
+
+}
+ul li:first-child{
+    margin-top:-1em;
+}
+
+.collapsible_header,#main_ul li:nth-child(2) div{
+    font-family: 'Raleway-Medium';
+    font-size:15px;
+    padding-left:32px;
+    padding-right:20px;
+    height:48px;
+    border-bottom:1px solid rgba(0,0,0,0.1);
+    line-height:48px;
+    width:100%;
+}
+.collapsible_header i{
+    float:right;
+    /*margin-top: 10px;*/
+}
+.collapsible_header span,#main_ul li:nth-child(2) span{
+    font-family: 'Raleway-Regular';
+    font-size:14px;
+    /*margin-left:50px;*/
+    color:rgba(0,0,0,0.54);
+}
+.collapsible_body{
+    /*padding-top:20px;*/
+    padding-bottom:30px;
+    /*height:auto;*/
+    display:none;
+    border-bottom:1px solid rgba(0,0,0,0.1);
+}
+#main_ul{
+    height:100%;
+    margin-bottom:0;
+    margin-top: 10px;
+
+}
+#main_ul li:nth-child(2) {
+
+
+}
+#suggPrd_ul li:first-child{
+    margin-top:5px;
+}
+#suggPrd_ul .btn-flat{
+    padding-left:3px;
+    padding-right:3px;
+}
+#selPed_ul li:first-child{
+    margin-top:5px;
+}
+#selPed_ul .btn-flat{
+    padding-left:3px;
+    padding-right:3px;
+}
+product-item{
+    width: 100%;
+    height:auto;
+    border: 1px solid white;
+}
+.btn-flat{
+    text-transform:none !important;
+}
+#main_ul li:nth-child(1) span{
+    margin-left: 63px;
+}
+#main_ul li:nth-child(2) span{
+    margin-left: 63px;
+}
+#main_ul li:nth-child(4) span{
+    margin-left: 30px;
+}
+#main_ul li:nth-child(5) span{
+    margin-left: 45px;
+}
+@media screen and (min-width: 768px) {
+    #main_ul li:nth-child(1) span{
+        margin-left: 100px;
+    }
+    #main_ul li:nth-child(2) span{
+        margin-left: 95px;
+    }
+    #main_ul li:nth-child(4) span{
+        margin-left: 60px;
+    }
+    #main_ul li:nth-child(5) span{
+        margin-left: 75px;
+    }
+}

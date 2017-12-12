@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/app/catalog/catalog.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">src/app/catalog</a> catalog.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">88.1% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>37/42</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">69.7% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>23/33</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">60% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>6/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">92.11% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>35/38</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">﻿import { Component, OnInit, Input,Output,EventEmitter, ViewChild } from '@angular/core';
+&nbsp;
+import { CartService } from './cart-list/cart.service';
+///import { ClientCaptureService } from '../client-capture.service';
+import { PriceFilterPipe } from '../shared/price-filter/price-filter.pipe'
+&nbsp;
+import { Observable } from 'rxjs/Observable';
+import { Http } from '@angular/http';
+import { Router } from '@angular/router';
+&nbsp;
+import { Product } from '../shared/products/product.model';
+import { Client, ClientCapture } from '../shared/clients/client.model';
+// import { MdGridListModule, MdSidenavModule, MdToolbarModule } from '@angular/material';
+import { LogoutService } from '../shared/logout/logout.service';
+import { NavbarService } from './navbar.service';
+import { TranslateService } from 'ng2-translate';
+&nbsp;
+&nbsp;
+&nbsp;
+@Component({
+    selector: 'app-catalog',
+    templateUrl: './catalog.component.html',
+    styleUrls: ['./catalog.component.css'],
+    providers: [CartService, NavbarService]
+})
+&nbsp;
+&nbsp;
+export class CatalogComponent implements OnInit {
+&nbsp;
+    @Input() products: Product[];
+    @Input() client: Client<span class="branch-1 cbranch-no" title="branch not covered" >;</span>
+    @Input() clientCapture: ClientCapture<span class="branch-1 cbranch-no" title="branch not covered" >;</span>
+    @Input() selectedProducts: Product[];
+    @Input() selectedLang:string;
+    @Output() switchLanguage: EventEmitter<span class="branch-1 cbranch-no" title="branch not covered" >&lt;any&gt; = new EventEmitter();</span>
+&nbsp;
+    @ViewChild('sidenav') sidenav;
+    @ViewChild('catalogList') catalogList;
+&nbsp;
+    productSelected: Product;
+&nbsp;
+    //translation
+    supportedLangs = [];
+&nbsp;
+    constructor(
+        cartService: CartService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+        private logoutService: LogoutService<span class="branch-2 cbranch-no" title="branch not covered" >,</span>
+        private navbarService: NavbarService<span class="branch-2 cbranch-no" title="branch not covered" >,</span>
+        private translate: TranslateService<span class="branch-2 cbranch-no" title="branch not covered" ></span>
+    ) {
+        navbarService.toggle$.subscribe(
+<span class="fstat-no" title="function not covered" >            () =&gt; <span class="cstat-no" title="statement not covered" ></span>this.sidenav.close()</span>
+        )
+    }
+    ngOnInit() {
+        //Language setting
+        this.supportedLangs = [
+            { display: 'English', value: 'en' },
+            { display: 'Français', value: 'fr' }
+        ];
+        this.translate.use(this.selectedLang);
+    }
+    //language functions
+<span class="fstat-no" title="function not covered" >    isCurrentLang(</span>lang: string) {
+<span class="cstat-no" title="statement not covered" >        return lang === this.selectedLang;</span>
+    }
+<span class="fstat-no" title="function not covered" >    selectLang(</span>lang: string) {
+<span class="cstat-no" title="statement not covered" >        this.switchLanguage.emit(lang);</span>
+    }
+&nbsp;
+&nbsp;
+    onSelect(product: Product) {
+        this.productSelected = product;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if(product.id) <span class="cstat-no" title="statement not covered" >this.sidenav.open();</span>
+    }
+&nbsp;
+    logout() {
+        let selection = this.selectedProducts.length != 0 ? <span class="branch-0 cbranch-no" title="branch not covered" >true </span>: false
+        this.logoutService.logout(this.client, selection ? <span class="branch-0 cbranch-no" title="branch not covered" >this.selectedProducts.map(<span class="fstat-no" title="function not covered" >product =&gt; <span class="cstat-no" title="statement not covered" >product.productVersions[0].id)</span> </span>: null);</span>
+    }
+&nbsp;
+    selectedProductsUpdate(products: Product[]) {
+        this.selectedProducts = products;
+    }
+&nbsp;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Oct 19 2017 16:43:26 GMT-0400 (Eastern Daylight Time)
+</div>
+</div>
+<script src="..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\sorter.js"></script>
+</body>
+</html>

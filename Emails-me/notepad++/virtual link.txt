@@ -1,0 +1,30 @@
+Installing fitConnectModule
+
+1. clone the repository https://github.com/stefanka-lingerie/FitConnect-ng4.git
+2. in both folder install npm
+3. in folder FitConnectModule, do -> npm run build
+4. in folder FitConnectDevelopmentApp do -> npm link fitconnectmodule 
+											ng serve
+											
+											
+											
+											
+											
+											
+											
+
+											Microsoft Windows [Version 10.0.15063]
+(c) 2017 Microsoft Corporation. All rights reserved.
+
+C:\WINDOWS\system32>cd ~/Documents/FitConnect-ng4/FitConnectDevelopmentApp/src/app
+The system cannot find the path specified.
+
+C:\WINDOWS\system32>cd C:\Users\leila\Documents\FitConnect-ng4\FitConnectDevelopmentApp\src\app
+
+C:\Users\leila\Documents\FitConnect-ng4\FitConnectDevelopmentApp\src\app>mklink /J FitConnectModuleSrc ..\..\..\FitConnectModule\src
+Cannot create a file when that file already exists.
+
+C:\Users\leila\Documents\FitConnect-ng4\FitConnectDevelopmentApp\src\app>mklink /J FitConnectModule-src ..\..\..\FitConnectModule\src
+Junction created for FitConnectModule-src <<===>> ..\..\..\FitConnectModule\src
+
+C:\Users\leila\Documents\FitConnect-ng4\FitConnectDevelopmentApp\src\app>

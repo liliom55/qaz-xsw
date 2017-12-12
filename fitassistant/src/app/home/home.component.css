@@ -1,0 +1,100 @@
+#home_container{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color:rgba(0,0,0,0.08);
+    /*overflow-y:auto;*/
+   
+}
+#body_container{
+    position: fixed;
+    bottom: -70px;
+    top: 0;
+    left: 350px;
+    right: 50px;
+    background-color:white;
+    margin:60px auto;
+    border:1px solid white;
+    overflow-y:auto;
+    /*background-color:rgba(0,0,0,0.08);*/
+}
+app-bar{
+    position: fixed;
+    width:100%;
+    z-index:800;
+}
+#grayCover{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color:black;
+    opacity:0.54;
+    display:none;
+    z-index:801;
+}
+#roomItem {
+    overflow-y:auto;
+}
+#roomItem ul li,#room_selected ul li{
+    border-bottom:1px solid rgba(0,0,0,0.1);
+}
+#room_selected ul li:last-child{
+    border-bottom:none;
+}
+
+.roomItem_ul{
+    margin-bottom: 0;
+}
+.roomItem_ul li:first-child{
+
+    margin-top: -15px;
+    height: 70px;
+}
+/*#room_selected .roomItem_ul li:first-child {
+    margin-top:-1.3em;
+}*/
+mesage-box{
+    position: fixed;
+    width:280px;
+    height:148px;
+    -webkit-box-shadow:0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    -moz-box-shadow:0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    display:none;
+    z-index:801;
+}
+#room_selected{
+    background-color:rgba(60,133,96,0.3);
+    box-shadow: 0 5px 3px rgba(0,0,0,0.2);
+}
+#room_selected label,#roomItem label{
+    font-family: 'Raleway-Regular';
+    font-size:14px;
+    color:#6E6E6E;
+    padding-left:32px;
+    border-bottom:1px solid rgba(0,0,0,0.1);
+    line-height:50px;
+    
+}
+/*#room_selected label{
+    margin-top:-10px;
+}*/
+
+room-detail,product-detail{
+    width:100%;
+    display:none;
+    background-color:white;
+}
+@media screen and (max-width: 768px) {
+    #body_container{
+        bottom: -60px;
+        top: 0;
+        left: 0;
+        right: 0;    
+    }
+    
+}

@@ -1,0 +1,41 @@
+﻿<div id="home_container">
+    <!---------------------nav bar---------------------------------------->
+    <app-bar [title]="title_home" [icon]="icon_home"></app-bar>
+
+    <div id="body_container">
+        <!---------------------room selected ---------------------------------------->
+        <div id="room_selected" *ngIf="roomSelected_list.length>0">
+            <label>{{"Cabines Sélectionnées" | translate}}</label>
+            <ul class="roomItem_ul">
+                <li *ngFor="let item of roomSelected_list ;let i = index" (click)="onClickRoom(i,$event)">
+
+                    <room-item [cabin_status]="item.cabin_status" [ico_status]="item.ico_status" [cabin_name_first]="item.name.split(' ')[0]" [cabin_name_second]="item.name.split(' ')[1]" [seller_name]="item.seller_name" [alert_msg]="item.alert_msg"></room-item>
+
+                </li>
+            </ul>
+        </div>
+        <!---------------------Room Item---------------------------------------->
+        <div id="roomItem">
+            <label>{{"Autre Cabines" | translate}}</label>
+            <ul class="roomItem_ul">
+                <li *ngFor="let item of room_list ;let i = index" (click)="onClickRoom(i,$event)" >
+
+                    <room-item [cabin_status]="item.cabin_status" [ico_status]="item.ico_status" [cabin_name_first]="item.name.split(' ')[0]" [cabin_name_second]="item.name.split(' ')[1]" [seller_name]="item.seller_name" [alert_msg]="item.alert_msg"></room-item>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+        <!--------------------- room details ---------------------------------------->
+
+        <room-detail [clientName]="clientName_" [roomStatus]="roomStatus_" [sugg_prd]="sugg_prd_" [sel_prd]="sel_prd_" [prd_sel_list]="prd_sel_list_" [prd_sugg_list]="prd_sugg_list_"></room-detail>
+
+        <!------------------------------product details------------------------------>
+        <product-detail [id_prd]="id_prd_" [sku_prd]="sku_prd_" [name_prd]="name_prd_" [price_prd]="price_prd_" [color_prd]="color_prd_" [large_picture_prd]="small_picture_prd_" [small_picture_prd]="small_picture_prd" [brand_prd]="brand_prd_" [cut_prd]="cut_prd_" [size_prd]="size_prd_" [fabric_prd]="fabric_prd_" [feature_prd]="feature_prd_" [sleeve_prd]="sleeve_prd_" [versionId_prd]="versionId_prd"></product-detail>
+        <!---------------------message box ---------------------------------------->
+        <div id="grayCover"></div>
+        <mesage-box [message_body]="message_body_" [captionBtn]="captionBtn_"></mesage-box>
+    </div>
+</div>

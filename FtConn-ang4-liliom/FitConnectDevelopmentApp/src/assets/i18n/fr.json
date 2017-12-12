@@ -1,0 +1,76 @@
+{
+    "HOME": {
+        "START": "Avant de débuter, ayez en main",
+        "FIRST": "Ruban à mesurer",
+        "SECOND": "Papier et crayon, au besoin"
+    },
+    "SEX":{
+        "QUESTION": "Êtes-vous",
+        "MEN": "Un homme",
+        "WOMEN": "Une femme"
+    },
+    "PREFERENCES": {
+        "TITLE": "Dites-nous en plus sur vos préférences"
+    },
+    "INFO":{
+        "ENTER": "Veuillez entrer vos informations"
+    },
+    "BODY":{
+        "TYPE": "Sélectionnez votre morphologie"
+    },
+    "MEASUREMENT":{
+        "INPUT": "Entrez vos mensurations"
+    },
+    "END":{
+        "COMPLETE": "Votre profil est maintenant complété!",
+        "SHOP": "Magasiner"
+    },
+    "MOOV":{
+      "STEP1": {
+        "TITLE": "Trouve ta taille",
+        "BUTTON": "Trouver ma taille"
+      },
+      "STEP2": {
+        "TITLE": "Quel est",
+        "BUTTON": "Continuer",
+        "FORM": {
+          "INPUT1": "Ta grandeur",
+          "INPUT2": "Ton poids"
+        }
+      },
+      "STEP3": {
+        "TITLE": "Quel est",
+        "BUTTON1": "Voir l’image",
+        "BUTTON2": "Continuer",
+        "FORM": {
+          "INPUT1": "Ton tour de taille",
+          "INPUT2": "Ton tour de hanche"
+        }
+      },
+      "STEP4": {
+        "TITLE": "Ton profil est en cours d’analyse"
+      },
+      "STEP5": {
+        "TITLE": "Ta taille idéale est un",
+        "RESULT": "medium",
+        "BUTTON1": "Comprendre ma taille",
+        "BUTTON2": "Magasiner"
+      },
+      "STEP6": {
+        "TITLE": "Quel est",
+        "BODY": "Votre courriel",
+        "BUTTON": "Continuer"
+      },
+      "STEP7": {
+        "TITLE": "Comprendre ma taille",
+        "BODY": "Vous etes magnifique et votre taille recommandée Moov Activewear saura sublimer votre silhouette. Nos leggings en supplex sont concus pour mouler et gainer vos courbes, c’est pourquoi votre taille Moov peut différer de votre taille de vetements habituelle. L’essayer, c’est l’adopter, alors foncez!",
+        "BUTTON": "Magasiner les produits"
+      },
+      "IMAGESHOWTAB": {
+        "TITLE": "Voici où est le",
+        "BODY1": "Tour de taille",
+        "BODY2": "Tour de hanche",
+        "BUTTON": "J’ai compris"
+      }
+    }
+}

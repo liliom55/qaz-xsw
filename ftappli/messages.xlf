@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="fr" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="ecd4fa111eb1d5055e641f6bfb59832e4a8f5b32" datatype="html">
+        <source>Connection Server Error</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="efc038e114eba1c4e081a7f7a945a1aa1639ccb6" datatype="html">
+        <source>Your <x id="INTERPOLATION"/> recommendations</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="d55077952bce5681f64293c6a808d60f97aff0c2" datatype="html">
+        <source>Good choice! Hold on while we are bringing your selection</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="e3cb8c917ee4b28a78b4c443bdc68f830c0be9bf" datatype="html">
+        <source>Make sure you get the right size every time you shop, enter your email here:</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="ce62d93882724d6e07a36a64c6217289f8a4e8f8" datatype="html">
+        <source>SEND</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="0f4a3bb2a0d0ac7dc806c7934f2740411577a5b4" datatype="html">
+        <source>Thank you for sharing your email with us</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="b0ff926f8a9440093ff25f43f53692c4b90d0d26" datatype="html">
+        <source>BACK</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="90336ab44261b650c3610a2d77b6a52cdd30eff5" datatype="html">
+        <source>LOG OUT</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="8743d435fc4f75f7e436442da65cb3b6f18a0809" datatype="html">
+        <source>
+            <x id="INTERPOLATION"/>
+        </source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="21c7ff340ba7935df9d461061dd26a45cab6cc5e" datatype="html">
+        <source>NEXT</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="46d148f238beb9b82490659b31d51c228f01b8b4" datatype="html">
+        <source>INCOGNITO</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="7897076ad18d375ad35be03f8ef31a6d207764c1" datatype="html">
+        <source> Enter your measurement</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="447ffd4cbfd3d8c3ca8dd216c0a82ecadc24a7de" datatype="html">
+        <source>Metrics</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="8cc4af83ef7734764efc7d73b85458694dbeed46" datatype="html">
+        <source>Imperial </source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="0554fa1259167a5eb119f263e47c57220bf74505" datatype="html">
+        <source>It seems you haven&apos;t defined a password yet. Enter one to finalize your inscription.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="c32ef07f8803a223a83ed17024b38e8d82292407" datatype="html">
+        <source>Password</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="e7b93ddf3dc6b07f6947a2485aee2ca793eae27a" datatype="html">
+        <source>
+        <x id="INTERPOLATION"/>
+    </source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="354b826786488337087380b77acb20916c618fa9" datatype="html">
+        <source>We already got your measurement. We can use them or take new ones if you prefer?</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="d96deb46ce4700d75295f04d654b2d160b1b5460" datatype="html">
+        <source>New measurements</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="a3a53a0f040b6c8156cca03eac5fc147f909dac1" datatype="html">
+        <source>Previous measurements</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="4ba790865087bf2f6f9208237362ee3ed599d546" datatype="html">
+        <source>Enter your password to log into your account.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="d3c29d068527b5aa80e243926a984867f4f6136e" datatype="html">
+        <source>
+        <x id="INTERPOLATION"/>
+    </source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="83c5fd946488c6b8c615edcebb5f9414ca2c2409" datatype="html">
+        <source>
+        <x id="INTERPOLATION"/>
+    </source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="6235fea9486ca3dde7247c4a07396d7ca1a33b6b" datatype="html">
+        <source>
+        You got <x id="LINE_BREAK" ctype="lb"/><x id="START_TAG_SPAN" ctype="x-span"/>
+            <x id="INTERPOLATION"/><x id="CLOSE_TAG_SPAN" ctype="x-span"/><x id="LINE_BREAK" ctype="lb"/> recommendations!
+    </source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="d557bb92ed71c6d7295d15d8f61c27bdc1c76f9f" datatype="html">
+        <source>Sorry, we didn&apos;t get any match...</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="40168da2dc8d227041055c905b324f8a358e348e" datatype="html">
+        <source>TRY AGAIN</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="8bec8e1c3797e662e462a2ac95ae93d6d20b2828" datatype="html">
+        <source><x id="INTERPOLATION"/></source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="4b0e87413cc0fec370459c098aceac3d14f4fac0" datatype="html">
+        <source>
+                <x id="INTERPOLATION"/>
+            </source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="bc22a9b838eed800a62c38fcb16425d8e255c7d1" datatype="html">
+        <source>Try again</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="30e9d02b0e20e399dea355ddcf03b7c5456d1c15" datatype="html">
+        <source>How do you feel today?</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="2213970b3ccd12f0fc19ff2f95c4bf3341778c23" datatype="html">
+        <source>ALL</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="e09393b862ea25dccd13ff2b04352badcc7b008d" datatype="html">
+        <source>FORMAL</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="b7cd1ff846b3fca9789fe435187dfac799d9ae15" datatype="html">
+        <source>CASUAL</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="b8c137b12bb8095ca56d7474957fcb07ff733df1" datatype="html">
+        <source>SPORT</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="5aeafa83945d5fc9caae353112480aaea32f0bdd" datatype="html">
+        <source>Put on the light bra.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="f63af065d86284688ebbdbc9790f0b991528155b" datatype="html">
+        <source>This will ensure to get the most accurate measurements.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="472861a2fd3f01407cd9b92d2910856b18b88570" datatype="html">
+        <source>Put your hands on your hips, straighten your back, look ahead.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="d6faac32929c4deecd06a3f1c16ea5185bc57560" datatype="html">
+        <source>Press Start when you are ready.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="67e425de6a162d200c9e5bf1edb804b095bddbde" datatype="html">
+        <source>START</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="eb4503bb194e613228c796dd735727c996b5ff88" datatype="html">
+        <source>The capture is about to start...</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="bc78a08ee947e5f4ede6a532640c8f8e7a355a31" datatype="html">
+        <source>Sorry, an error occured</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="56976a40e4d92b8d1ec8c0eaafc5df069b8387e4" datatype="html">
+        <source>Empty basket</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="fbe08d9d176f8a06899c58ef7cdffa0ea659ca8f" datatype="html">
+        <source>TRY ON MY SELECTION</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="10fc627122916c9fc03992f7bd0e8f0420bbe854" datatype="html">
+        <source>SIZE </source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="8fa4d523f7b91df4390120b85ed0406138273e1a" datatype="html">
+        <source>Color</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="b1c1c6a43da1ad3e41b7a6e3aa5dcc24226cf580" datatype="html">
+        <source>Minimum Price</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="6dd84054c52e1edf631f37accb054de0c4071069" datatype="html">
+        <source>Maximum Price</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="85b79c9064aed1ead31ace985f31aa1363f6bdaf" datatype="html">
+        <source>Help</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="d0227a069d21cc5c6951d829cbf135be5b5bc767" datatype="html">
+        <source>Log Out</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="004978a8e9795d34749f234a590ba8148d629e22" datatype="html">
+        <source>
+        BRAND
+      </source>
+        <target/>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

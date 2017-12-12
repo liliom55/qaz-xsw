@@ -1,0 +1,28 @@
+<div [formGroup]="formGroup" fxLayout="row">
+    <h2>{{input.label | translate}}</h2>
+    <ng-container *ngIf="isFeetOrInchMeasurement(input.imperialUnit); then feetOrInchMeasurement else nomask">
+    </ng-container>
+
+    <ng-template #feetOrInchMeasurement>
+        <input mdInput class="number" [textMask]="getMask(input.imperialUnit)" [unit]="input.imperialUnit" [minImperialSupport]="input.min" [maxImperialSupport]="input.max" [formControlName]="input.name"
+            [value]="inputAsIs" (input)="input.value = setInProperUnit($event.target.value, input.imperialUnit)"
+            required>
+    </ng-template>
+
+    <ng-template #nomask>
+        <input mdInput class="number" type="number" [min]="getInProperUnit(input.min, input.imperialUnit)" [max]="getInProperUnit(input.max, input.imperialUnit)" [formControlName]="input.name" [value]="inputAsIs"
+            (input)="input.value = setInProperUnit($event.target.value, input.imperialUnit)" required>
+    </ng-template>
+
+    <ng-container *ngIf='unitConversionService.metricUnit; then metricSuffix else imperialSuffix'>
+    </ng-container>
+
+    <ng-template #metricSuffix>
+        <h2>{{'UNITS.' + input.metricUnit | translate}}</h2>
+    </ng-template>
+    <ng-template #imperialSuffix>
+        <h2>{{'UNITS.' + input.imperialUnit | translate}}</h2>
+    </ng-template>
+
+    <div *ngIf="formGroup.controls[input.name]?.touched && getError(formGroup, input)" class="error-msg" fxLayout="row" fxLayoutAlign="center center"><span class="text-center">{{error}}</span></div>
+</div>

@@ -1,0 +1,95 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600,700');
+
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$branding-palette: (
+    50 : #f9fbe7,
+    100 : #f0f5c4,
+    200 : #e6ee9c,
+    300 : #dce774,
+    400 : #d5e157,
+    500 : #cddc39,
+    600 : #c8d833,
+    700 : #c1d32c,
+    800 : #bace24,
+    900 : #aec517,
+    A100 : #fefff7,
+    A200 : #f7ffc4,
+    A400 : #f0ff91,
+    A700 : #ecff78,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+// define a real custom palette (using http://mcg.mbitson.com)
+$primary: (
+    50 : #e2e4fe,
+    100 : #b7bbfd,
+    200 : #878efc,
+    300 : #5760fa,
+    400 : #333ef9,
+    500 : #0f1cf8,
+    600 : #0d19f7,
+    700 : #0b14f6,
+    800 : #0811f5,
+    900 : #0409f3,
+    A100 : #ffffff,
+    A200 : #e6e7ff,
+    A400 : #b3b4ff,
+    A700 : #9a9bff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+
+
+
+$stefanka-app-primary: mat-palette($primary);
+$stefanka-app-accent:  mat-palette($branding-palette, 500);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$stefanka-app-theme: mat-light-theme($stefanka-app-primary, $stefanka-app-accent);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($stefanka-app-theme);

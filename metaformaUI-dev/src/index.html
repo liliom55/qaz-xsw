@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Ng4test</title>
+  <base href="/">
+  <!-- <base href="/metaforma/"> -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="side-nav">
+
+    <div class="values">
+      <div class="title">Step 1: Customize your avatar</div>
+      <label>Gender </label>
+      <input type="radio" name="gender" value="male" onchange="logistikBlackBox.setSex('male')"> Male
+      <input type="radio" name="gender" value="female" onchange="logistikBlackBox.setSex('female')"> Female<br>
+
+       <table>  
+        <tr>
+          <td>Height (po)  </td>
+          <td><input type="number" name="height" class="measurements" value=68.38></td> 
+        </tr>
+        <tr>
+          <td>Weight (lbs)  </td>
+          <td><input type="number" name="weight" class="measurements" value=189.06></td>           
+        </tr>
+        <tr>
+          <td>Neck (po) </td>
+          <td><input type="number" name="neck_size" class="measurements" value=16.87></td>           
+        </tr>
+        <tr>
+          <td>Chest (po) </td>
+          <td><input type="number" name="chest_size" class="measurements" value=42.96></td>           
+        </tr>
+        <tr>
+          <td> Waist (po) </td>
+          <td><input type="number" name="waist_width" class="measurements" value=37.70></td>           
+        </tr>
+        <tr>
+          <td> Hip (po) </td>
+          <td><input type="number" name="hip_size" class="measurements" value=42.46></td>           
+        </tr>
+      </table> 
+    </div>
+
+    <div id="measurementBtn">
+     <button onclick="logistikBlackBox.setMeasurements(logistikBlackBox.measurements)">Apply</button>
+    </div>
+     <div class="title">Step 2: Dress your avatar</div>
+    <div id="catalog">
+      <table border="1">
+        <tr>
+          <th>Clothing</th>
+          <th>size+</th>
+          <th>size</th>
+          <th>size-</th>
+        </tr>
+        <tr>
+          <td>Shirt</td>
+          <td><label>1800</label><input type="checkbox" class="label_box" onchange="logistikBlackBox.toggleClothing(this, logistikBlackBox.products[8])"></td>
+          <td><label>medium+</label><input type="checkbox" class="label_box" onchange="logistikBlackBox.toggleClothing(this, logistikBlackBox.products[6])"></td>
+          <td><label>medium</label><input type="checkbox" class="label_box" onchange="logistikBlackBox.toggleClothing(this, logistikBlackBox.products[1])"></td>
+        </tr>
+        <tr>
+            <td>Pants</td>
+            <td><label>medium+</label><input type="checkbox" class="label_box" onchange="logistikBlackBox.toggleClothing(this, logistikBlackBox.products[5])"></td>
+            <td><label>medium</label><input type="checkbox" class="label_box" onchange="logistikBlackBox.toggleClothing(this, logistikBlackBox.products[0])"></td>
+            <td></td>  
+          </tr>
+        <tr>
+          <td>Vest</td>
+          <td><label>medium+</label><input type="checkbox" class="label_box" onchange="logistikBlackBox.toggleClothing(this, logistikBlackBox.products[7])"></td>
+          <td> <label>medium</label><input type="checkbox" class="label_box" onchange="logistikBlackBox.toggleClothing(this, logistikBlackBox.products[2])"></td>
+          <td></td>  
+        </tr>
+        <tr>
+            <td>ADA shirt</td>
+            <td><label>medium</label><input type="checkbox" class="label_box" onchange="logistikBlackBox.toggleClothing(this, logistikBlackBox.products[3])"></td>
+            <td></td>
+            <td></td>  
+          </tr>
+          <tr>
+              <td>ADA pants</td>
+              <td><label>medium</label><input type="checkbox" class="label_box" onchange="logistikBlackBox.toggleClothing(this, logistikBlackBox.products[4])"></td>
+              <td></td>
+              <td></td>  
+            </tr>
+      </table>
+    </div>
+
+  </div>
+  
+  <div class="metaforma">
+    <app-root>Loading...</app-root>
+  </div>
+</body>
+
+</html>

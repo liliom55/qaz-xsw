@@ -1,0 +1,36 @@
+﻿<md-toolbar color="primary">
+    <button md-icon-button (click)="closeNavbar()">
+        <md-icon>arrow_back</md-icon>
+    </button>
+    <span class="stfk-title title">{{product.productMetadatas._product_name}}</span>
+    <span></span>
+</md-toolbar>
+<div class="top-container">
+    <div id="prd_img">
+        <img #productImage [src]="product.thumbUrl" alt="Product Image" />
+    </div>
+    <div id="prd_color">
+        <ul>
+            <li *ngFor="let color of productColors" (click)="productImage.src = color.large_image" (touch)="productImage.src = color.large_image">
+                <div><img [src]="color.small_image" /></div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="bottom-container">
+    <div class="product-features-row">
+        <span>{{product.productMetadatas.brand |uppercase}}</span>
+        <span class="stfk-heading product-feature-name">SIZE </span><span class="product-feature-value stfk-body2">{{productVersion.tag | productSizeDisplay: productSizeDescription}}</span>
+    </div>
+    <div class="product-features-row" fxLayout="row" fxLayoutAlign="space-between center">
+        <span class="stfk-heading">#{{product.sku}}</span>
+        <span class="stfk-heading">{{product.productMetadatas._product_price | currency:'CAD':true}}</span>
+    </div>
+    <div class="product-features-row product-features-main">
+        <div class="stfk-heading product-feature-name">{{'Features'|uppercase}}</div>
+        <div *ngFor="let key of productMetasConfig">{{key | humanize | titlecase}} | {{productMetas[key]}}</div>
+        <div class="product-feature-value">{{product.productMetadatas.feature}}</div>
+    </div>
+
+</div>
+   <button class="button-add-cart" md-fab (click)="addProduct()" (touch)="addProduct()"><md-icon>add</md-icon></button>

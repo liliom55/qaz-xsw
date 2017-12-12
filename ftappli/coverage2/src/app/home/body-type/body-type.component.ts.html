@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/app/home/body-type/body-type.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\..\index.html">All files</a> / <a href="index.html">src/app/home/body-type</a> body-type.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">86.27% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>44/51</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">66.67% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>16/24</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>9/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">85.42% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>41/48</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+&nbsp;
+import { environment } from '../../../environments/environment';
+&nbsp;
+import { Client, ClientCaptureMetric, ClientCapture } from '../../shared/clients/client.model';
+import { ClientService } from '../../shared/clients/client.service';
+import { HomeRoutingService } from '../home-routing/home-routing.service';
+&nbsp;
+@Component({
+    selector: 'body-type',
+    templateUrl: './body-type.component.html',
+    styleUrls: ['../home.component.css', 'body-type.component.css'],
+})
+&nbsp;
+export class BodyTypeComponent implements OnInit {
+    @Input() client: Client<span class="branch-1 cbranch-no" title="branch not covered" >;</span>
+    @Input() clientCapture: ClientCapture<span class="branch-1 cbranch-no" title="branch not covered" >;</span>
+    // @Output() switchView = new EventEmitter&lt;string&gt;();
+    public gender: string = this.getGender();
+    appType: string;
+    private imageSource: string = `assets/images/bodyTypes/${this.gender}/`;
+&nbsp;
+    clientBodyTypes: ClientCaptureMetric[] = [];
+    public bodyTypes: Object = {
+        "F": [
+            {
+                title: "Select your breast volume",
+                type: "volume",
+                bodyTypeItems: [
+                    { id: 0, title: "Thin &amp; discrete" },
+                    { id: 1, title: "Somewhat average" },
+                    { id: 2, title: "Voluminous &amp; massive" }
+                ]
+            },
+            {
+                title: "Select your breast spacing",
+                type: "spacing",
+                bodyTypeItems: [
+                    { id: 0, title: "Quite close" },
+                    { id: 1, title: "Somewhat spaced" }
+                ]
+            },
+            {
+                title: "Select where the tip of your breast is pointing",
+                type: "sagging",
+                bodyTypeItems: [
+                    { id: 0, title: "Upward" },
+                    { id: 1, title: "Straight ahead" },
+                    { id: 2, title: "Downward" }
+                ]
+            }
+        ],
+        "M": [
+            {
+                title: "Select your type of morphology",
+                type: "belly_type",
+                bodyTypeItems: [
+                    { id: 0, title: "Thin or muscular shape." },
+                    { id: 1, title: "Average size / I don't know." },
+                    { id: 2, title: "Stout build with slighty bumped stomach." }
+                ]
+            }
+        ]
+    };
+    currentIndex: number;
+    selectedType: Object;
+&nbsp;
+    constructor(
+        private clientService: ClientService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+        private homeRoutingService: HomeRoutingService<span class="branch-2 cbranch-no" title="branch not covered" ></span>
+    ) { }
+&nbsp;
+    ngOnInit() {
+        document.body.style.cursor = 'auto';
+        this.currentIndex = 0;
+        this.selectedType = { id: null, title: null }
+&nbsp;
+        // for avoiding to get the previous measurement
+        if (this.clientCapture.clientCaptureMetrics) {
+            this.clientCapture.clientCaptureMetrics = null;
+        }
+&nbsp;
+        this.appType = environment.app;
+    }
+&nbsp;
+    private getGender(): string {
+        return environment.gender;
+    }
+&nbsp;
+    selectType(bodyTypeItem: Object) {
+        this.selectedType = bodyTypeItem;
+    }
+&nbsp;
+    gatherBodyType(type: string, value: number) {
+        this.currentIndex += 1;
+        this.clientBodyTypes.push(new ClientCaptureMetric(type, value));
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (this.currentIndex == this.bodyTypes[this.gender].length) { // No more measurement to collect
+            this.submitBodyType(this.clientBodyTypes);
+        } else { //Go to next measurement type
+<span class="cstat-no" title="statement not covered" >            this.selectedType = { id: null, title: null }</span>
+        }
+&nbsp;
+    }
+&nbsp;
+&nbsp;
+&nbsp;
+    //Create a clientCapture from measurement form; then tries to make a match
+    submitBodyType(clientCaptureMetrics: ClientCaptureMetric[]): void {
+&nbsp;
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (!this.clientCapture.clientCaptureMetrics) { // First input of metrics in clientCapture
+            this.clientCapture.clientCaptureMetrics = clientCaptureMetrics;
+            if (this.appType === 'fitStand') {
+                this.next();
+            } else {
+                // fitroom
+                this.clientService.addClientCapture(this.clientCapture, this.client)
+                   .then(() =&gt; this.next());
+            }
+        } else {                                        // Edit of the previously created clientCapture
+<span class="cstat-no" title="statement not covered" >            if (this.appType === 'fitStand') {</span>
+<span class="cstat-no" title="statement not covered" >                this.clientCapture.clientCaptureMetrics = this.clientCapture.clientCaptureMetrics.concat(clientCaptureMetrics);</span>
+<span class="cstat-no" title="statement not covered" >                this.next();</span>
+            } else {
+                // fitroom
+<span class="cstat-no" title="statement not covered" >                this.clientCapture.clientCaptureMetrics = clientCaptureMetrics;</span>
+<span class="cstat-no" title="statement not covered" >                this.clientService.editClientCapture(this.clientCapture)</span>
+                    .then(<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>this.next())</span>;
+            }
+        }
+    }
+    next(): void {
+        document.body.style.cursor = 'wait';
+        this.homeRoutingService.next(this.constructor.name);
+    }
+&nbsp;
+&nbsp;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Oct 19 2017 16:43:26 GMT-0400 (Eastern Daylight Time)
+</div>
+</div>
+<script src="..\..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\..\sorter.js"></script>
+</body>
+</html>

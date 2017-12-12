@@ -1,0 +1,16 @@
+
+
+.sex-content .md-button {
+    line-height: 26px;
+    border-radius: 30px;
+    padding: 0 20px;
+    text-transform: none;
+}
+
+.next-btn {
+    background-color: #909CB6;
+    color: rgba(0, 0, 0, 0.54);
+    &:hover {
+        background-color: #5E6574;
+    }
+}

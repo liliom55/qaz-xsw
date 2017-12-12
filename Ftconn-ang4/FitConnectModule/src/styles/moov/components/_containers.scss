@@ -1,0 +1,14 @@
+//fix for shitty safari
+.btnContainer{
+    height: auto !important;
+}
+
+.card {
+    padding-left:80px;
+    padding-right:80px;
+    overflow: visible !important;
+    //fix for shitty safari:
+    $materialToolbarHeight: 64px;
+    height: calc(100vh - (#{$dialogBorder} * 2) - (#{$dialogPadding} * 2) - #{$materialToolbarHeight}) !important;
+    min-height: calc(100vh - (#{$dialogBorder} * 2) - (#{$dialogPadding} * 2) - #{$materialToolbarHeight}) !important;
+}

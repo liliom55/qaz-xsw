@@ -1,0 +1,23 @@
+﻿<!--   Add to card list  --> 
+<button md-icon-button [mdMenuTriggerFor]="menuCart">
+    <md-icon>shopping_cart</md-icon><span *ngIf="selectedProducts?.length>0" class="stefanka-basket-accent counter-shopping">{{selectedProducts?.length}}</span>
+</button>
+<md-menu #menuCart="mdMenu">
+    <div [ngClass]="{ 'empty-cart': selectedProducts?.length == 0, 'full-cart':  selectedProducts?.length != 0, 'cart-container': true }">
+        <md-list *ngIf="selectedProducts" class="cart-list-content">
+            <md-list-item *ngFor="let product of selectedProducts">
+                <img md-list-avatar [src]="product.thumbUrl" alt="Product item in Cart">
+                <h3 md-line> {{product.productMetadatas._product_name}} </h3>
+                <p md-line>
+                <span> {{product.productMetadatas._product_price| currency:'CAD':true}} </span>
+                <span> -- <button md-icon-button (click)="deleteProduct(product)" (touch)="deleteProduct(product)"> <md-icon>delete</md-icon> </button> </span>
+                </p>
+            </md-list-item>
+        </md-list>
+        <div class="cart-list-content" *ngIf="selectedProducts?.length == 0">
+            <span i18n>Empty basket</span>
+        </div>
+    </div>
+   <button class="stefanka-button-large stefanka-button-accent" [disabled]="selectedProducts?.length == 0" (click)="switchToGoodbye()" i18n>TRY ON MY SELECTION</button>
+
+</md-menu>

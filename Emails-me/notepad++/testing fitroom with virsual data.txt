@@ -1,0 +1,19 @@
+ssh connection to pool for testing the fitroom app
+0.install putty 
+1. host name -> enter -> dev.stefanka.tech
+2. category -> connection -> ssh -> tunnels -> source port: 15671 
+											   destination:localhost:15672
+											   add
+											   open
+											   
+3. enter username and password : username:leila, pass:*******
+4. go to the browser -> url: http://localhost:15671/#/exchanges/%2F/pool_001
+username:guest
+password:guest
+
+5.routingKey: "viewer.status"
+Payload:SCAN_STARTED (in fitroom app it supposed to start snipper progress )
+after a couple of seconds  -> replace with -> Payload:SCAN_STOP_1490297895.55035 (in fitroom it supposed to show the result 14 products)
+
+{"type":"belly_type","value":1}
+

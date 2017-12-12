@@ -1,0 +1,22 @@
+<div id="avatar-container" >
+  <div fxLayout="row" fxLayoutAlign="center center" class="rotate-div">
+    <img  (click)="move('left')" (mousedown)="move('left')" src="./assets/images/avatar/turn_left.png" alt="Turn Left" class="rotate-left">
+    <div class="backgrnd-range">
+      <input type="range" class="rotate" [step]="0.4" [(ngModel)]="currentRotateVal" (ngModelChange)="rotaterange($event)" [value]="currentRotateVal">
+    </div>
+    <img  (click)="move('right')" (mousedown)="move('right')" src="./assets/images/avatar/turn_right.png" alt="Turn right" class="rotate-right">
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="center center" class="zoom-div">
+    <img (click)="zoom('out')" (mousedown)="zoom('out')" src="./assets/images/avatar/zoom_min.png" alt="Zoom -" class="zoom-min">
+    <div class="backgrnd-range">
+      <input type="range" class="zoom" [step]="0.1" [min]="1" [max]="10" [(ngModel)]="currentZoomVal" (ngModelChange)="zoomrange($event)" [value]="currentZoomVal">
+    </div>
+    <img (click)="zoom('in')" (mousedown)="zoom('in')" src="./assets/images/avatar/zoom_plus.png" alt="Zoom +" class="rotate-plus">
+  </div>
+
+
+  <div class="remove-button">
+    <input type="button" value="remove all" (click)="loadAvatar('base')">
+  </div>
+</div>

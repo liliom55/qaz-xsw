@@ -1,0 +1,32 @@
+<div class="fullheight" fxLayout="row" fxLayoutAlign="center center">
+    <div class="content-bye" fxFlex="60" fxLayout="column">
+        <h3 fxFlex="40" translate>Good choice! Hold on while we are bringing your selection</h3>
+        <div *ngIf="!email">
+            <div>
+                <div>
+                    <p for="email" translate>Make sure you get the right size every time you shop, enter your email here:</p>
+                    <form [formGroup]="fv.emailForm">
+                        <div>
+                            <mat-input-container color="accent">
+                                <input matInput formControlName="email" [placeholder]="'Email' | translate" type="email" #email>
+                            </mat-input-container>
+                            <div *ngIf="fv.formErrors_email.email" class="errorMessage" translate>
+                                {{ fv.formErrors_email.email }}
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            <button class="send-email-btn" [disabled]="!fv.emailForm.valid || isSended" (click)="sendEmail(email.value);" mat-button >{{'SEND'|translate}}</button><br/>
+            <!-- <button type="submit" class="btn stefanka-button" translate>SEND</button><br /> -->
+            <span [@visibilityChanged] *ngIf="isSended" translate>Thank you for sharing your email with us</span>
+        </div>
+        <div  fxLayout="row" fxLayoutAlign="space-between center" >
+            <button fxFlex="30" class="return stefanka-button-large stefanka-button-accent" (click)="back()" translate>BACK</button>
+            <button [disabled]="!this.client.email" fxFlex="30" class="exit stefanka-button-large stefanka-button-accent" (click)="logout()" translate>LOG OUT</button>
+
+        </div>
+
+    </div>
+</div>

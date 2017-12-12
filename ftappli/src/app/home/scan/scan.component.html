@@ -1,0 +1,13 @@
+<div class="wait-div" *ngIf="!started && !error">
+    <p translate>The capture is about to start...</p>
+    <img src="assets/images/scan/wait.gif" alt="waiting">
+</div>
+<mat-progress-spinner *ngIf="started" color="accent" [mode]="spinnerMode" [value]="scanProgression">
+</mat-progress-spinner>
+<div class="message-spinner" fxLayout="row" fxLayoutAlign="space-around center">
+    <span *ngIf="error">
+        <span translate>Sorry, an error occurred</span>
+    <br>
+    <button mat-button (click)="tryAgain()" translate>TRY AGAIN</button>
+    </span>
+</div>

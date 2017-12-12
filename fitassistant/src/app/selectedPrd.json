@@ -1,0 +1,47 @@
+[
+{
+"id":"19d16c12-4a1f-48de-b0ab-4854d75c3740",
+"sku":"7063-59053",
+"name":"Colourful Stretch Shirt",
+"price":"69$",
+"color":[
+{"name":"Pattened Dark Crimson","small_image":"http://images.simonscdn.ca/images/7063/88626/69/A1_1.jpg?__=3","large_image":"http://images.simonscdn.ca/images/7063/88626/69/A1_1.jpg?__=3"}
+],
+"large_picture":"http://images.simonscdn.ca/images/7063/88626/69/A1_1.jpg?__=3",
+"small_picture":"http://images.simonscdn.ca/images/7063/88626/69/A1_1.jpg?__=3",
+"brand":"La Maison Simons",
+"cut":"Semi-tailored Fit",
+"size":16,
+"fabric":"97% Cotton 3% Lycra",
+"feature":["Light and stretchy weave","Flaring neck","Patch pocket on the chest"],
+"sleeve":"Longues","versionId":"3a48d9cb-c6ac-439a-9615-debaa2fcc0e1"},
+{
+"id":"61ee777c-d16f-4284-8961-9d60434d40d0",
+"sku":"5103-8428",
+"name":"Indigo Leaves Shirt",
+"price":"69$",
+"color":[
+{"name":"Pattened White","small_image":"http://images.simonscdn.ca/images/5103/8428/19/A1_1.jpg?__=1","large_image":"http://images.simonscdn.ca/images/5103/8428/19/A1_1.jpg?__=1"}],
+"large_picture":"http://images.simonscdn.ca/images/5103/8428/19/A1_1.jpg?__=1",
+"small_picture":"http://images.simonscdn.ca/images/5103/8428/19/A1_1.jpg?__=1",
+"brand":"La Maison Simons",
+"cut":"Semi-tailored Fit",
+"size":15.5,
+"fabric":"100% cotton",
+"feature":["A contrasting, rich indigo pattern of small, wind-borne leaves, Semi-tailored fit, Button-down collar, Contrasting underside, 100% oxford cotton weave"],
+"sleeve":"Longues","versionId":"0863f240-c290-4170-bebf-690e21a43920"},
+{
+"id":"e7bfe487-38b4-41a5-9a0c-df0bf030fdb1",
+"sku":"7063-88626",
+"name":"Hidden pocket square shirt ",
+"price":"59.95$",
+"color":[
+{"name":"Pattened Blue","small_image":"http://images.simonscdn.ca/images/7063/88626/49/A1_1.jpg?__=3","large_image":"http://images.simonscdn.ca/images/7063/88626/49/A1_1.jpg?__=3"}],
+"large_picture":"http://images.simonscdn.ca/images/7063/88626/49/A1_1.jpg?__=3",
+"small_picture":"http://images.simonscdn.ca/images/7063/88626/49/A1_1.jpg?__=3",
+"brand":"La Maison Simons",
+"cut":"Semi-tailored Fit",
+"size":16,
+"fabric":"100% cotton",
+"feature":["Chic graphic piece with micro patterns in an optical look, Semi-tailored fit, Floral print on the underside, Soft and comfortable 100% cotton weave"],
+"sleeve":"Longues","versionId":"1bb482ed-2b80-499f-b519-532ec1107a21"}]

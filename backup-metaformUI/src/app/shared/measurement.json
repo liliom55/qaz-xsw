@@ -1,0 +1,29 @@
+{
+    "measurement": {
+        "metrics": "cm",
+        "height": {
+            "min": 150,
+            "max": 200
+        },
+        "chest": {
+            "min": 70,
+            "max": 150
+        },
+        "neck": {
+            "min": 25,
+            "max": 45
+        },
+        "hip": {
+            "min": 70,
+            "max": 150
+        },
+        "waist": {
+            "min": 60,
+            "max": 150
+        },
+        "sleeveLength": {
+            "min": 45,
+            "max": 80
+        }
+    }
+}

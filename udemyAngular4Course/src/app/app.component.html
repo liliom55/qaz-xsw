@@ -1,0 +1,61 @@
+ <md-tab-group [(selectedIndex)]="selectedTab">
+            <md-tab label="Menu">
+                <ng-container *ngTemplateOutlet="menuTab"></ng-container>
+            </md-tab>
+            <md-tab label="Start">
+                <ng-container *ngTemplateOutlet="startTab"></ng-container>
+            </md-tab>
+            <md-tab label="Sex">
+                <ng-container *ngTemplateOutlet="sexTab"></ng-container>
+            </md-tab>
+            <md-tab label="basicInfo">
+                <ng-container *ngTemplateOutlet="basicInfosTab"></ng-container>
+            </md-tab>
+            <md-tab label="Shape">
+                <ng-container *ngTemplateOutlet="bodyShapesTab"></ng-container>
+            </md-tab>
+            <md-tab label="Measurements">
+                <ng-container *ngTemplateOutlet="measurementsTab"></ng-container>
+            </md-tab>
+            <md-tab label="End">
+                <ng-container *ngTemplateOutlet="endTab"></ng-container>
+            </md-tab>
+        </md-tab-group>
+
+<ng-template #menuTab>
+    <h1>Manu</h1>
+</ng-template>
+
+<ng-template #startTab>
+    <h1>start</h1>
+</ng-template>
+
+<ng-template #sexTab>
+    <h1>sex</h1>
+</ng-template>
+
+<ng-template #basicInfosTab>
+    <h1>basicInfos</h1>
+</ng-template>
+
+<ng-template #bodyShapesTab>
+    <h1>bodyShapes</h1>
+</ng-template>
+
+<ng-template #measurementsTab>
+    <h1>measurements</h1>
+</ng-template>
+
+<ng-template #endTab>
+    <h1>end</h1>
+</ng-template>
+
+
+<ng-template #nextButton>
+    <h1>next</h1>
+</ng-template>
+
+<ul>
+  <li><a href=""></a></li>
+  <li><a href=""></a></li>
+</ul>

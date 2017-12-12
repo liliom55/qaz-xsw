@@ -1,0 +1,15 @@
+.fullheight{
+    height: 100%;
+}
+.content-bye h3{
+    padding-bottom:80px; 
+}
+.mat-input-container {
+    width: 50%;
+}
+.send-email-btn{
+    min-width: 0 !important;
+}
+.errorMessage{
+    color:crimson;
+}

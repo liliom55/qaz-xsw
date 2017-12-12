@@ -1,0 +1,23 @@
+<h1>users</h1>
+<!-- <p>
+  <a class="btn btn-primary" routerLink="/users/new">Add User</a>
+</p>
+<input type="text" [(ngModel)] = "selUser">
+<table class="table table-bordered">
+  <tr (click)="sortElem($event)">
+    <th>Name</th>
+    <th>Email</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <tr *ngFor="let user of users | filter:selUser" >
+    <td>{{user.name}}</td>
+    <td>{{user.email}}</td>
+    <td><a [routerLink]="['/users', user.id]"><span class="glyphicon glyphicon-edit"></span></a></td>
+    <td><span class="glyphicon glyphicon-remove"></span></td>
+  </tr>
+</table> -->
+<div *ngIf="users">
+  <app-custom-table [data] = "users"></app-custom-table>
+</div>
+

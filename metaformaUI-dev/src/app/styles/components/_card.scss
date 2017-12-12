@@ -1,0 +1,25 @@
+$break-large: 1375px;
+$break-small:1024;
+
+// .font-style{
+//     font-weight: bolder;
+// }
+// md-card-title-text span{
+//     @extend .font-style;
+// }
+// md-card-content p {
+//     @extend .font-style;
+// }
+md-card-content p{
+    text-transform: capitalize;
+}
+@media screen and (min-width: $break-large) {
+    md-card-title-text span{
+        font-size: 20px;
+    }
+    md-card-content p{
+        font-size: 20px;
+    }
+}
+@media screen and (min-width: $break-large) {
+}

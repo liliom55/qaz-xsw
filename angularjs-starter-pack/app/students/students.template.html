@@ -1,0 +1,31 @@
+<div class="container" ng-if="stdentCtrl.studentList">
+    <h1>{{stdentCtrl.message}}</h1>
+    <input type="text" ng-model="student.name" placeholder="Search by name..">
+    <input type="text" ng-model="student.username" placeholder="Search by user name..">
+    <button ng-click="stdentCtrl.findStudent(student)">Search</button>
+    <table>
+
+        <tr>
+            <th ng-repeat="propertyN in stdentCtrl.propertyNames">{{propertyN}}</th>
+        </tr>
+        <!-- <tr ng-repeat="student in stdentCtrl.studentList | filter:stdentCtrl.studentfinded "> -->
+
+        <tr ng-repeat="student in stdentCtrl.studentList | startFrom:(stdentCtrl.currentPage-1)* stdentCtrl.pageSize |limitTo:stdentCtrl.pageSize">
+            <td ng-repeat="propertyN in stdentCtrl.propertyNames">
+                <span ng-if="propertyN !=='name'">{{student[propertyN]}}</span>
+                <a ng-if="propertyN ==='name'" href="#!/students/{{student.id}}">
+                    {{student[propertyN]}}</a>
+            </td>
+        </tr>
+
+    </table>
+    <br>
+    <!-- pagination -->
+    <div>
+        <ul uib-pagination boundary-links="true" total-items="stdentCtrl.studentList.length" ng-model="stdentCtrl.currentPage" items-per-page="stdentCtrl.pageSize" class="pagination-sm"
+            previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+    </div>
+    <!-- *************************************************** -->
+    <button ng-click="stdentCtrl.reloadData()">Reload</button>
+
+</div>

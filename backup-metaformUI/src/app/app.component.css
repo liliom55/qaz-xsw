@@ -1,0 +1,31 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+    width:90%;
+    height: 60%;
+    margin: 30px auto;
+}
+.nav-bar{
+    border-bottom: 8px solid;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.body{
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.measurement,.products{
+    background-color: #cad9e6;
+
+}
+.avatar{
+    background-color: lightgray;
+}
+.products{
+    border:1px solid lightgray;
+}
+.hide{
+    visibility: hidden;
+}

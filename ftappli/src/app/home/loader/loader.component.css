@@ -1,0 +1,39 @@
+.message-spinner {
+    position: absolute;
+    top: calc(50% - 100px);
+    left: calc(50% - 100px);
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 62px;
+}
+.message-spinner-num-recommendation{
+    line-height: 1;
+    font-size: 100px;
+    font-weight: bolder;
+}
+button{
+    text-transform: uppercase;
+}
+/*:host /deep/ .message-spinner-num-recommendation {
+    font-size: 100px;
+}*/
+mat-progress-spinner{
+    width:500px;
+    height:500px;
+    margin: auto;
+}
+.stefanka-button-round {
+    position: absolute;
+    top: calc(50% - 60px);
+    right: 24px;
+}
+@media screen and (max-width: 880px) {
+    .stefanka-button-round {
+        bottom: -278px;
+        right: calc(50% - 80px);
+    }
+}

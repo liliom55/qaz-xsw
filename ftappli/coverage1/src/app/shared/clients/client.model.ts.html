@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/app/shared/clients/client.model.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\..\index.html">All files</a> / <a href="index.html">src/app/shared/clients</a> client.model.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">92.19% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>59/64</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">66.67% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>12/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">88.89% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>8/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.49% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>55/57</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-yes">67x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// import { Client, ClientMetadata, ClientCapture, ClientCaptureMetric, ClientMetrics }
+&nbsp;
+//Use decorator JsonProperty to describe how the util should map a Json Object from the server to one of theses classes
+//Note: order of definition is important (see https://github.com/jf3096/json-typescript-mapper/issues/19)
+//Note: constructors are used in the json-mapper (new Clazz()); careful when changing them
+import { JsonProperty } from '../json-mapper/map-utils';
+&nbsp;
+export class ClientMetadata {
+  id: string;
+  @JsonProperty({ name: 'client_id' })
+  clientId: string;
+  name: string;
+  value: string;
+  created: Date;
+  modified: Date;
+&nbsp;
+  constructor(name?: string, value?: string, clientId?: string) {
+    this.id = undefined;
+    this.clientId = undefined;
+    this.name = undefined;
+    this.value = undefined;
+    this.created = undefined;
+    this.modified = undefined;
+    if (name) {
+      this.name = name;
+    }
+    if (value) {
+      this.value = value;
+    }
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (clientId) {
+<span class="cstat-no" title="statement not covered" >      this.clientId = clientId;</span>
+    }
+  }
+}
+&nbsp;
+export class ClientCaptureMetric {
+  id: string;
+  @JsonProperty({ name: 'client_capture_id' })
+  clientCaptureId: string;
+  type: string;
+  value: number;
+  created: Date;
+  modified: Date;
+&nbsp;
+  constructor(type?: string, value?: number) {
+    this.id = undefined;
+    this.clientCaptureId = undefined;
+    this.type = undefined;
+    this.value = undefined;
+    this.created = undefined;
+    this.modified = undefined;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (type) {
+      this.type = type;
+    }
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (value || value == 0) {
+      this.value = value;
+    }
+&nbsp;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  readyToSend(): Object {</span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
+      type: this.type, value: this.value
+    };
+  }
+}
+&nbsp;
+export class ClientCapture {
+  id: string;
+  @JsonProperty({ name: 'client_id' })
+  clientId: string;
+  @JsonProperty({ name: 'client_capture_metrics', clazz: ClientCaptureMetric })
+  clientCaptureMetrics: ClientCaptureMetric[];
+  created: Date;
+  modified: Date;
+&nbsp;
+  constructor(id?: string, clientId?: string, clientCaptureMetrics?: ClientCaptureMetric[]) {
+    this.id = undefined;
+    this.clientId = undefined;
+    this.clientCaptureMetrics = undefined;
+    this.created = undefined;
+    this.modified = undefined;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (id) <span class="cstat-no" title="statement not covered" >this.id = id;</span>
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (clientId) <span class="cstat-no" title="statement not covered" >this.clientId = clientId;</span>
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (clientCaptureMetrics) <span class="cstat-no" title="statement not covered" >this.clientCaptureMetrics = clientCaptureMetrics;</span>
+  }
+}
+&nbsp;
+export class Client {
+  id: string;
+  email: string;
+  password: string;
+  firstname: string;
+  lastname: string;
+  anonymous: number;
+  created: Date;
+  modified: Date;
+  @JsonProperty({ name: "client_metrics" })
+  clientMetrics: Object;
+  @JsonProperty({ name: "client_metadatas", clazz: ClientMetadata })
+  clientMetadatas: ClientMetadata[];
+  clientCaptures: ClientCapture[];
+&nbsp;
+  constructor() {
+&nbsp;
+    this.id = undefined;
+    this.email = undefined;
+    this.password = undefined;
+    this.firstname = undefined;
+    this.lastname = undefined;
+    this.anonymous = undefined;
+    this.created = undefined;
+    this.modified = undefined;
+    this.clientMetadatas = undefined;
+    this.clientMetrics = undefined;
+&nbsp;
+  }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Oct 10 2017 14:14:23 GMT-0400 (Eastern Daylight Time)
+</div>
+</div>
+<script src="..\..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\..\sorter.js"></script>
+</body>
+</html>

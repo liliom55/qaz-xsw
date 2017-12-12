@@ -1,0 +1,266 @@
+First
+------------------------------------------------------------------------------------------------------------------------
+1.create an account on heroku site : https://www.heroku.com/ (pass:@qazxswedc)
+2.install heroku for windows : https://devcenter.heroku.com/articles/heroku-cli
+3.uninstall node from your system
+4.install nvm : https://github.com/coreybutler/nvm-windows/releases
+
+----------------------------------------------------------------------------------------------------------------------
+BEFORE PUBLISH ON HEROKU:
+---------------------------------------------------------------------------------------------------------------------
+0. build the app (on cmd or bash):
+ng build  --env=prod --aot --output-path /Users/leila/Documents/Heroku/fitStansLilianne/public/ --watch
+create these 4 file beside public folder:
+.gitignore ->    
+			node_modules/
+			.DS_Store
+			package-lock.json
+
+
+index.js ->
+			var express = require('express');
+			var path = require('path');
+			var app = express();
+
+			const port = process.env.PORT || '5000';
+
+			app.set('port',port);
+			app.use(express.static(__dirname + '/public'));
+			app.get('/[^\.]+$',function(req,res){
+				res.set('Content-Type','text/html')
+					.sendFile(path.join(__dirname,'/publish/index.html'))
+			});
+			app.listen(app.get('port'),function(){
+				console.log("Node app is rinning at localhost:"+ app.get('port'))
+			});
+			
+package.json -> NOTE:change your app name 
+			{
+			  "name": "fitroomlilianne",
+			  "version": "1.0.0",
+			  "description": "",
+			  "main": "index.js",
+			  "scripts": {
+				"test": "echo \"Error: no test specified\" && exit 1"
+			  },
+			  "author": "",
+			  "license": "ISC",
+			  "dependencies": {
+				"ejs": "2.5.7",
+				"express": "4.15.4",
+				"path": "0.12.7",
+				"mongoose": "4.11.6",
+				"body-parser": "1.17.2",
+				"compression": "1.7.0"
+			  }
+			}
+Procfile -> 
+			web: node index.js
+
+
+-----------------------------------------------------------------------------------------------------------------
+on git bash or cmd -> 
+			
+leila@DESKTOP-J905B5M MINGW64 ~/Documents/Heroku/fitStansLilianne 
+$ nvm list
+
+    8.2.1
+  * 6.11.2 (Currently using 64-bit executable)
+  
+leila@DESKTOP-J905B5M MINGW64 ~/Documents/Heroku/fitStansLilianne 
+$ npm i
+
+
+
+leila@DESKTOP-J905B5M MINGW64 ~/Documents/Heroku/fitStansLilianne
+$ node index.js
+Node app is rinning at localhost:5000
+
+
+
+if the app works well continue steps below
+
+-------------------------------------------------------------------------------------------------------------
+PUBLISH ON HEROKU:
+--------------------------------------------------------------------------------------------------------------
+leila@DESKTOP-J905B5M MINGW64 ~/Documents/Heroku/fitStansLilianne
+$ git init
+Initialized empty Git repository in C:/Users/leila/Documents/Heroku/fitStansLilianne/.g
+it/
+
+
+leila@DESKTOP-J905B5M MINGW64 ~/Documents/Heroku/fitStansLilianne (master)
+$ git add --all
+
+
+leila@DESKTOP-J905B5M MINGW64 ~/Documents/Heroku/fitStansLilianne (master)
+$ git commit -am "Initial commit"
+
+leila@DESKTOP-J905B5M MINGW64 ~/Documents/Heroku/fitStansLilianne (master)
+$ nvm use 8.2.1 64
+Now using node v8.2.1 (64-bit)
+
+leila@DESKTOP-J905B5M MINGW64 ~/Documents/Heroku/fitStansLilianne (master)
+$ heroku login
+Enter your Heroku credentials:
+Email: leila_onsori@yahoo.com
+Password: **********
+Logged in as leila_onsori@yahoo.com
+
+
+NOTIC: (if there is problem to login run "winpty heroku login")
+
+leila@DESKTOP-J905B5M MINGW64 ~/Documents/Heroku/fitStansLilianne (master)
+$ heroku create fitstandlilianne
+Creating fitstandlilianne... !
+
+leila@DESKTOP-J905B5M MINGW64 ~/Documents/Heroku/fitStansLilianne (master)
+$ heroku create fitstandlilianne
+
+Creating fitstandlilianne... done
+https://fitstandlilianne.herokuapp.com/ | https://git.heroku.com/fitstandlilianne.git
+
+leila@DESKTOP-J905B5M MINGW64 ~/Documents/Heroku/fitStansLilianne (master)
+$ git push heroku master
+Counting objects: 64, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (61/61), done.
+Writing objects: 100% (64/64), 2.37 MiB | 218.00 KiB/s, done.
+Total 64 (delta 4), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Node.js app detected
+remote:
+remote: -----> Creating runtime environment
+remote:
+remote:        NPM_CONFIG_LOGLEVEL=error
+remote:        NPM_CONFIG_PRODUCTION=true
+remote:        NODE_VERBOSE=false
+remote:        NODE_ENV=production
+remote:        NODE_MODULES_CACHE=true
+remote:
+remote: -----> Installing binaries
+remote:        engines.node (package.json):  unspecified
+remote:        engines.npm (package.json):   unspecified (use default)
+remote:
+remote:        Resolving node version 6.x...
+remote:        Downloading and installing node 6.11.2...
+remote:        Using default npm version: 3.10.10
+remote:
+remote: -----> Restoring cache
+remote:        Skipping cache restore (not-found)
+remote:
+remote: -----> Building dependencies
+remote:        Installing node modules (package.json)
+remote:        fitstandlilianne@1.0.0 /tmp/build_42232c1ddf30f8b23fe947cc6f3be522
+remote:        ├─┬ body-parser@1.17.2
+remote:        │ ├── bytes@2.4.0
+remote:        │ ├── content-type@1.0.2
+remote:        │ ├── debug@2.6.7
+remote:        │ ├── depd@1.1.1
+remote:        │ ├─┬ http-errors@1.6.2
+remote:        │ │ └── inherits@2.0.3
+remote:        │ ├── iconv-lite@0.4.15
+remote:        │ ├─┬ on-finished@2.3.0
+remote:        │ │ └── ee-first@1.1.1
+remote:        │ ├── qs@6.4.0
+remote:        │ ├─┬ raw-body@2.2.0
+remote:        │ │ └── unpipe@1.0.0
+remote:        │ └─┬ type-is@1.6.15
+remote:        │   ├── media-typer@0.3.0
+remote:        │   └── mime-types@2.1.16
+remote:        ├─┬ compression@1.7.0
+remote:        │ ├─┬ accepts@1.3.3
+remote:        │ │ └── negotiator@0.6.1
+remote:        │ ├── bytes@2.5.0
+remote:        │ ├─┬ compressible@2.0.11
+remote:        │ │ └── mime-db@1.29.0
+remote:        │ ├── debug@2.6.8
+remote:        │ ├── on-headers@1.0.1
+remote:        │ ├── safe-buffer@5.1.1
+remote:        │ └── vary@1.1.1
+remote:        ├── ejs@2.5.7
+remote:        ├─┬ express@4.15.4
+remote:        │ ├── array-flatten@1.1.1
+remote:        │ ├── content-disposition@0.5.2
+remote:        │ ├── cookie@0.3.1
+remote:        │ ├── cookie-signature@1.0.6
+remote:        │ ├── debug@2.6.8
+remote:        │ ├── encodeurl@1.0.1
+remote:        │ ├── escape-html@1.0.3
+remote:        │ ├── etag@1.8.0
+remote:        │ ├─┬ finalhandler@1.0.4
+remote:        │ │ └── debug@2.6.8
+remote:        │ ├── fresh@0.5.0
+remote:        │ ├── merge-descriptors@1.0.1
+remote:        │ ├── methods@1.1.2
+remote:        │ ├── parseurl@1.3.1
+remote:        │ ├── path-to-regexp@0.1.7
+remote:        │ ├─┬ proxy-addr@1.1.5
+remote:        │ │ ├── forwarded@0.1.0
+remote:        │ │ └── ipaddr.js@1.4.0
+remote:        │ ├── qs@6.5.0
+remote:        │ ├── range-parser@1.2.0
+remote:        │ ├─┬ send@0.15.4
+remote:        │ │ ├── debug@2.6.8
+remote:        │ │ ├── destroy@1.0.4
+remote:        │ │ └── mime@1.3.4
+remote:        │ ├── serve-static@1.12.4
+remote:        │ ├── setprototypeof@1.0.3
+remote:        │ ├── statuses@1.3.1
+remote:        │ └── utils-merge@1.0.0
+remote:        ├─┬ mongoose@4.11.6
+remote:        │ ├─┬ async@2.1.4
+remote:        │ │ └── lodash@4.17.4
+remote:        │ ├── bson@1.0.4
+remote:        │ ├── hooks-fixed@2.0.0
+remote:        │ ├── kareem@1.5.0
+remote:        │ ├─┬ mongodb@2.2.30
+remote:        │ │ ├── es6-promise@3.2.1
+remote:        │ │ ├─┬ mongodb-core@2.1.14
+remote:        │ │ │ └─┬ require_optional@1.0.1
+remote:        │ │ │   ├── resolve-from@2.0.0
+remote:        │ │ │   └── semver@5.4.1
+remote:        │ │ └─┬ readable-stream@2.2.7
+remote:        │ │   ├── buffer-shims@1.0.0
+remote:        │ │   ├── core-util-is@1.0.2
+remote:        │ │   ├── isarray@1.0.0
+remote:        │ │   ├── process-nextick-args@1.0.7
+remote:        │ │   ├── string_decoder@1.0.3
+remote:        │ │   └── util-deprecate@1.0.2
+remote:        │ ├── mpath@0.3.0
+remote:        │ ├── mpromise@0.5.5
+remote:        │ ├─┬ mquery@2.3.1
+remote:        │ │ ├── bluebird@2.10.2
+remote:        │ │ ├── debug@2.6.8
+remote:        │ │ └── sliced@0.0.5
+remote:        │ ├── ms@2.0.0
+remote:        │ ├── muri@1.2.2
+remote:        │ ├── regexp-clone@0.0.1
+remote:        │ └── sliced@1.0.1
+remote:        └─┬ path@0.12.7
+remote:        ├── process@0.11.10
+remote:        └─┬ util@0.10.3
+remote:        └── inherits@2.0.1
+remote:
+remote:
+remote: -----> Caching build
+remote:        Clearing previous node cache
+remote:        Saving 2 cacheDirectories (default):
+remote:        - node_modules
+remote:        - bower_components (nothing to cache)
+remote:
+remote: -----> Build succeeded!
+remote: -----> Discovering process types
+remote:        Procfile declares types -> web
+remote:
+remote: -----> Compressing...
+remote:        Done: 18.2M
+remote: -----> Launching...
+remote:        Released v3
+remote:        https://fitstandlilianne.herokuapp.com/ deployed to Heroku
+remote:
+remote: Verifying deploy... done.
+To https://git.heroku.com/fitstandlilianne.git
+ * [new branch]      master -> master

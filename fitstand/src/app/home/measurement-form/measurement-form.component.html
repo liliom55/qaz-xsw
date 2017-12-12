@@ -1,0 +1,15 @@
+<div>
+    <h3 style="margin-bottom:100px;" class="stfk-title" i18n> Enter your measurement</h3>
+            <div>
+                <span i18n>Metrics</span> (cm, kg)
+                <!--<md-slide-toggle [checked]="systemChoice" (change)="toggleSystemChoice()" type="checkbox"></md-slide-toggle>-->
+                <md-slide-toggle (change)="toggleSystemChoice()" type="checkbox" [checked]="systemChoice=='imperial'"></md-slide-toggle>
+                <span i18n>Imperial </span>(ft, in, lb)
+            </div>
+           <dynamic-form *ngIf="questions" [questions]="questions"></dynamic-form>
+            <div>
+                <button style="margin-top:80px" (click)="updateClientCapture()" 
+                class="stefanka-button-large stefanka-button-accent" 
+                type="button" name="Suivant" i18n>NEXT</button>
+            </div>
+</div>

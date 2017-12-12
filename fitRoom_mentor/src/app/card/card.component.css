@@ -1,0 +1,122 @@
+#wrapper {
+    position:relative;
+    width:100%;
+    height:100%;
+    text-align:center;
+}
+/*-------------------------pic------------------------------*/
+#pic {
+    width: 200px;
+    height:250px;
+    float: left;
+    margin-left:23%;
+}
+#pic img{
+    max-width:100%;
+    max-height:100%;
+}
+/*-------------------------------color----------------------*/
+#colors {
+    float: left;
+    width: 15%;
+    padding-left:2.5%;
+    padding-right:2.5%;
+    display:none;
+}
+
+    #colors ul {
+        margin-top: 50px !important;
+        margin-left: 20px !important;
+    }
+
+    #colors li {
+        display: block !important;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        margin-bottom: 20px;
+    }
+
+        #colors li:nth-child(1) {
+            background-color: mediumpurple;
+        }
+
+        #colors li:nth-child(2) {
+            background-color: red;
+        }
+
+        #colors li:nth-child(3) {
+            background-color: blue;
+        }
+
+.clr_both {
+    clear: both;
+}
+/*---------------------------------title------------------------------------*/
+#title p, #brand label, #price label {
+    font-family: 'Raleway-SemiBold';
+    font-size: 24px;
+    color: black;
+}
+
+#brand label,#price label {
+    font-size: 19px;
+}
+
+#title {
+    display: table;
+    /*padding-top:7%;*/
+    /*padding-bottom:25%;*/
+    width: 100%;
+    height: 30%;
+    text-align: center;
+    margin:auto;
+}
+#title p{
+    display: table-cell;
+    vertical-align: middle;
+}
+#footer{
+    width:100%;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+#brand {
+    width:80%;
+    text-align: left;
+    float: left;
+    
+}
+
+#brand label, #price label {
+    opacity: 0.50;
+}
+
+#price {
+    width:20%;
+    text-align: right;
+    float: left;
+    /*margin-top: -8px;*/
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    #title p {
+    
+    font-size: 20px;
+    
+}
+    #brand label, #price label {
+        font-size: 16px;
+    }
+    
+    #pic {
+    margin-left:13%;
+}
+
+}
+@media screen and (max-width: 768px) {
+
+
+}

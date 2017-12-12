@@ -1,0 +1,17 @@
+#main_canvas_container, #metaforma {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#loading{
+  width:400px;
+  height:150px;
+  font-family:  proxima-nova, verdana, helvetica, arial, sans-serif;
+  font-size: 20px;
+  color: #276193;
+  position: absolute;
+  text-align: center;
+  top: calc(75% - 75px);
+  left: calc(50% - 200px);
+}

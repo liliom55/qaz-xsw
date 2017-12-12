@@ -1,0 +1,60 @@
+{
+    "id": "824b4a0d-0b31-411c-ac9d-7e123510fe50",
+    "email": "leila_onsori@yahoo.com",
+    "firstname": null,
+    "lastname": null,
+    "anonymous": 0,
+    "created": "2017-04-28T18:50:50+00:00",
+    "modified": "2017-04-28T18:50:50+00:00",
+    "clientMetadatas": [
+        {
+            "id": "6d10ad54-a6d0-4896-954c-aeb3b7f859e3",
+            "clientId": "824b4a0d-0b31-411c-ac9d-7e123510fe50",
+            "name": "preference_unit_system",
+            "value": "metric",
+            "created": "2017-04-28T18:50:50+00:00",
+            "modified": "2017-04-28T18:50:50+00:00"
+        },
+        {
+            "id": "8681f0df-72c9-4a39-80f9-193bfc581e9d",
+            "clientId": "824b4a0d-0b31-411c-ac9d-7e123510fe50",
+            "name": "gender",
+            "value": "M",
+            "created": "2017-02-08T18:51:11+00:00",
+            "modified": "2017-02-08T18:51:11+00:00"
+        }
+    ],
+    "clientCaptures": [
+        {
+            "id": "e68bf952-26ce-4d53-b282-9dafe3fab2f7",
+            "clientCaptureMetrics": [
+                {
+                    "id": "68e5e3e6-1958-41d1-875a-e78ec739776e",
+                    "clientCaptureId": "e68bf952-26ce-4d53-b282-9dafe3fab2f7",
+                    "type": "volume",
+                    "value": 2,
+                    "created": "2017-05-01T14:18:44+00:00",
+                    "modified": "2017-05-01T14:18:44+00:00"
+                },
+                {
+                    "id": "09d509b0-266c-4182-838a-ab149db4caf3",
+                    "clientCaptureId": "e68bf952-26ce-4d53-b282-9dafe3fab2f7",
+                    "type": "spacing",
+                    "value": 1,
+                    "created": "2017-05-01T14:18:44+00:00",
+                    "modified": "2017-05-01T14:18:44+00:00"
+                },
+                {
+                    "id": "aeed5a2a-a72c-40c9-b217-82bba7042b3f",
+                    "clientCaptureId": "e68bf952-26ce-4d53-b282-9dafe3fab2f7",
+                    "type": "sagging",
+                    "value": 0,
+                    "created": "2017-05-01T14:18:44+00:00",
+                    "modified": "2017-05-01T14:18:44+00:00"
+                }
+            ],
+            "created": "2017-05-01T14:18:44+00:00",
+            "modified": "2017-05-01T14:18:44+00:00"
+        }
+    ]
+}

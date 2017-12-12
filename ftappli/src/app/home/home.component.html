@@ -1,0 +1,84 @@
+﻿<div class="container" id="home-container" fxLayoutAlign="center center">
+    <!-- Treanslation -->
+    <div class="translate">
+        <button   
+        *ngFor="let lang of supportedLangs" 
+        (click)="selectLang(lang.value)" 
+        (touch)="selectLang(lang.value)"
+            class="stefanka-button-secondary" 
+            [class.stefanka-button-accent]="isCurrentLang(lang.value)">
+        {{ lang.display }}
+    </button>
+    </div>
+
+    <!--  -->
+    <div id="login-container" fxLayout="column" fxLayoutAlign="center center" *ngIf="homeRouting.current == 'EmailFormComponent'
+            || homeRouting.current == 'MeasurementHistoryComponent'
+            || homeRouting.current == 'PasswordAuthentificationComponent'
+            || homeRouting.current == 'PasswordRegistrationComponent'">
+        <div id="logo-container">
+            <img src="/assets/images/brand-logo.png" />
+        </div>
+        <div id="login-components-container" fxLayoutAlign="center center">
+            <!--   EMAIL FORM -->
+            <div  *ngIf="homeRouting.current == 'EmailFormComponent'">
+                <email-form [client]="client" [autoNextStep] = "autoNextStep"> </email-form>
+            </div>
+            <!--   PASSWORD AUTH -->
+            <div [@flyInOut] *ngIf="homeRouting.current == 'PasswordAuthentificationComponent'">
+                <password-authentification [client]="client"> </password-authentification>
+            </div>
+            <!--  PASSWORD REGISTRATION -->
+            <div [@flyInOut] *ngIf="homeRouting.current === 'PasswordRegistrationComponent'">
+                <password-registration [client]="client"> </password-registration>
+            </div>
+            <!--   MEASUREMENT OLD/NEW -->
+            <div [@flyInOut] *ngIf="homeRouting.current == 'MeasurementHistoryComponent'">
+                <measurement-history [client]="client" [products]="products"> </measurement-history>
+            </div>
+        </div>
+    </div>
+
+    <!--  MEASUREMENT FORM  -->
+    <div [@flyInOut] *ngIf="homeRouting.current === 'MeasurementFormComponent'">
+        <measurement-form [client]="client" [clientCapture]="clientCapture"> </measurement-form>
+    </div>
+
+    <!-- BODY TYPE -->
+    <div *ngIf="homeRouting.current == 'BodyTypeComponent'" [@flyInOut]>
+        <body-type  [client]="client" [clientCapture]="clientCapture" [autoNextStep] = "autoNextStep"> </body-type>
+    </div>
+
+
+
+    <!-- LOADER -->
+    <div *ngIf="homeRouting.current == 'LoaderComponent'">
+        <loader [client]="client" [clientCapture]="clientCapture" [autoNextStep] = "autoNextStep"></loader>
+    </div>
+    <!--  PREFILTER  -->
+    <div *ngIf="homeRouting.current == 'PreFilterComponent'" [@flyInOut]>
+        <pre-filter [autoNextStep] = "autoNextStep"> </pre-filter>
+    </div>
+    <div *ngIf="homeRouting.current == 'ScanInstructionComponent'" [@flyInOut]>
+        <app-scan-instruction [autoNextStep] = "autoNextStep"></app-scan-instruction>
+    </div>
+    <div *ngIf="homeRouting.current == 'ScanComponent'" [@flyInOut]>
+        <app-scan></app-scan>
+    </div>
+
+
+
+    <!--  FOOTER -->
+    <div id="footer">
+        <img src="/assets/images/stefanka-logo.png" />
+        <p translate>powered by </p>
+        <div class="clear_both"></div>
+    </div>
+
+    <!--  ERROR HANDLING -->
+    <div id="errorHandler" *ngIf="isError && !isError_match" class="valign-wrapper">
+        <div id="messageError" class="valign">
+            <h2 translate>Connection Server Error</h2><i class="material-icons">error</i>
+        </div>
+    </div>
+</div>

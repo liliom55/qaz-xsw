@@ -1,0 +1,60 @@
+// Import all the tools needed to customize the theme and extract parts of it
+@import '~@angular/material/theming';
+
+// Define a mixin that accepts a theme and outputs the color styles for the component.
+@mixin stefanka-button-theme($theme) {
+  // Extract whichever individual palettes you need from the theme.
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  // Use mat-color to extract individual colors from a palette as necessary.
+  .stefanka-button-accent {
+    background-color: mat-color($accent) !important;
+  }
+
+  .stefanka-button-secondary {
+    background-color: rgba(0,0,0,0.63);
+  }
+  .stefanka-button-large {
+    color: white;
+    width: 100%;
+    height: 50px;
+    border-radius: 2px;
+    font-weight: 800;
+    margin-top: 8px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    border: none;
+  }
+
+
+
+  .stefanka-button-round {
+    border: none;
+    background-color: transparent;
+    outline: none;
+  }
+  .stefanka-button-round .stefanka-button-round_icon {
+    width: 80px;
+    height: 80px;
+    float: left;
+    border: 2px solid mat-color($accent);
+    color: mat-color($accent);
+    border-radius: 100%;
+  }
+  .stefanka-button-round .stefanka-button-round_icon mat-icon {
+    width: 80px;
+    line-height: 80px;
+    font-size: 60px;
+    color: mat-color($accent);
+  }
+
+  .stefanka-button-round .stefanka-button-round_label {
+    font-size: 16px;
+    color: rgba(0,0,0,0.3);
+    position: relative;
+    right: 150px;
+    top: 34px;
+  }
+}

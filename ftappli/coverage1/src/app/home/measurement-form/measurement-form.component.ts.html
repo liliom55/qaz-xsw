@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/app/home/measurement-form/measurement-form.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\..\index.html">All files</a> / <a href="index.html">src/app/home/measurement-form</a> measurement-form.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">65.48% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>55/84</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">57.45% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>27/47</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">60% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>12/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">63.75% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>51/80</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">153x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import {
+    trigger,
+    state,
+    style,
+    animate,
+    transition
+} from '@angular/animations';
+&nbsp;
+import { environment } from '../../../environments/environment'
+import { Client, ClientCapture, ClientCaptureMetric } from '../../shared/clients/client.model';
+import { ProductService } from '../../shared/products/product.service';
+import { ClientService } from '../../shared/clients/client.service';
+import { MeasurementFormService } from './measurement-form.service';
+import { HomeRoutingService } from '../home-routing/home-routing.service';
+&nbsp;
+import { DynamicFormComponent } from '../../shared/dynamic-form/dynamic-form.component';
+import { FormControlService } from '../../shared/dynamic-form/form-control.service';
+&nbsp;
+&nbsp;
+@Component({
+    selector: 'measurement-form',
+    templateUrl: './measurement-form.component.html',
+    styleUrls: ['../home.component.css'],
+    providers: [MeasurementFormService, FormControlService, ClientService]
+})
+&nbsp;
+export class MeasurementFormComponent implements OnInit {
+&nbsp;
+    @Input() client: Client<span class="branch-1 cbranch-no" title="branch not covered" >;</span>
+    @Input() clientCapture: ClientCapture<span class="branch-1 cbranch-no" title="branch not covered" >;</span>
+    dynamicForm: any;
+    systemChoice: string;
+    questions: any[];
+    isClickedNext: boolean;
+&nbsp;
+    measurementElem: any;
+    form: FormGroup;
+    hasHeight: boolean;
+&nbsp;
+    constructor(
+        private clientService: ClientService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+        private productService: ProductService<span class="branch-2 cbranch-no" title="branch not covered" >,</span>
+        private measurementFormService: MeasurementFormService<span class="branch-2 cbranch-no" title="branch not covered" >,</span>
+        private homeRoutingService: HomeRoutingService<span class="branch-2 cbranch-no" title="branch not covered" >,</span>
+        private qcs: FormControlService<span class="branch-2 cbranch-no" title="branch not covered" ></span>
+    ) {
+&nbsp;
+    }
+    ngOnInit() {
+        document.body.style.cursor = 'auto';
+        this.isClickedNext = false;
+        //Load the system preference and measurement form from config file
+        this.systemChoice = environment.defaultMeasurementSystem;
+        this.dynamicForm = this.measurementFormService.loadQuestion();
+        this.questions = this.dynamicForm[this.systemChoice];
+        this.measurementElem = this.measurementFormService.measurementElements;
+        this.cleanForm();
+        this.form = this.qcs.toFormGroup(this.measurementElem);
+        this.hasHeight = this.measurementElem.find(o =&gt; o.key === 'feet') ? true : <span class="branch-1 cbranch-no" title="branch not covered" >false;</span>
+    }
+    //Switch between metrics and imperial system
+    toggleSystemChoice(): void {
+        this.systemChoice = this.systemChoice == 'metric' ? <span class="branch-0 cbranch-no" title="branch not covered" >'imperial' </span>: 'metric';
+        this.questions = this.dynamicForm[this.systemChoice];
+        // console.log(this.questions);
+        this.measurementElem = this.measurementFormService.measurementElements;
+        // console.log('measurementElem',this.measurementElem);
+        this.cleanForm();
+        this.form = this.qcs.toFormGroup(this.measurementElem);
+&nbsp;
+&nbsp;
+    }
+&nbsp;
+    //Create a clientCapture from measurement form; then tries to make a match
+    updateClientCapture(): void {
+        let metrics: ClientCaptureMetric[] = [];
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (!this.form.valid) {
+            return;
+        }
+        // copy the value of the form to question object
+<span class="cstat-no" title="statement not covered" >        Object.keys(this.form.value).forEach(<span class="fstat-no" title="function not covered" >(</span>key_form) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            this.questions.forEach(<span class="fstat-no" title="function not covered" >(</span>q) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                Object.keys(q).forEach(<span class="fstat-no" title="function not covered" >(</span>key_question) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    if (key_form == q['key']) {</span>
+<span class="cstat-no" title="statement not covered" >                        q['value'] = this.form.value[key_form];</span>
+                    }
+                });
+            });
+        });
+        // app that has feet and inch
+        let feet;
+        let inch;
+        let height;
+<span class="cstat-no" title="statement not covered" >        this.questions.forEach(<span class="fstat-no" title="function not covered" >(</span>q) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            if (q.key === 'feet') {</span>
+<span class="cstat-no" title="statement not covered" >                feet = q.value;</span>
+            }
+<span class="cstat-no" title="statement not covered" >            if (q.key === 'inch') {</span>
+<span class="cstat-no" title="statement not covered" >                inch = q.value;</span>
+<span class="cstat-no" title="statement not covered" >                q.key = 'height';</span>
+<span class="cstat-no" title="statement not covered" >                q.label = 'Height';</span>
+<span class="cstat-no" title="statement not covered" >                height = parseInt(feet) * 12 + parseInt(inch);</span>
+<span class="cstat-no" title="statement not covered" >                q.value = height + "";</span>
+            }
+        });
+<span class="cstat-no" title="statement not covered" >        this.questions = this.questions.filter(<span class="fstat-no" title="function not covered" >(</span>elem) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            return elem.key !== 'feet';</span>
+        });
+<span class="cstat-no" title="statement not covered" >        this.questions.map(<span class="fstat-no" title="function not covered" >(</span>value) =&gt; {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (this.systemChoice == 'imperial') { //Convert value to metric system</span>
+<span class="cstat-no" title="statement not covered" >                value.value = this.measurementFormService.convertUnit(value.value, 'metric', value.unit)</span>
+            }
+<span class="cstat-no" title="statement not covered" >            metrics.push(new ClientCaptureMetric(value.key, value.value));</span>
+        });
+<span class="cstat-no" title="statement not covered" >        this.clientService.editClient(this.client.id, { // Add a preference unit system (metric or imperial) to the client preference</span>
+            client_metadatas: [{
+                client_id: this.client.id, name: 'preference_unit_system', value: this.systemChoice
+            }]
+        });
+<span class="cstat-no" title="statement not covered" >        if (!this.clientCapture.clientCaptureMetrics) { // First input of metrics in clientCapture</span>
+<span class="cstat-no" title="statement not covered" >            this.clientCapture.clientCaptureMetrics = metrics;</span>
+<span class="cstat-no" title="statement not covered" >            this.clientService.addClientCapture(this.clientCapture, this.client)</span>
+                .then(<span class="fstat-no" title="function not covered" >capture =&gt; <span class="cstat-no" title="statement not covered" >this.match(capture.id))</span>;</span>
+        } else {                                        // Edit of the previously created clientCapture
+<span class="cstat-no" title="statement not covered" >            this.clientCapture.clientCaptureMetrics = this.clientCapture.clientCaptureMetrics.concat(metrics);</span>
+            // this.clientService.editClientCapture(this.clientCapture)
+            //     .then(capture =&gt; this.match(capture.id));
+            // **************************************************************????????
+<span class="cstat-no" title="statement not covered" >            this.clientService.addClientCapture(this.clientCapture, this.client)</span>
+                .then(<span class="fstat-no" title="function not covered" >capture =&gt; <span class="cstat-no" title="statement not covered" >this.match(capture.id))</span>;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        this.isClickedNext = true;</span>
+    }
+    // rearrenge form elements
+    cleanForm() {
+        if (this.systemChoice === 'imperial') {
+            // delete this.form.value['height'];
+            this.measurementElem = this.measurementElem.filter((elem) =&gt; {
+                return elem.key !== 'height';
+            });
+&nbsp;
+        } else {
+            this.measurementElem = this.measurementElem.filter((elem) =&gt; {
+                return elem.key !== 'feet';
+            });
+            this.measurementElem = this.measurementElem.filter((elem) =&gt; {
+                return elem.key !== 'inch';
+            });
+        }
+    }
+    match(captureId: string): void {
+        this.productService.match(captureId);
+        this.next();
+    }
+&nbsp;
+    next() {
+        document.body.style.cursor = 'wait';
+        this.homeRoutingService.next(this.constructor.name);
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Oct 10 2017 14:14:23 GMT-0400 (Eastern Daylight Time)
+</div>
+</div>
+<script src="..\..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\..\sorter.js"></script>
+</body>
+</html>

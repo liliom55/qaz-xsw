@@ -1,0 +1,26 @@
+﻿<!-----------------------------------  card component  -----------------------------------> 
+<div id="wrapper">
+    <div id="pic">
+        <img id="product_img" [src]="prdPicUrl" alt="cart">
+    </div>
+    <div id="colors">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="clr_both"></div>
+    <div id="title">
+        <p [innerHTML]="prdName"></p>
+    </div>
+    <div id="footer">
+        <div id="brand">
+            <label [innerHTML]="PrdBrand"></label>
+        </div>
+        <div id="price">
+            <label [innerHTML]="prdPrice"></label>
+        </div>
+    </div>
+    <div class="clr_both"></div>
+</div>

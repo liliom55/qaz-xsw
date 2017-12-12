@@ -1,0 +1,232 @@
+<div id="dialog" fxLayout="column" fxLayoutAlign="none center">
+    <md-toolbar class="transparent" fxLayout="row" fxLayoutAlign="start center">
+        <div>
+            <button [disabled]="selectedTab <= 1" fxFlex="30px" class="no-padding" md-button type="button" (click)="goBack()">
+            <i class="material-icons">navigate_before</i>
+            </button>
+        </div>
+
+        <div>
+            <button [disabled]="selectedTab == 0" fxFlex="30px" class="no-padding" md-button type="button" (click)="goTo(0)">
+            <i class="material-icons">view_module</i>
+            </button>
+        </div>
+        <div>
+            <button (click)="changeLanguage()" fxFlex="30px" class="no-padding" md-button type="button">
+                {{getOtherLanguage()}}
+            </button>
+        </div>
+
+        <!-- <md-slide-toggle (change)="changeUnits()">imperial</md-slide-toggle> -->
+
+
+        <div fxFlex="94" fxLayoutAlign="end none">
+            <button fxFlex="30px" class="no-padding" md-button type="button" (click)="closeDialogBox()">
+            <i class="material-icons">close</i>
+            </button>
+        </div>
+    </md-toolbar>
+    <div>
+        <md-tab-group [(selectedIndex)]="selectedTab">
+            <md-tab label="Menu">
+                <ng-container *ngTemplateOutlet="menuTab"></ng-container>
+            </md-tab>
+            <md-tab label="Start">
+                <ng-container *ngTemplateOutlet="startTab"></ng-container>
+            </md-tab>
+            <md-tab label="Sex">
+                <ng-container *ngTemplateOutlet="sexTab"></ng-container>
+            </md-tab>
+            <md-tab label="Preferences">
+                <ng-container *ngTemplateOutlet="preferencesTab"></ng-container>
+            </md-tab>
+            <md-tab label="basicInfo">
+                <ng-container *ngTemplateOutlet="basicInfosTab"></ng-container>
+            </md-tab>
+            <md-tab label="Shape">
+                <ng-container *ngTemplateOutlet="bodyShapesTab"></ng-container>
+            </md-tab>
+            <md-tab label="Measurements">
+                <ng-container *ngTemplateOutlet="measurementsTab"></ng-container>
+            </md-tab>
+            <md-tab label="End">
+                <ng-container *ngTemplateOutlet="endTab"></ng-container>
+            </md-tab>
+        </md-tab-group>
+    </div>
+</div>
+
+
+<ng-template #menuTab>
+    <md-card fxLayout="column" fxLayoutAlign="center none">
+        <h1>Menu</h1>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div>
+                <button md-button (click)="goTo(2)">sex</button>
+            </div>
+            <div>
+                <button md-button (click)="goTo(3)">Preferences</button>
+            </div>
+            <div>
+                <button md-button (click)="goTo(4)">Basic informations</button>
+            </div>
+            <div>
+                <button md-button (click)="goTo(5)">shape</button>
+            </div>
+            <div>
+                <button md-button (click)="goTo(6)">measurements</button>
+            </div>
+        </div>
+    </md-card>
+</ng-template>
+
+<ng-template #startTab>
+    <md-card fxLayout="column" fxLayoutAlign="center none">
+        <h1>{{'HOME.START' | translate}}</h1>
+        <div fxLayout="row" fxLayoutAlign="space-around center">
+            <div fxFlex="90">
+                <p>{{'HOME.FIRST' | translate}}</p>
+                <p>{{'HOME.SECOND' | translate}}</p>
+            </div>
+            <ng-container *ngTemplateOutlet="nextButton"></ng-container>
+        </div>
+    </md-card>
+</ng-template>
+
+<ng-template #sexTab>
+    <md-card fxLayout="column" fxLayoutAlign="center none">
+        <h1>{{'SEX.QUESTION' | translate}}</h1>
+        <div fxLayout="row">
+            <div fxLayout="row" fxAlign="center center" class="btn-sex-div">
+                <button md-button type="button" (click)="setSex('men')">{{'SEX.MEN' | translate}}</button>
+            </div>
+            <div fxLayout="row" fxAlign="center center" class="btn-sex-div">
+                <button md-button type="button" (click)="setSex('women')">{{'SEX.WOMEN' | translate}}</button>
+            </div>
+        </div>
+    </md-card>
+</ng-template>
+
+<ng-template #preferencesTab>
+
+    <md-card fxLayout="column" fxLayoutAlign="center none">
+        <h1>{{'PREFERENCES.TITLE' | translate}}</h1>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <form fxFlex="80" fxLayout="row" fxLayoutAlign="space-between center" [formGroup]="preferencesForm">
+                <div [fxFlex]="100 / store.preferences.length" *ngFor="let preference of store.preferences">
+                    <div>
+                        <md-select [(ngModel)]="preference.value" [formControlName]="preference.name" [placeholder]="preference.name" required>
+                            <md-option *ngFor="let option of preference.options" [value]="option.value">
+                                {{ option.name }}
+                            </md-option>
+                        </md-select>
+                    </div>
+                </div>
+            </form>
+            <div fxFlex="10">
+                <button [disabled]="!preferencesForm.valid" md-fab type="button" (click)="goNext()">
+                    <i class="material-icons">navigate_next</i>
+                 </button>
+            </div>
+        </div>
+    </md-card>
+
+</ng-template>
+
+<ng-template #basicInfosTab>
+
+    <md-card fxLayout="column" fxLayoutAlign="center none">
+        <h1>{{'INFO.ENTER' | translate}}</h1>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <form fxFlex="80" fxLayout="row" fxLayoutAlign="space-between center" [formGroup]="basicInfosForm">
+                <div fxFlex="26" *ngFor="let basicInfo of store.profile">
+                    <md-icon [svgIcon]="basicInfo.svgIcon"></md-icon>
+
+                    <md-input-container>
+                        <input mdInput [min]="basicInfo.min" [max]="basicInfo.max" [formControlName]="basicInfo.name" [placeholder]="getInputPlacerholder(basicInfosForm, basicInfo)"
+                            [value]="getInImperial(basicInfo.value, basicInfo.imperialUnit)" (change)="basicInfo.value = setValue($event.target.value, basicInfo.imperialUnit)"
+                            required>
+                        <span mdSuffix>
+                                        <span *ngIf='isMetric(); else elseBlock'>{{basicInfo.metricUnit}}</span>
+                        <ng-template #elseBlock>{{basicInfo.imperialUnit}}</ng-template>
+                        </span>
+                    </md-input-container>
+
+                </div>
+
+            </form>
+            <div fxFlex="10">
+                <button [disabled]="!basicInfosForm.valid" md-fab type="button" (click)="goNext()">
+                    <i class="material-icons">navigate_next</i>
+                 </button>
+            </div>
+        </div>
+    </md-card>
+
+</ng-template>
+
+<ng-template #bodyShapesTab>
+    <md-card fxLayout="column" fxLayoutAlign="center none">
+        <h1>{{'BODY.TYPE' | translate}}</h1>
+            <md-radio-group [(ngModel)]="bodyShape" fxLayout="row" fxLayoutAlign="space-between center">
+                <md-radio-button *ngFor="let bodyshape of store.bodyShapes" [value]="bodyshape" (click)="goNext()">
+                        <img class="full-width" [src]="bodyshape.imgUrl">
+                </md-radio-button>
+            </md-radio-group>
+    </md-card>
+</ng-template>
+
+<ng-template #measurementsTab>
+    <md-card fxLayout="column" fxLayoutAlign="center none">
+        <h1>{{'MEASUREMENT.INPUT' | translate}}</h1>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div fxFlex="80" fxLayout="row" fxLayoutAlign="space-between center">
+                <div fxFlex="30">
+                    <img class="full-width" [src]="bodyShape.imgUrl">
+                </div>
+                <form fxFlex="60" [formGroup]="measurementsForm">
+                    <div *ngFor="let measurement of store.measurements">
+
+                        <md-input-container>
+                            <input mdInput type="number" [min]="measurement.min" [max]="measurement.max" [formControlName]="measurement.name" [placeholder]="getInputPlacerholder(measurementsForm, measurement)"
+                                [value]="getInImperial(measurement.value, measurement.imperialUnit)" (change)="measurement.value = setValue($event.target.value, measurement.imperialUnit)"
+                                required>
+                            <span mdSuffix>
+                                        <span *ngIf='isMetric(); else elseBlock'>{{measurement.metricUnit}}</span>
+                            <ng-template #elseBlock>{{measurement.imperialUnit}}</ng-template>
+                            </span>
+                        </md-input-container>
+
+                    </div>
+                </form>
+            </div>
+            <div fxFlex="10">
+                <button md-fab [disabled]="!measurementsForm.valid" type="button" (click)="goNext()">
+                    <i class="material-icons">navigate_next</i>
+                </button>
+            </div>
+        </div>
+    </md-card>
+</ng-template>
+
+<ng-template #endTab>
+    <md-card fxLayout="column" fxLayoutAlign="center ce">
+        <h1>{{'END.COMPLETE' | translate}}</h1>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div>
+                <button md-raised-button type="button" (click)="submitMeasurements()">
+                    {{'END.SHOP' | translate}}
+                </button>
+            </div>
+        </div>
+    </md-card>
+</ng-template>
+
+
+<ng-template #nextButton>
+    <div fxFlex="10">
+        <button md-fab type="button" (click)="goNext()" class="next-btn">
+                    <i class="material-icons">navigate_next</i>
+        </button>
+    </div>
+</ng-template>
